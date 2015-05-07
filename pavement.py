@@ -14,6 +14,7 @@ project_name = "overview"
 
 master_url = 'http://127.0.0.1:8000'
 master_app = 'runestone'
+serving_dir = "./build/"+project_name
 
 options(
     sphinx = Bunch(docroot=".",),
@@ -63,6 +64,5 @@ def build(options):
     if 'masterapp' in options.build:
         options.build.template_args['appname'] = options.build.masterapp
 
-    print 'Building into ', options.build.outdir    
+    print 'Building into ', options.build.outdir
     paverutils.run_sphinx(options,'build')
-
