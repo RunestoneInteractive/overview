@@ -33,7 +33,7 @@ options(
 )
 
 if project_name == "<project_name>":
-  print "Please edit pavement.py and give your project a name"
+  print("Please edit pavement.py and give your project a name")
   exit()
 
 @task
@@ -64,5 +64,5 @@ def build(options):
     if 'masterapp' in options.build:
         options.build.template_args['appname'] = options.build.masterapp
 
-    print 'Building into ', options.build.outdir
+    print('Building into ', options.build.outdir)
     paverutils.run_sphinx(options,'build')
