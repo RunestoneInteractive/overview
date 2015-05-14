@@ -24,11 +24,15 @@ options(
         sourcedir=".",
         outdir="./build/"+project_name,
         confdir=".",
-        template_args={'course_id':project_name,
-                       'login_required':'false',
-                       'appname':master_app,
-                       'loglevel':10,
-                       'course_url':master_url }
+        template_args = {
+            'course_id':project_name,
+            'login_required':'false',
+            'appname':master_app,
+            'loglevel':10,
+            'course_url':master_url,
+            'use_services': 'true',
+            'python3': 'false',
+        }
     )
 )
 
