@@ -37,8 +37,8 @@ Is this site reliable enough to use in class?
 Yes.  All of the important parts of the book are served as static pages.  Everything else that happens either uses Javascript right in the browser, or background ajax calls that won't have any impact on the primary text.  We host this on a very reliable service and we monitor our traffic constantly.  In summer 2013 we increased our capacity in anticipation of higher traffic for Fall 2013.
 
 
-Why doesn't List and Grade Assignments doesn't show anything?
--------------------------------------------------------------
+Why doesn't List and Grade Assignments show anything?
+-----------------------------------------------------
 
 There could be two reasons.
 
