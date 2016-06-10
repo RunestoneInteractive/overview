@@ -3,38 +3,38 @@
 Help for Instructors
 ====================
 
-If you are an instructor who is wondering what this interactive textbook is all about you may want to take a look at the :doc:`overview`.  This shows you the various features that are incorporated into our interactive textbooks.
+If you are an instructor who is wondering what this interactive textbook is all about you may want to take a look at the :doc:`overview`.  This shows you the various special features that are incorporated into our interactive textbooks.
 
-If you are thinking about using this book for your course but have some questions then this is a good place to start.  The rest of this help document is structured like a FAQ so you can quickly find the question you may have from the Page menu and hopefully it will be answered here.
+If you are thinking about using this book for your course, but have some questions, then this is a good place to start.  The rest of this help document is structured like a FAQ so you can quickly find the question you may have from the Page menu and hopefully it will be answered here.
 
 Can I build my own course and host it here?
 -------------------------------------------
 
-Yes, we are currently hosting many courses for many different institutions around the world.  In fact in 2013 one large institution had 800 students using one of the books.
+Yes, you do not have to set up your own server to handle setup of stuff on the web. We are currently hosting many courses for many different institutions around the world.  In fact, recently, one large institution had 800 students using one of the books.
 
-The best approach is to use our system to build your own textbook.  This gives you several advantages as an instructor including:
+The best approach is to use our system to build your own textbook.  This gives you several advantages as an instructor, including:
 
 * a simple grading interface for homework problems at the end of each chapter
 * some simple reports on your students activities within the textbook.
-* at a glance information about the multiple choice and fill in the blank questions embedded in the text.
+* at-a-glance information about the multiple choice and fill in the blank questions embedded in the text (e.g. what % of students who tried it got it correct)
 
 
 How do I build my own course?
 -----------------------------
 
-1.  First you should register yourself as a user on this site.  When you register you must pick a course.  Just use thinkcspy or pythonds, it doesn't matter as that will change when you build your own.
-2.  Then go to the `instructors page <http://interactivepython.org/runestone/admin/index>`_.
-3.  On this page you will see the links for listing and grading assignments and lots of other things.  Right now those won't show you anything, so move along to the `Create a Custom Course <http://interactivepython.org/runestone/designer>`_ link.
-4. Fill in the Project Name.  This should be a short one word description of your course like `luther150a.`  When your students register for the course this is the name they will have to type in to join your particular course.   No Spaces allwed in this name.
-5. The description can say a bit more about the course.
-6. The big choice is whether to use a ready-made book or to pick and choose sections from the repository of sections.  Most people just choose one of the pre-made books.
-7.  Its probably just fine to leave this at today's date.  If you set it into the future and then do some experimenting with assignments and quizzes today you won't be able to see your results because you are only shown things that come after the start date.
+1.  First, register yourself as a user on this site.  When you register, you must pick a course book.  Just use ``thinkcspy`` or ``pythonds``, it doesn't matter -- what your course book looks like will change when you build your own.
+2.  Then, go to the `instructors page <http://interactivepython.org/runestone/admin/index>`_.
+3.  You should see the links for listing and grading assignments, and lots of other things.  Right now those won't show you anything, so move along to the `Create a Custom Course <http://interactivepython.org/runestone/designer>`_ link.
+4. Fill in the **Project Name**.  This should be a short one word description of your course like ``luther150a.``  **When your students register for the course, this is the name they will have to type in to join your particular course.**  No apaces allowed in this name.
+5. The **description** can say a bit more about the course.
+6. Now, your big choice is which book we provide to use. You will have the option to edit the table of contents for your course book.
+7.  It's probably just fine to leave the course start date at today's date.  (If you set it into the future and then do some experimenting with assignments and quizzes today, you won't be able to see your results, because you are only shown things that come after the start date.)
 
 
 Is this site reliable enough to use in class?
 ---------------------------------------------
 
-Yes.  All of the important parts of the book are served as static pages.  Everything else that happens either uses Javascript right in the browser, or background ajax calls that won't have any impact on the primary text.  We host this on a very reliable service and we monitor our traffic constantly.  In summer 2013 we increased our capacity in anticipation of higher traffic for Fall 2013.
+Yes.  All of the important parts of the book are served as static pages.  Everything else that happens either uses Javascript right in the browser, or background ajax calls that won't have any impact on the primary text. (If you don't know what that means yet, that's OK!) We host this on a very reliable service and we monitor our traffic constantly.
 
 
 Why doesn't List and Grade Assignments show anything?
@@ -60,21 +60,36 @@ How do I update my course to get the latest bug fixes?
 
 Here is the link to `rebuild your course <http://interactivepython.org/runestone/admin/rebuildcourse>`_.   We recommend that you do this every so often.  The instructors page will show you the current version of our software used to build the thinkcspy and pythonds books.  It will also show you the version for your own course.   If you course is out of date you will also get a flash message in the upper right corner of your browser window.
 
+I got a notification to rebuild my course. What should I do?
+------------------------------------------------------------
+
+*Rebuilding* your course will pull in all updates from our base books, except for things you've edited, like your Table of Contents. Sometimes, we find bugs in what we've done, and will release a notification that you should rebuild your book. (This is rare, and it will not affect any of your students' course progress.) In that case, you should probably do so.
+
+Here is the link to `rebuild your course <http://interactivepython.org/runestone/admin/rebuildcourse>`_.
+
+All the data from past terms is still saved in the database so students that want to go back and look at things from their past terms will be able to access their information, but nothing prior to your latest course start date will show up in any of your reports.
+
+If you have any questions or concerns about this, please contact us!
+
 
 I was just experimenting and I want to delete my course
 -------------------------------------------------------
 
-We are working on an automatic way to delete a course, but its still in testing.  Until then send an email to me bmiller at luther dot edu and I'll remove the course.
+We are working on an automatic way to delete a course, but its still in testing.  Until then send an email to me: bmiller at luther dot edu, and I'll remove the course.
 
 What if I want to add a new section or chapter?
 -----------------------------------------------
 
-That would be awesome.  This whole book is open source.  You can grab a copy of the source on `github <http://github.com/bnmnetp/runestone>`_.  The source for thinkcspy and pythonds is in the source folder and there is a subfolder for each chapter.  If you want to make a whole new chapter then create a folder and follow the conventions of one of the other chapters.  There is full documentation for the markup language at `docs.runestoneinteractive.org <http://docs.runestoneinteractive.org>`_.  When you are finished make a pull request and we'll review your material and incorporate them into the book.
+That would be awesome.  Each whole book is open source.  You can grab a copy of the source on `github <https://github.com/RunestoneInteractive>`_, where you can find the GitHub repositories for each book.
+
+If you want to make a whole new chapter then create a folder and follow the conventions of one of the other chapters.  There is full documentation for the markup language at `docs.runestoneinteractive.org <http://docs.runestoneinteractive.org>`_.  When you are finished, make a pull request, and we'll review your material and incorporate them into the book.
 
 What if I want to add my own exercises?
 ---------------------------------------
 
-New exercises are always welcome and we would love to expand the number of exercises.  The simplest way is to go to the `github issues <http://github.com/bnmnetp/runestone/issues>`_ page and file a new issue.  In the description simply include the text for the exercise and which chapter you think it should go in.  We'll take it from there.  After we've added the exercise you can rebuild your book and it will be there.
+New exercises are always welcome, and we would love to expand the number of exercises.  The simplest way is to go to the `github issues <http://github.com/bnmnetp/runestone/issues>`_ page and file a new issue.  In the description simply include the text for the exercise and which chapter you think it should go in.  We'll take it from there.  After we've added the exercise, you can rebuild your book and it will be there.
+
+If you want to add an exercise directly to the source of a book, see above!
 
 What version of Python does your book use?
 ------------------------------------------
