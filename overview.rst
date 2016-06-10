@@ -21,11 +21,13 @@
 An Overview of Runestone Interactive
 ====================================
 
-Runestone Interactive is a project focusing on providing tools and content for the purpose of
-creating interactive computer science courseware.  We provide a complete introductory series of chapters
-that can be used as is, or if you wish, you can customize the chapters.  You can even start
-from scratch and write your own interactive textbook using the tools that we provide.
-In order to see how the tools work, the following sections will show them in action.
+**Runestone Interactive** is a project that provides:
+
+* Interactive, open source textbooks for computer science and programming content which you can use by creating an account and logging in
+* Tools for writing your own interactive activities (or even your own book!)
+* An application server for hosting your own content on the web
+
+In order to see how the special tools for writing interactive activities work, and examine the type of special content that's used in our interactive textbooks, the following sections will show a few of them in action. For more detailed documentation and information about the Runestone community and project, please see `the main Runestone Interactive website <http://runestoneinteractive.org>`_.
 
 
 Embedded Videos
@@ -52,7 +54,6 @@ YouTube
     :height: 315
     :width: 560
     :align: left
-
 
 
 ActiveCode Windows
@@ -226,7 +227,7 @@ Another type of question allows you as the instructor to ask for a value.  You c
    What is value of 25 expressed as an octal number (base 8) :textfield:`baseconvert1_ans1::mini`
 
 
-And finally here is a way of giving your students some simple programming problems where the code is already there for them but not indented or in the correct order.  Use drag-and-drop to get everthing right.
+There is also a way of giving your students some simple programming problems where the code is already there for them but not indented or in the correct order.  Use drag-and-drop to get everthing right.
 
 **Check your understanding**
 
@@ -283,7 +284,9 @@ You can add a timed exam of multiple-choice questions that the user can only tak
 
 Please note that you can currently only have one timed exam per html page.
 
-It currently needs at least 4 directives to function: starttimer, revealquestions, timedmchoicemf, and finishtimer.  You can have as many timedmchoicemf as you want.  The time is specified in minutes using the :duration option in starttimer.  
+Additional notes for those developing content:
+This tool currently needs at least 4 directives to function: ``starttimer``, ``revealquestions``, ``timedmchoicemf``, and ``finishtimer``.  You can have as many ``timedmchoicemf`` as you want.  The time is specified in minutes, using the     :duration`` option in starttimer.  (For complete documentation of tools and directives, see `the main Runestone Interactive website <http://runestoneinteractive.org>`_ .)
+
 
 .. starttimer:: Start
     :duration: 38
@@ -595,14 +598,10 @@ Other Languages - LiveCode
 What To Do Now
 --------------
 
-Now that you have seen some of these tools in action, you can do more exploration by going back to the Runestone Interactive
-site and choosing the courseware examples that we have already created.  The first,
-**How to Think Like a Computer Scientist: Interactive Edition**, provides an introductory course.  This course covers the basic ideas
-of computer science and helps you learn Python programming.  The second course, **Problem Solving with Algorithms and Data Structures Using Python**, is a thorough introduction to data structures and algorithms using Python.  Topics include stacks,
-queues, trees, graphs, and recursion.
+Now that you have seen some of these tools in action, you can do more exploration by going back to the main
+site and examining the courseware examples that we have already created. 
 
-We hope you will find these tools and materials useful.  If you want to get more involved, feel free to download the tools and write your own courseware.  Everything you need can be found in the current `GitHub repository <http://github.com/bnmnetp/runestone>`_.
-
+We hope you will find these tools and materials useful.  If you want to get more involved, feel free to download the tools and write your own courseware.  Everything you need, instructions and help for contributing or writing your own courseware, and links to our GitHub repositories, can be found `here <http://runestoneinteractive.org/build/html/index.html>`_
 
 
 .. toctree::
