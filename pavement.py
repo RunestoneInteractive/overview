@@ -14,6 +14,7 @@ project_name = "overview"
 master_url = 'http://127.0.0.1:8000'
 master_app = 'runestone'
 serving_dir = "./build/"+project_name
+dest = '../../static'
 
 options(
     sphinx = Bunch(docroot=".",),
@@ -31,7 +32,7 @@ options(
             'loglevel':10,
             'course_url':master_url,
             'use_services': 'true',
-            'python3': 'false',
+            'python3': 'true',
         }
     )
 )

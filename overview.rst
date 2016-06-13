@@ -103,6 +103,8 @@ are learning to program.
 
 .. activecode:: codeexample2
     :nocodelens:
+    :hidecode:
+    :autorun:
 
     import turtle
 
@@ -186,7 +188,7 @@ understand why an answer may or may not be correct.
 
 **Check your understanding**
 
-.. mchoicemf:: question1_1
+.. mchoice:: question1_1
    :answer_a: Python
    :answer_b: Java
    :answer_c: C
@@ -204,7 +206,8 @@ This next type of question allows more than one correct answer to be required.  
 correct number as well as the feedback for each.
 
 
-.. mchoicema:: question1_2
+.. mchoice:: question1_2
+   :multiple_answers:
    :answer_a: red
    :answer_b: yellow
    :answer_c: black
@@ -220,11 +223,14 @@ correct number as well as the feedback for each.
 
 Another type of question allows you as the instructor to ask for a value.  You can test for the value using Pythons regular expressions.  For example:
 
-.. fillintheblank:: baseconvert1
-   :correct: \\b31\\b
-   :blankid: baseconvert1_ans1
+.. fillintheblank:: fill1512
 
-   What is value of 25 expressed as an octal number (base 8) :textfield:`baseconvert1_ans1::mini`
+    .. blank:: blank21
+        :correct: \\b31\\b
+        :feedback1: ("\\b25\\b", "That's base 10!")
+        :feedback2: (".*", "25 in octal please!")
+
+        What is the value of 25 expressed as an octal number (base 8)?
 
 
 There is also a way of giving your students some simple programming problems where the code is already there for them but not indented or in the correct order.  Use drag-and-drop to get everthing right.
@@ -284,56 +290,68 @@ You can add a timed exam of multiple-choice questions that the user can only tak
 
 Please note that you can currently only have one timed exam per html page.  By default the feedback will be shown after the user clicks the "Submit Answer" button or also after the time runs out for an exam with a specified duration. 
 
-Additional notes for those developing content:
-This tool currently needs at least 4 directives to function: ``starttimer``, ``revealquestions``, ``timedmchoicemf``, and ``finishtimer``.  You can have as many ``timedmchoicemf`` as you want.  The time is specified in minutes, using the     :duration`` option in starttimer.  (For complete documentation of tools and directives, see `the main Runestone Interactive website <http://runestoneinteractive.org>`_ .)
 
 
-.. starttimer:: Start
-    :duration: 38
+.. timed:: timed1
+    :timelimit: 10
 
-.. startexam:: timed_Test
-    :showtitle: Timed Exam Paused or Not Started
-    :hidetitle: Currently Taking Timed Exam
-    :duration: 1
+    .. mchoice:: questiontimed1_1
+        :answer_a: The value you are searching for is the first element in the array.
+        :answer_b: The value you are searching for is the last element in the array
+        :answer_c: The value you are searching for is in the middle of the array.
+        :answer_d: The value you are searching for is not in the array
+        :answer_e: Sequential Search can never be faster than Binary Search.
+        :correct: a
+        :feedback_a: Only when the search value is the first item in the array, and thus the first value encountered in sequential search, will sequential be faster than binary.
+        :feedback_b: In this case a sequential search will have to check every element before finding the correct one, whereas a binary search will not.
+        :feedback_c: Results will differ depending on the exact location of the element, but Binary Search will still find the element faster while Sequential will have to check more elements.
+        :feedback_d: If the search value is not in the array, a sequential search will have to check every item in the array before failing, a binary search will be faster.
+        :feedback_e: When the search value is the first element, Sequential will always be faster, as it will only need to check one element.
 
-    .. exammchoicemf:: te_1
-       :answer_a: The value you are searching for is the first element in the array.
-       :answer_b: The value you are searching for is the last element in the array
-       :answer_c: The value you are searching for is in the middle of the array.
-       :answer_d: The value you are searching for is not in the array
-       :answer_e: Sequential Search can never be faster than Binary Search.
-       :correct: a
-       :feedback_a: Only when the search value is the first item in the array, and thus the first value encountered in sequential search, will sequential be faster than binary.
-       :feedback_b: In this case a sequential search will have to check every element before finding the correct one, whereas a binary search will not.
-       :feedback_c: Results will differ depending on the exact location of the element, but Binary Search will still find the element faster while Sequential will have to check more elements.
-       :feedback_d: If the search value is not in the array, a sequential search will have to check every item in the array before failing, a binary search will be faster.
-       :feedback_e: When the search value is the first element, Sequential will always be faster, as it will only need to check one element.
+        Under which of these conditions will a sequential search be faster than a binary search?
 
-       Under which of these conditions will a sequential search be faster than a binary search?
+    .. clickablearea:: clicktimed1
+        :question: Click on the correct cells.
+        :feedback: Remember, the operator '=' is used for assignment.
+        :table:
+        :correct: 1,1;1,4;2,3;2,4
+        :incorrect: 2,1;2,2;3,0
 
-    .. exammchoicemf:: te_2
-       :answer_a: (c || d)
-       :answer_b: (c && d)
-       :answer_c: (!c) || (!d)
-       :answer_d: !(c && d)
-       :answer_e: (!c) && (!d)
-       :correct: e
-       :feedback_a: NOTing an OR expression does not result in the same values ORed.
-       :feedback_b: You do negate the OR to AND, but you also need to negate the values of d and d.
-       :feedback_c: This would be equivalent to (!(c && d)) using De Morgans laws.
-       :feedback_d: This would be equivalent to (!c || !d)
-       :feedback_e: NOTing (negating) an OR expression is the same as the AND of the individual values NOTed (negated). See De Morgans laws.
+        +------------------------+------------+----------+----------+
+        |        correct         |    N-A     |    N-A   | correct  |
+        +========================+============+==========+==========+
+        | Incorrect              | incorrect  | correct  | correct  |
+        +------------------------+------------+----------+----------+
+        | This row is incorrect  |   ...      |   ...    |   ...    |
+        +------------------------+------------+----------+----------+
 
-       Which of the following expressions is equivalent to the following? 
-   
-       .. code-block:: java
+    .. dragndrop:: dnd2
+        :feedback: This is feedback.
+        :match_1: Drag to Answer A|||Answer A
+        :match_2: Drag me Answer B|||Answer B
+        :match_3: Drag to Answer C|||Answer C
 
-           !(c || d)
-           
-    .. finishexam:: Finish
-    
-You can turn off the feedback by adding the :nofeedback option.
-You can turn off the display of the results (how many the user got right or wrong and what they answered) with the :noresult option.  It will tell the user that s/he finished the exam and that the answers were recorded.
+        This is a drag n drop question.
+
+    .. fillintheblank:: fill1412
+
+        .. blank:: blank1345
+            :correct: \\bred\\b
+            :feedback1: (".*", "Try 'red'")
+
+            Fill in the blanks to make the following sentence: "The red car drove away" The
+
+        .. blank:: blank52532
+            :correct: \\baway\\b
+            :feedback1: (".*", "Try 'away'")
+
+            car drove
+
+    .. activecode:: timedactive
+       :language: python
+
+       print("hello world")
+
 
 Unit Tests for Code
 -------------------
@@ -398,6 +416,38 @@ Fix the following code so that it always correctly adds two numbers.
    myTests().main()
 
 
+Drag N Drop
+------------------
+
+You can add a Drag n drop matching question to your page simply by defining the pairs of matchable elements within a dragndrop directive.
+The order of draggable elements and their respective dropzones will be randomized so the pairs aren't always side-by-side.
+
+.. dragndrop:: dnd1
+    :feedback: This is feedback.
+    :match_1: Drag me to 1|||I am 1
+    :match_2: Drag me to 2|||I am 2
+    :match_3: Drag me to 3|||I am 3
+
+    This is a drag n drop question.
+
+Clickable Area
+------------------
+
+Clickable area is another type of assess question you can use. All you need to do is write the code you wish to be in the question, and wrap the parts that you
+would like to be clickable in either a click-correct tag or a click-incorrect tag. The students can click on all elements you defined as being clickable, and
+will be evaluated once they click the 'Check Me' button.
+
+.. clickablearea:: click1
+    :question: Click on all assignment statements.
+    :iscode:
+    :feedback: Remember, the operator '=' is used for assignment.
+
+    :click-incorrect:def main()::endclick:
+        :click-correct:x = 4:endclick:
+        for i in range(5):
+            :click-correct:y = i:endclick:
+            :click-incorrect:if y > 2::endclick:
+                print(y)
 
 
 Disqus Comment Box
@@ -413,7 +463,7 @@ A comment box allowing users to add comments and start discussions can be added.
 Tabbed Question
 ---------------
 
-Any of the existing question types can be placed in a tabbed exhibit-style question. This may be used to provide an possible answer or a Disqus discussion box specifically related to a certain question.
+Any of the existing components can be placed in a tabbed exhibit-style question. This may be used to provide an possible answer or a Disqus discussion box specifically related to a certain question.
 
 .. tabbed:: exercise1
 
@@ -498,7 +548,7 @@ as Python.  Here is a simple example:
       }
    }
    console.log(fact(10));
-   outf('hello world');
+   writeln('hello world');
 
 
 Adding a javascript example is just as easy as Python, all you need to do is add a ``:language:``
@@ -569,11 +619,15 @@ connect it to the set block.  Then click on variables and drag out the X block a
 connect it to the print block.  Now click the run button and you should see 10 printed
 in the gray output area.
 
+Other Languages in ActiveCode
+-----------------------------
 
-Other Languages - LiveCode
---------------------------
+Activecode now supports Java, C++ and C through a backend server, not in the browser.    You can
+use them by specifying the language to be `java`, `cpp` or `c` In addition it supports either Python3 or Python2
+outside of the browser using `python3` or `python2` as the language.   You are limited to non-graphical
+programs in any of these options.
 
-.. livecode:: lc1
+.. activecode:: lc1
    :language: java
    :stdin: 100
 
@@ -596,6 +650,19 @@ Other Languages - LiveCode
        }
 
    }
+
+
+Audio Tours
+-----------
+
+
+.. activecode:: ch03_4
+    :nocanvas:
+    :tour_1: "Overall Tour"; 1-2: Example04_Tour01_Line01; 2: Example04_Tour01_Line02; 1: Example04_Tour01_Line03;
+
+    for name in ["Joe", "Amy", "Brad", "Angelina", "Zuki", "Thandi", "Paris"]:
+        print("Hi", name, "Please come to my party on Saturday!")
+
 
 
 
