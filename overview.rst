@@ -466,7 +466,8 @@ Before you go on, fix the add function in the activecode box.  The full compleme
 
        myTests().main()
 
-**Check Your Understanding**
+Hidden Unit Tests with Graphical Status
+---------------------------------------
 
 Fix the following code so that it always correctly adds two numbers.
 
