@@ -248,8 +248,10 @@ Parsons Problems
       x = x + 1
 
 
+CodeLens Predictions
+--------------------
 
-Here is a different sort of codelens visualization.  Some codelens blocks can have
+Here is a different sort of CodeLens visualization.  Some CodeLens blocks can have
 questions embedded in them that will ask you a question about the value of a
 variable, or which line will be the next line to execute.  This example asks you
 to keep track of the ``tot`` variable as you step through the loop.
@@ -279,10 +281,10 @@ next line executed.
     x = 2
     y = 0
     if x % 2 == 1:
-        print 'x is odd'
+        print('x is odd')
         y = y + x
     else:
-        print 'x is even'
+        print('x is even')
         y = y - x
 
 Drag N Drop
