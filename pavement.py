@@ -3,6 +3,7 @@ from paver.easy import *
 import paver.setuputils
 paver.setuputils.install_distutils_tasks()
 import os, sys
+from socket import gethostname
 
 from sphinxcontrib import paverutils
 
@@ -11,7 +12,12 @@ from sphinxcontrib import paverutils
 project_name = "overview"
 ###############################
 
-master_url = 'http://127.0.0.1:8000'
+master_url = None
+if master_url is None:
+    if gethostname() == 'web407.webfaction.com':
+        master_url = 'http://interactivepython.org'
+    else:
+        master_url = 'http://127.0.0.1:8000'
 master_app = 'runestone'
 serving_dir = "./build/"+project_name
 dest = '../../static'
