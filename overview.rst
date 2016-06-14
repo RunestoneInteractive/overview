@@ -21,43 +21,40 @@
 An Overview of Runestone Interactive
 ====================================
 
-**Runestone Interactive** is a project that provides:
+.. admonition:: **Runestone Interactive** is a project that provides:
 
-* Interactive, open source textbooks for computer science and programming content which you can use by creating an account and logging in
-* Tools for writing your own interactive activities (or even your own book!)
-* An application server for hosting your own content on the web
+    * Interactive, open source textbooks for computer science and programming content which you can use by creating an account and logging in
+    * Tools for writing your own interactive activities (or even your own book!)
+    * An application server for hosting your own content on the web.  We also use this server to provide textbooks as a service!
 
 In order to see how the special tools for writing interactive activities work, and examine the type of special content that's used in our interactive textbooks, the following sections will show a few of them in action. For more detailed documentation and information about the Runestone community and project, please see `the main Runestone Interactive website <http://runestoneinteractive.org>`_.
 
+How can I use Runestone?
+========================
 
-Embedded Videos
----------------
+.. sidebar:: An Overview of the Overview
 
-Our toolset provides a number of different things that will help you to learn to program in the Python programming language.
-Aside from reading the text, it is sometimes useful to hear someone tell you about different aspects of the topic being discussed.
-In order to accomplish this, we provide a way to integrate simple, short videos into the text.  For example, if you click
-on the video shown below, you will hear us talk about the tools that will be described shortly.
+   .. contents:: Topic Outline
 
-.. video:: videoinfo
-    :controls:
-    :thumb: _static/activecodethumb.png
+There are several ways that you might want to use Runestone in your own classroom.  The most common way is to choose one of our textbooks, and allow us to serve that book to your students.  We call this building a custom course.  Hundreds of high schools and colleges use our service to provide their students great content for learning computer science. Its free, and you don't have to install any additional software on your school computers to get going.  In the sections below you will see examples of the kinds of interactive components that are embedded in our textbooks, that enhance the learning of your students.
 
-    http://media.interactivepython.org/runestone.mov
-    http://media.interactivepython.org/runestone.webm
+If you decide to use one of our books, you can customize the book in a couple of different ways.
 
+* You can create your own assignments, by combining end of the chapter exercises or review questions that are right in each section of the book.  We have a grading interface that allows you to grade these assignments and provide students feedback all within the textbook.
+
+* You can also customize which chapters you want to use, and the order that you teach them in.  That takes a bit more work, but you can definitely do it.
 
 
-YouTube
--------
+Once you get going using one of our textbooks, you may decide that you want to create your own tutorials, lab exercises, or even make a short booklet to use as presentation materials.  Using the runestone tools it is pretty easy to make your own materials. We have `Documentation on how to do that <http://runestoneinteractive.org/instructors.html>`_
 
-.. youtube:: anwy2MPT5RE
-    :height: 315
-    :width: 560
-    :align: left
+What is an Interactive Textbook?
+================================
+
+One of the key differences between an interactive textbook and a regular textbook is that with an interactive textbook your students do not need to switch back and forth between reading a book and interacting with a development environment.  One of our primary motivations for creating an interactive book was to encourage students to experiment with examples as they are reading.  To do this we developed the idea of an activecode example.  This led to the development of many other interactive components.  In the following sections you can explore each of them from the perspective of a reader.  At the end, we have some information on where to go if you want to write your own materials.
 
 
-ActiveCode Windows
-------------------
+ActiveCode Examples
+-------------------
 
 One of the most important things that you can do when you are learning a programming language is to write programs.  Unfortunately,
 typical textbooks allow you to read about programming but don't allow you to practice.  We have created a unique tool called
@@ -85,7 +82,7 @@ addition symbol, the "+", to the multiplication symbol, "*".  Press *run* to see
 You can do this as many times as you like.  You can even start completely over by simply deleting all the code from the window.
 
 If you are a registered user and have logged in,
-it is possible to save the changes you make for reloading later. *Save* and *Load* buttons will appear that allow you to keep one copy of the program you are working on.
+any changes you make are automatically saved, and the history slider allows you to go back to any previous version of your program.
 Note that these saved programs can be accessed from anywhere if you have logged in.  However, if you are
 working anonymously, then you will lose your work at the end of the session.
 
@@ -151,6 +148,7 @@ are learning to program.
 
 
 
+
 The CodeLens Tool
 -----------------
 
@@ -179,10 +177,11 @@ more complex aspects of Python.
     zeros[1] = fruit
     zeros[1][2] = numlist
 
-Self-Check Questions
---------------------
 
-Finally, it is also possible to embed simple questions into the text.  These
+Multiple Choice
+---------------
+
+It is also possible to embed simple questions into the text.  These
 questions provide a way for the students to check themselves as they go along.  The questions also provide feedback so that you can
 understand why an answer may or may not be correct.
 
@@ -220,6 +219,8 @@ correct number as well as the feedback for each.
 
    Which colors might be found in a rainbow? (choose all that are correct)
 
+Fill in the Blank
+-----------------
 
 Another type of question allows you as the instructor to ask for a value.  You can test for the value using Pythons regular expressions.  For example:
 
@@ -233,9 +234,10 @@ Another type of question allows you as the instructor to ask for a value.  You c
         What is the value of 25 expressed as an octal number (base 8)?
 
 
-There is also a way of giving your students some simple programming problems where the code is already there for them but not indented or in the correct order.  Use drag-and-drop to get everthing right.
+There is also a way of giving your students some simple programming problems where the code is already there for them but not indented or in the correct order.  Think of it like coding with refrigerator magnets! Use drag-and-drop to get everything right.
 
-**Check your understanding**
+Parsons Problems
+----------------
 
 .. parsonsprob:: question1_100_4
 
@@ -282,11 +284,52 @@ next line executed.
     else:
         print 'x is even'
         y = y - x
-        
-Timed Exam Questions
----------------------
 
-You can add a timed exam of multiple-choice questions that the user can only take once. You can specify the maximum duration of the exam in minutes and it will display the time remaining.  If you don't include a duration it will keep track of the amount of time used and give the user unlimited time to finish the exam.   To start the exam click on the "Start" button.  You can pause the time by clicking on the "Pause" button and start it again by clicking on the "Resume" button.  When you pause the exam the questions will be hidden.  There is also a clock icon that will display the time remaining if it is a timed exam and the time used otherwise when the reader hovers over it.  
+Drag N Drop
+-----------
+
+You can add a Drag n drop matching question to your page simply by defining the pairs of matchable elements within a dragndrop directive.
+The order of draggable elements and their respective dropzones will be randomized so the pairs aren't always side-by-side.
+
+.. dragndrop:: dnd1
+    :feedback: This is feedback.
+    :match_1: Drag me to 1|||I am 1
+    :match_2: Drag me to 2|||I am 2
+    :match_3: Drag me to 3|||I am 3
+
+    This is a drag n drop question.
+
+Clickable Area
+--------------
+
+Clickable area is another type of assess question you can use. All you need to do is write the code you wish to be in the question, and wrap the parts that you
+would like to be clickable in either a click-correct tag or a click-incorrect tag. The students can click on all elements you defined as being clickable, and
+will be evaluated once they click the 'Check Me' button.
+
+.. clickablearea:: click1
+    :question: Click on all assignment statements.
+    :iscode:
+    :feedback: Remember, the operator '=' is used for assignment.
+
+    :click-incorrect:def main()::endclick:
+        :click-correct:x = 4:endclick:
+        for i in range(5):
+            :click-correct:y = i:endclick:
+            :click-incorrect:if y > 2::endclick:
+                print(y)
+
+
+Short Answer
+------------
+
+.. shortanswer:: shorta1
+
+   You can ask your students to answer reflective questions or short essays in the box provided.
+
+Timed Exam Questions
+--------------------
+
+You can add a timed exam of any of the assessments described so far. You can specify the maximum duration of the exam in minutes and it will display the time remaining.  If you don't include a duration it will keep track of the amount of time used and give the user unlimited time to finish the exam.   To start the exam click on the "Start" button.  You can pause the time by clicking on the "Pause" button and start it again by clicking on the "Resume" button.  When you pause the exam the questions will be hidden.  There is also a clock icon that will display the time remaining if it is a timed exam and the time used otherwise when the reader hovers over it.
 
 Please note that you can currently only have one timed exam per html page.  By default the feedback will be shown after the user clicks the "Submit Answer" button or also after the time runs out for an exam with a specified duration. 
 
@@ -353,6 +396,33 @@ Please note that you can currently only have one timed exam per html page.  By d
        print("hello world")
 
 
+
+Embedded Videos
+---------------
+
+Our toolset provides a number of different things that will help you to learn to program in the Python programming language.
+Aside from reading the text, it is sometimes useful to hear someone tell you about different aspects of the topic being discussed.
+In order to accomplish this, we provide a way to integrate simple, short videos into the text.  For example, if you click
+on the video shown below, you will hear us talk about the tools that will be described shortly.
+
+.. video:: videoinfo
+    :controls:
+    :thumb: _static/activecodethumb.png
+
+    http://media.interactivepython.org/runestone.mov
+    http://media.interactivepython.org/runestone.webm
+
+
+
+YouTube
+-------
+
+.. youtube:: anwy2MPT5RE
+    :height: 315
+    :width: 560
+    :align: left
+
+
 Unit Tests for Code
 -------------------
 
@@ -415,39 +485,6 @@ Fix the following code so that it always correctly adds two numbers.
 
    myTests().main()
 
-
-Drag N Drop
-------------------
-
-You can add a Drag n drop matching question to your page simply by defining the pairs of matchable elements within a dragndrop directive.
-The order of draggable elements and their respective dropzones will be randomized so the pairs aren't always side-by-side.
-
-.. dragndrop:: dnd1
-    :feedback: This is feedback.
-    :match_1: Drag me to 1|||I am 1
-    :match_2: Drag me to 2|||I am 2
-    :match_3: Drag me to 3|||I am 3
-
-    This is a drag n drop question.
-
-Clickable Area
-------------------
-
-Clickable area is another type of assess question you can use. All you need to do is write the code you wish to be in the question, and wrap the parts that you
-would like to be clickable in either a click-correct tag or a click-incorrect tag. The students can click on all elements you defined as being clickable, and
-will be evaluated once they click the 'Check Me' button.
-
-.. clickablearea:: click1
-    :question: Click on all assignment statements.
-    :iscode:
-    :feedback: Remember, the operator '=' is used for assignment.
-
-    :click-incorrect:def main()::endclick:
-        :click-correct:x = 4:endclick:
-        for i in range(5):
-            :click-correct:y = i:endclick:
-            :click-incorrect:if y > 2::endclick:
-                print(y)
 
 
 Disqus Comment Box
@@ -669,10 +706,10 @@ Audio Tours
 What To Do Now
 --------------
 
-Now that you have seen some of these tools in action, you can do more exploration by going back to the main
-site and examining the courseware examples that we have already created. 
+Now that you have seen some of these tools in action, you can do more exploration by going to `Runestone library <http://runestoneinteractive.org/library.html>`_
+and browsing through some of our existing books.
 
-We hope you will find these tools and materials useful.  If you want to get more involved, feel free to download the tools and write your own courseware.  Everything you need, instructions and help for contributing or writing your own courseware, and links to our GitHub repositories, can be found `here <http://runestoneinteractive.org/build/html/index.html>`_
+We hope you will find these tools and materials useful.  If you want to get more involved, feel free to download the tools and write your own materials.  Everything you need, instructions and help for contributing or writing your own materials, and links to our GitHub repositories, can be found `here <http://runestoneinteractive.org/build/html/index.html>`_
 
 
 .. toctree::
