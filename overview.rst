@@ -333,7 +333,7 @@ Timed Exam Questions
 
 You can add a timed exam of any of the assessments described so far. You can specify the maximum duration of the exam in minutes and it will display the time remaining.  If you don't include a duration it will keep track of the amount of time used and give the user unlimited time to finish the exam.   To start the exam click on the "Start" button.  You can pause the time by clicking on the "Pause" button and start it again by clicking on the "Resume" button.  When you pause the exam the questions will be hidden.  There is also a clock icon that will display the time remaining if it is a timed exam and the time used otherwise when the reader hovers over it.
 
-Please note that you can currently only have one timed exam per html page.  By default the feedback will be shown after the user clicks the "Submit Answer" button or also after the time runs out for an exam with a specified duration. 
+Please note that you can currently only have one timed exam per html page.  By default the feedback will be shown after the user clicks the "Submit Answer" button or also after the time runs out for an exam with a specified duration.
 
 
 
@@ -442,7 +442,7 @@ Its nice to be able to have students solve a particular problem by writing some 
 
        def testOne(self):
            self.assertEqual(add(2,2),4,"A feedback string when the test fails")
-           self.assertAlmostEqual(add(2.0,3.0),5.0,"Your function failed on inputs of 2.0 and 3.0")
+           self.assertAlmostEqual(add(2.0,3.0), 5.0, 1, "Try adding your parmeters")
 
    myTests().main()
 
@@ -462,7 +462,7 @@ Before you go on, fix the add function in the activecode box.  The full compleme
 
            def testOne(self):
                self.assertEqual(add(2,2),4,"A feedback string when the test fails")
-               self.assertAlmostEqual(add(2.0,3.0),5.0,"Your function failed on inputs of 2.0 and 3.0")
+               self.assertAlmostEqual(add(2.0,3.0), 5.0, 5, "Try adding the parameters")
 
        myTests().main()
 
@@ -484,7 +484,7 @@ Fix the following code so that it always correctly adds two numbers.
 
        def testOne(self):
            self.assertEqual(add(2,2),4,"A feedback string when the test fails")
-           self.assertAlmostEqual(add(2.0,3.0),5.0,"Your function failed on inputs of 2.0 and 3.0")
+           self.assertAlmostEqual(add(2.0,3.0), 5.0, 5, "Try adding your parameters")
 
    myTests().main()
 
@@ -508,15 +508,15 @@ Any of the existing components can be placed in a tabbed exhibit-style question.
 .. tabbed:: exercise1
 
     .. tab:: Question 1
-        
+
         Write a program that prints "Hello, world".
-            
+
         .. activecode:: helloworld
 
             print("Hello, world")
 
     .. tab:: Discussion
-        
+
         .. disqus::
             :shortname: interactivepython
             :identifier: helloworlddiscussion
@@ -643,14 +643,14 @@ Blockly
    variables
 
    preload::
-   <xml>  
-      <block type="variables_set" id="1" inline="true" x="25" y="9">    
-         <field name="VAR">X</field>    
-         <value name="VALUE">      
+   <xml>
+      <block type="variables_set" id="1" inline="true" x="25" y="9">
+         <field name="VAR">X</field>
+         <value name="VALUE">
             <block type="math_number" id="2">
                <field name="NUM">10</field>
-            </block>    
-         </value>  
+            </block>
+         </value>
       </block>
    </xml>
 
