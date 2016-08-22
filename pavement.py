@@ -38,6 +38,7 @@ options(
             'loglevel':10,
             'course_url':master_url,
             'use_services': 'true',
+            'basecourse': 'overview',
             'python3': 'true',
         }
     )
