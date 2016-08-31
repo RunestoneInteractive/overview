@@ -395,6 +395,8 @@ Please note that you can currently only have one timed exam per html page.  By d
     .. activecode:: timedactive
        :language: python
 
+       Write a program that prints "hello world" two times.
+       ~~~~
        print("hello world")
 
 

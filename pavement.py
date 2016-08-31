@@ -14,7 +14,7 @@ project_name = "overview"
 
 master_url = None
 if master_url is None:
-    if gethostname() == 'web407.webfaction.com':
+    if gethostname() in ['web407.webfaction.com', 'rsbuilder']:
         master_url = 'http://interactivepython.org'
     else:
         master_url = 'http://127.0.0.1:8000'
