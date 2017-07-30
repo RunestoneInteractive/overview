@@ -226,12 +226,11 @@ Another type of question allows you as the instructor to ask for a value.  You c
 
 .. fillintheblank:: fill1512
 
-    .. blank:: blank21
-        :correct: \\b31\\b
-        :feedback1: ("\\b25\\b", "That's base 10!")
-        :feedback2: (".*", "25 in octal please!")
+    What is the value of 25 expressed as an octal number (base 8)?
 
-        What is the value of 25 expressed as an octal number (base 8)?
+    - :31: Is the correct answer!
+      :25: Thats base 10!
+      :.*: 25 in octal please
 
 
 There is also a way of giving your students some simple programming problems where the code is already there for them but not indented or in the correct order.  Think of it like coding with refrigerator magnets! Use drag-and-drop to get everything right.
@@ -380,17 +379,14 @@ Please note that you can currently only have one timed exam per html page.  By d
 
     .. fillintheblank:: fill1412
 
-        .. blank:: blank1345
-            :correct: \\bred\\b
-            :feedback1: (".*", "Try 'red'")
+        Fill in the blanks to make the following sentence: "The red car drove away" The |blank| car drove |blank|.
 
-            Fill in the blanks to make the following sentence: "The red car drove away" The
+        - :red: Correct
+          :.*: Try red
 
-        .. blank:: blank52532
-            :correct: \\baway\\b
-            :feedback1: (".*", "Try 'away'")
+        - :away: Corect
+          :.*: where did we say the red car was going?
 
-            car drove
 
     .. activecode:: timedactive
        :language: python
