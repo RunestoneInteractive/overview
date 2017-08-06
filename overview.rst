@@ -486,6 +486,46 @@ Fix the following code so that it always correctly adds two numbers.
 
    myTests().main()
 
+ShowEval Trace Mode
+-------------------
+
+.. showeval:: showEval_0
+   :trace_mode: true
+
+   eggs = ['dogs', 'cats', 'moose']
+   ~~~~
+
+   ''.join({{eggs}}{{['dogs', 'cats', 'moose']}}).upper().join(eggs)
+   {{''.join(['dogs', 'cats', 'moose'])}}{{'dogscatsmoose'}}.upper().join(eggs)
+   {{'dogscatsmoose'.upper()}}{{'DOGSCATSMOOSE'}}.join(eggs)
+   'DOGSCATSMOOSE'.join({{eggs}}{{['dogs', 'cats', 'moose']}})
+   {{'DOGSCATSMOOSE'.join(['dogs', 'cats', 'moose'])}}{{'dogsDOGSCATSMOOSEcatsDOGSCATSMOOSEmoose'}}
+
+.. showeval:: showEval_2
+   :trace_mode: true
+
+   eggs = ['dogs', 'cats', 'moose']
+   ham = ['elk', 'salmon']
+   eggs = eggs + ham
+   ~~~~
+   eggs = {{eggs}}{{['dogs', 'cats', 'moose']}} + ham 
+   eggs = ['dogs', 'cats', 'moose'] + {{ham}}{{['elk', 'salmon']}}
+   eggs = {{['dogs', 'cats', 'moose'] + ['elk', 'salmon']}}{{['dogs', 'cats', 'moose', 'elk', 'salmon']}}
+
+ShowEval Replace Mode
+---------------------
+
+.. showeval:: showEval_1
+  :trace_mode: false
+
+  eggs = ['dogs', 'cats', 'moose']
+  ~~~~
+
+  ''.join({{eggs}}{{['dogs', 'cats', 'moose']}}).upper().join(eggs)
+  {{''.join(['dogs', 'cats', 'moose'])}}{{'dogscatsmoose'}}.upper().join(eggs)
+  {{'dogscatsmoose'.upper()}}{{'DOGSCATSMOOSE'}}.join(eggs)
+  'DOGSCATSMOOSE'.join({{eggs}}{{['dogs', 'cats', 'moose']}})
+  {{'DOGSCATSMOOSE'.join(['dogs', 'cats', 'moose'])}}{{'dogsDOGSCATSMOOSEcatsDOGSCATSMOOSEmoose'}}
 
 
 Disqus Comment Box
