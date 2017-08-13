@@ -12,7 +12,7 @@ from sphinxcontrib import paverutils
 project_name = "overview"
 ###############################
 
-master_url = None
+master_url = 'https://runestone.academy'
 if master_url is None:
     if gethostname() in ['web407.webfaction.com', 'rsbuilder']:
         master_url = 'http://interactivepython.org'
