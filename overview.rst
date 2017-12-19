@@ -95,7 +95,7 @@ working anonymously, then you will lose your work at the end of the session.
 
       .. activecode:: codeexample1
          :coach:
-         
+
          print("My first program adds a list of numbers")
          myList = [2, 4, 6, 8, 10]
          total = 0
@@ -188,12 +188,12 @@ more complex aspects of Python.
    :showtitle: Show Source
    :hidetitle: Hide Source
    :modaltitle: Source for the example above
-   
+
    .. code-block:: rst
 
       .. codelens:: firstexample
           :showoutput:
-      
+
           print("My first program adds two numbers, 2 and 3:")
           print(2 + 3)
 
@@ -239,7 +239,7 @@ correct number as well as the feedback for each.
    :showtitle: Show Source
    :hidetitle: Hide Source
    :modaltitle: Source for the example above
-   
+
    .. code-block:: rst
 
       .. mchoice:: question1_1
@@ -252,7 +252,7 @@ correct number as well as the feedback for each.
          :feedback_b: Java is a good object oriented language but it has some details that make it hard for the beginner.
          :feedback_c: C is an imperative programming language that has been around for a long time, but it is not the one that we use.
          :feedback_d: No, ML is a functional programming language.  You can use Python to write functional programs as well.
-      
+
          What programming language does this site help you to learn?
 
 
@@ -275,7 +275,7 @@ correct number as well as the feedback for each.
    :showtitle: Show Source
    :hidetitle: Hide Source
    :modaltitle: Source for the example above
-   
+
    .. code-block:: rst
 
       .. mchoice:: question1_2
@@ -289,7 +289,7 @@ correct number as well as the feedback for each.
          :feedback_b: Yes, yellow is correct.
          :feedback_c: Remember the acronym...ROY G BIV.  B stands for blue.
          :feedback_d: Yes, green is one of the colors.
-      
+
          Which colors might be found in a rainbow? (choose all that are correct)
 
 
@@ -310,17 +310,17 @@ Another type of question allows you as the instructor to ask for a value.  You c
    :showtitle: Show Source
    :hidetitle: Hide Source
    :modaltitle: Source for the example above
-   
+
    .. code-block:: rst
 
       .. fillintheblank:: fill1512
-      
+
           What is the value of 25 expressed as an octal number (base 8)?
-      
+
           - :31: Is the correct answer!
             :25: Thats base 10!
             :.*: 25 in octal please
-   
+
 There is also a way of giving your students some simple programming problems where the code is already there for them but not indented or in the correct order.  Think of it like coding with refrigerator magnets! Use drag-and-drop to get everything right.
 
 Parsons Problems
@@ -339,17 +339,17 @@ Parsons Problems
    :showtitle: Show Source
    :hidetitle: Hide Source
    :modaltitle: Source for the example above
-   
+
    .. code-block:: rst
 
       .. parsonsprob:: question1_100_4
-      
+
          Construct a block of code that correctly implements the accumulator pattern.
          -----
          x = 0
          for i in range(10)
             x = x + 1
-   
+
 CodeLens Predictions
 --------------------
 
@@ -374,7 +374,7 @@ to keep track of the ``tot`` variable as you step through the loop.
    :showtitle: Show Source
    :hidetitle: Hide Source
    :modaltitle: Source for the example above
-   
+
    .. code-block:: rst
 
       .. codelens:: codelens_question
@@ -382,13 +382,13 @@ to keep track of the ``tot`` variable as you step through the loop.
           :breakline: 4
           :feedback: Use the global variables box to look at the current values of tot and i.
           :correct: globals.tot
-      
+
           tot = 0
           prod = 1
           for i in range(10):
              tot = tot + i
              prod = prod * i
-   
+
 Here's another example that asks the student to predict which line will be the
 next line executed.
 
@@ -411,7 +411,7 @@ next line executed.
    :showtitle: Show Source
    :hidetitle: Hide Source
    :modaltitle: Source for the example above
-   
+
    .. code-block:: rst
 
       .. codelens:: codelens_question_line
@@ -419,7 +419,7 @@ next line executed.
           :breakline: 3
           :feedback: Remember that in an if/else statement only one block is executed.
           :correct: line
-      
+
           x = 2
           y = 0
           if x % 2 == 1:
@@ -428,7 +428,7 @@ next line executed.
           else:
               print('x is even')
               y = y - x
-      
+
 Drag N Drop
 -----------
 
@@ -447,7 +447,7 @@ The order of draggable elements and their respective dropzones will be randomize
    :showtitle: Show Source
    :hidetitle: Hide Source
    :modaltitle: Source for the example above
-   
+
    .. code-block:: rst
 
       .. dragndrop:: dnd1
@@ -455,9 +455,9 @@ The order of draggable elements and their respective dropzones will be randomize
           :match_1: Drag me to 1|||I am 1
           :match_2: Drag me to 2|||I am 2
           :match_3: Drag me to 3|||I am 3
-      
+
           This is a drag n drop question.
-      
+
 Clickable Area
 --------------
 
@@ -482,21 +482,21 @@ will be evaluated once they click the 'Check Me' button.
    :showtitle: Show Source
    :hidetitle: Hide Source
    :modaltitle: Source for the example above
-   
+
    .. code-block:: rst
 
       .. clickablearea:: click1
           :question: Click on all assignment statements.
           :iscode:
           :feedback: Remember, the operator '=' is used for assignment.
-      
+
           :click-incorrect:def main()::endclick:
               :click-correct:x = 4:endclick:
               for i in range(5):
                   :click-correct:y = i:endclick:
                   :click-incorrect:if y > 2::endclick:
                       print(y)
-      
+
 Short Answer
 ------------
 
@@ -509,13 +509,13 @@ Short Answer
    :showtitle: Show Source
    :hidetitle: Hide Source
    :modaltitle: Source for the example above
-   
+
    .. code-block:: rst
 
       .. shortanswer:: shorta1
-      
+
          You can ask your students to answer reflective questions or short essays in the box provided.
-      
+
 Timed Exam Questions
 --------------------
 
@@ -589,12 +589,12 @@ Please note that you can currently only have one timed exam per html page.  By d
    :showtitle: Show Source
    :hidetitle: Hide Source
    :modaltitle: Source for the example above
-   
+
    .. code-block:: rst
 
       .. timed:: timed1
           :timelimit: 10
-      
+
           .. mchoice:: questiontimed1_1
               :answer_a: The value you are searching for is the first element in the array.
               :answer_b: The value you are searching for is the last element in the array
@@ -607,16 +607,16 @@ Please note that you can currently only have one timed exam per html page.  By d
               :feedback_c: Results will differ depending on the exact location of the element, but Binary Search will still find the element faster while Sequential will have to check more elements.
               :feedback_d: If the search value is not in the array, a sequential search will have to check every item in the array before failing, a binary search will be faster.
               :feedback_e: When the search value is the first element, Sequential will always be faster, as it will only need to check one element.
-      
+
               Under which of these conditions will a sequential search be faster than a binary search?
-      
+
           .. clickablearea:: clicktimed1
               :question: Click on the correct cells.
               :feedback: Remember, the operator '=' is used for assignment.
               :table:
               :correct: 1,1;1,4;2,3;2,4
               :incorrect: 2,1;2,2;3,0
-      
+
               +------------------------+------------+----------+----------+
               |        correct         |    N-A     |    N-A   | correct  |
               +========================+============+==========+==========+
@@ -624,33 +624,33 @@ Please note that you can currently only have one timed exam per html page.  By d
               +------------------------+------------+----------+----------+
               | This row is incorrect  |   ...      |   ...    |   ...    |
               +------------------------+------------+----------+----------+
-      
+
           .. dragndrop:: dnd2
               :feedback: This is feedback.
               :match_1: Drag to Answer A|||Answer A
               :match_2: Drag me Answer B|||Answer B
               :match_3: Drag to Answer C|||Answer C
-      
+
               This is a drag n drop question.
-      
+
           .. fillintheblank:: fill1412
-      
+
               Fill in the blanks to make the following sentence: "The red car drove away" The |blank| car drove |blank|.
-      
+
               - :red: Correct
                 :.*: Try red
-      
+
               - :away: Corect
                 :.*: where did we say the red car was going?
-      
-      
+
+
           .. activecode:: timedactive
              :language: python
-      
+
              Write a program that prints "hello world" two times.
              ~~~~
              print("hello world")
-      
+
 Embedded Videos
 ---------------
 
@@ -671,16 +671,16 @@ on the video shown below, you will hear us talk about the tools that will be des
    :showtitle: Show Source
    :hidetitle: Hide Source
    :modaltitle: Source for the example above
-   
+
    .. code-block:: rst
 
       .. video:: videoinfo
           :controls:
           :thumb: _static/activecodethumb.png
-      
+
           http://media.interactivepython.org/runestone.mov
           http://media.interactivepython.org/runestone.webm
-      
+
 
 YouTube
 -------
@@ -694,14 +694,14 @@ YouTube
    :showtitle: Show Source
    :hidetitle: Hide Source
    :modaltitle: Source for the example above
-   
+
    .. code-block:: rst
 
       .. youtube:: anwy2MPT5RE
           :height: 315
           :width: 560
           :align: left
-      
+
 Unit Tests for Code
 -------------------
 
@@ -772,28 +772,28 @@ Hidden Unit Tests with Graphical Status
    :showtitle: Show Source
    :hidetitle: Hide Source
    :modaltitle: Source for the example above
-   
+
    .. code-block:: rst
 
       .. activecode:: units2
          :nocodelens:
 
          Fix the following code so that it always correctly adds two numbers.
-         ~~~~       
+         ~~~~
          def add(a,b):
             return 4
-      
+
          ====
          from unittest.gui import TestCaseGui
-      
+
          class myTests(TestCaseGui):
-      
+
              def testOne(self):
                  self.assertEqual(add(2,2),4,"A feedback string when the test fails")
                  self.assertAlmostEqual(add(2.0,3.0), 5.0, 5, "Try adding your parameters")
-      
+
          myTests().main()
-      
+
 ShowEval Trace Mode
 -------------------
 
@@ -813,21 +813,21 @@ ShowEval Trace Mode
    :showtitle: Show Source
    :hidetitle: Hide Source
    :modaltitle: Source for the example above
-   
+
    .. code-block:: rst
 
       .. showeval:: showEval_0
          :trace_mode: true
-      
+
          eggs = ['dogs', 'cats', 'moose']
          ~~~~
-      
+
          ''.join({{eggs}}{{['dogs', 'cats', 'moose']}}).upper().join(eggs)
          {{''.join(['dogs', 'cats', 'moose'])}}{{'dogscatsmoose'}}.upper().join(eggs)
          {{'dogscatsmoose'.upper()}}{{'DOGSCATSMOOSE'}}.join(eggs)
          'DOGSCATSMOOSE'.join({{eggs}}{{['dogs', 'cats', 'moose']}})
          {{'DOGSCATSMOOSE'.join(['dogs', 'cats', 'moose'])}}{{'dogsDOGSCATSMOOSEcatsDOGSCATSMOOSEmoose'}}
-      
+
 .. showeval:: showEval_2
    :trace_mode: true
 
@@ -835,7 +835,7 @@ ShowEval Trace Mode
    ham = ['elk', 'salmon']
    eggs = eggs + ham
    ~~~~
-   eggs = {{eggs}}{{['dogs', 'cats', 'moose']}} + ham 
+   eggs = {{eggs}}{{['dogs', 'cats', 'moose']}} + ham
    eggs = ['dogs', 'cats', 'moose'] + {{ham}}{{['elk', 'salmon']}}
    eggs = {{['dogs', 'cats', 'moose'] + ['elk', 'salmon']}}{{['dogs', 'cats', 'moose', 'elk', 'salmon']}}
 
@@ -858,21 +858,21 @@ ShowEval Replace Mode
    :showtitle: Show Source
    :hidetitle: Hide Source
    :modaltitle: Source for the example above
-   
+
    .. code-block:: rst
 
       .. showeval:: showEval_1
         :trace_mode: false
-      
+
         eggs = ['dogs', 'cats', 'moose']
         ~~~~
-      
+
         ''.join({{eggs}}{{['dogs', 'cats', 'moose']}}).upper().join(eggs)
         {{''.join(['dogs', 'cats', 'moose'])}}{{'dogscatsmoose'}}.upper().join(eggs)
         {{'dogscatsmoose'.upper()}}{{'DOGSCATSMOOSE'}}.join(eggs)
         'DOGSCATSMOOSE'.join({{eggs}}{{['dogs', 'cats', 'moose']}})
         {{'DOGSCATSMOOSE'.join(['dogs', 'cats', 'moose'])}}{{'dogsDOGSCATSMOOSEcatsDOGSCATSMOOSEmoose'}}
-      
+
 Disqus Comment Box
 ------------------
 
@@ -886,13 +886,13 @@ A comment box allowing users to add comments and start discussions can be added.
    :showtitle: Show Source
    :hidetitle: Hide Source
    :modaltitle: Source for the example above
-   
+
    .. code-block:: rst
 
       .. disqus::
           :shortname: interactivepython
           :identifier: discussion1
-      
+
 Tabbed Question
 ---------------
 
@@ -919,25 +919,25 @@ Any of the existing components can be placed in a tabbed exhibit-style question.
    :showtitle: Show Source
    :hidetitle: Hide Source
    :modaltitle: Source for the example above
-   
+
    .. code-block:: rst
 
       .. tabbed:: exercise1
-      
+
           .. tab:: Question 1
-      
+
               Write a program that prints "Hello, world".
-      
+
               .. activecode:: helloworld
-      
+
                   print("Hello, world")
-      
+
           .. tab:: Discussion
-      
+
               .. disqus::
                   :shortname: interactivepython
                   :identifier: helloworlddiscussion
-      
+
 
 
 Polls
@@ -952,15 +952,15 @@ Polls
    :showtitle: Show Source
    :hidetitle: Hide Source
    :modaltitle: Source for the example above
-   
+
    .. code-block:: rst
 
       .. poll:: pollid1
          :scale: 10
          :allowcomment:
-      
+
           On a scale from 1 to 10, how important do you think it is to have a polling directive in the Runestone Tools?
-      
+
 Reveals
 -------
 .. reveal:: revealid1
@@ -980,21 +980,21 @@ Reveals
    :showtitle: Show Source
    :hidetitle: Hide Source
    :modaltitle: Source for the example above
-   
+
    .. code-block:: rst
-      
+
       .. reveal:: revealid1
           :showtitle: Reveal Content
           :hidetitle: Hide Content
-      
+
           This content starts out hidden. It's visibility can be toggled by using the Show/Hide button.
-      
+
           The reveal block can also contain other directives (ActiveCode, Disqus block, etc):
-      
+
           .. activecode:: ac11
-      
+
               print ("Hello, world")
-      
+
 DOM Access
 ----------
 
@@ -1015,17 +1015,17 @@ the value in the text entry box and run it again.
    :showtitle: Show Source
    :hidetitle: Hide Source
    :modaltitle: Source for the example above
-   
+
    .. code-block:: rst
 
       .. activecode:: tftest1
          :nocodelens:
-      
+
          import document
-      
+
          t = document.getElementById('text1')
          print('value = ', t.value)
-      
+
 JavaScript
 ----------
 
@@ -1058,13 +1058,13 @@ parameter to the activecode directive.
    :showtitle: Show Source
    :hidetitle: Hide Source
    :modaltitle: Source for the example above
-   
+
    .. code-block:: rst
-      
+
       .. activecode:: jstest1
          :language: javascript
          :nocodelens:
-      
+
          var x = 10;
          var y = 11;
          var z = x + y;
@@ -1077,8 +1077,8 @@ parameter to the activecode directive.
          }
          console.log(fact(10));
          writeln('hello world');
-      
-      
+
+
       Adding a javascript example is just as easy as Python, all you need to do is add a ``:language:``
       parameter to the activecode directive.
 
@@ -1111,13 +1111,13 @@ Although you don't run HTML, clicking the run button will cause the HTML to be r
    :showtitle: Show Source
    :hidetitle: Hide Source
    :modaltitle: Source for the example above
-   
+
    .. code-block:: rst
 
       .. activecode:: html1
          :language: html
          :nocodelens:
-      
+
          <html>
          <body>
          <style>
@@ -1132,7 +1132,7 @@ Although you don't run HTML, clicking the run button will cause the HTML to be r
          </ul>
          </body>
          </html>
-      
+
 Blockly
 -------
 
@@ -1210,33 +1210,47 @@ programs in any of these options.
    :showtitle: Show Source
    :hidetitle: Hide Source
    :modaltitle: Source for the example above
-   
+
    .. code-block:: rst
 
       .. activecode:: lc1
          :language: java
          :stdin: 100
-      
+
          import java.util.Scanner;
-      
+
          public class TempConv {
              public static void main(String[] args) {
                   Double fahr;
                   Double cel;
                   Scanner in;
-      
+
                   in = new Scanner(System.in);
                   System.out.println("Enter the temperature in F: ");
                   fahr = in.nextDouble();
-      
+
                   cel = (fahr - 32) * 5.0/9.0;
                   System.out.println(fahr + " degrees F is: " + cel + " C");
-      
+
                   System.exit(0);
              }
-      
+
          }
-      
+
+
+
+.. activecode:: lc2
+    :language: cpp
+    :stdin: 100
+    :compileargs: ['-std=c++11', '-Wall', '-Wpedantic']
+
+    #include <iostream>
+    using namespace std;
+    void main() {
+        cout << "Hello World!" << endl;   cout << "Welcome to C++ Programming" << endl;
+    }
+
+
 Audio Tours
 -----------
 
@@ -1253,20 +1267,20 @@ Audio Tours
    :showtitle: Show Source
    :hidetitle: Hide Source
    :modaltitle: Source for the example above
-   
+
    .. code-block:: rst
-      
+
       .. activecode:: ch03_4
           :nocanvas:
           :tour_1: "Overall Tour"; 1-2: Example04_Tour01_Line01; 2: Example04_Tour01_Line02; 1: Example04_Tour01_Line03;
-      
+
           for name in ["Joe", "Amy", "Brad", "Angelina", "Zuki", "Thandi", "Paris"]:
               print("Hi", name, "Please come to my party on Saturday!")
 
 What To Do Now
 --------------
 
-We are working on additional question types as well.  Give us your feedback on our `Github <https://github.com/RunestoneInteractive/RunestoneComponents/issues>`_  or like us or give us feedbak on our `Facebook page <http://www.facebook.com/RunestoneInteractive>`_. 
+We are working on additional question types as well.  Give us your feedback on our `Github <https://github.com/RunestoneInteractive/RunestoneComponents/issues>`_  or like us or give us feedbak on our `Facebook page <http://www.facebook.com/RunestoneInteractive>`_.
 
 You can find more complete documentation of the directives on our `Runestone docs page <http://runestoneinteractive.org/build/html/index.html>`_
 
