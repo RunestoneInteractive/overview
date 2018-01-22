@@ -40,6 +40,7 @@ options(
             'use_services': 'true',
             'basecourse': 'overview',
             'python3': 'true',
+            'downloads_enabled': 'true'
         }
     )
 )
