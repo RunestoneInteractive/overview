@@ -14,8 +14,8 @@ project_name = "overview"
 
 master_url = None
 if master_url is None:
-    if gethostname() in ['web407.webfaction.com', 'rsbuilder']:
-        master_url = 'http://interactivepython.org'
+    if gethostname() in ['runestone.academy', 'runestone-deploy',  'rsbuilder']:
+        master_url = 'https://runestone.academy
     else:
         master_url = 'http://127.0.0.1:8000'
 master_app = 'runestone'
@@ -41,6 +41,9 @@ options(
             'basecourse': 'overview',
             'python3': 'true',
             'downloads_enabled': 'true'
+            'jobe_server': master_url,
+            'pproxy_uri_runs' '/runestone/proxy/jobeRun',
+            'proxy_uri_files' '/runestone/proxy/jobePushFile',
         }
     )
 )
