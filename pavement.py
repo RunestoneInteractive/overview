@@ -42,7 +42,7 @@ options(
             'python3': 'true',
             'downloads_enabled': 'true',
             'jobe_server': master_url,
-            'pproxy_uri_runs': '/runestone/proxy/jobeRun',
+            'proxy_uri_runs': '/runestone/proxy/jobeRun',
             'proxy_uri_files': '/runestone/proxy/jobePushFile',
         }
     )
