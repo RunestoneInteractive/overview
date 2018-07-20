@@ -64,7 +64,7 @@ environment for learning a programming language like Python since you can experi
 
 Take a look at the activecode interpreter in action.  If we take a simple Python program and make it active, you will see that it can be executed directly by pressing the *run* button.   Try pressing the *run* button below.
 
-.. activecode:: codeexample1
+.. activecode:: over_ac_example1
    :coach:
 
    print("My first program adds a list of numbers")
@@ -173,7 +173,7 @@ The CodeLens Tool
 In addition to activecode, you can also execute Python code with the assistance of a unique visualization tool.  This tool, known as **codelens**, allows you to control the step by step execution of a program.  It also lets you see the values of
 all variables as they are created and modified.  The following example shows codelens in action on the same simple program as we saw above.  Remember that in activecode, the source code executes from beginning to end and you can see the final result.  In codelens you can see and control the step by step progress.  Try clicking on the forward button below.
 
-.. codelens:: firstexample
+.. codelens:: over_codelens1
     :showoutput:
 
     print("My first program adds two numbers, 2 and 3:")
@@ -184,7 +184,7 @@ Note that you can control the step by step execution and you can even move forwa
 pictures as the statements are being executed.  These pictures, called reference diagrams, are very helpful as you learn about the
 more complex aspects of Python.
 
-.. reveal:: firstexample_src
+.. reveal:: over_codelens1_src
    :showtitle: Show Source
    :hidetitle: Hide Source
    :modaltitle: Source for the example above
@@ -306,7 +306,7 @@ Another type of question allows you as the instructor to ask for a value.  You c
       :25: Thats base 10!
       :.*: 25 in octal please
 
-.. reveal:: codeexample1_src
+.. reveal:: fill1512_src
    :showtitle: Show Source
    :hidetitle: Hide Source
    :modaltitle: Source for the example above
@@ -326,11 +326,29 @@ There is also a way of giving your students some simple programming problems whe
 Parsons Problems
 ----------------
 
-.. parsonsprob:: question1_100_4
+.. parsonsprob:: bnm_3_1_2018
+
+   Add some text here
+       
+   -----
+   import turtle
+   window = turtle.Screen()
+   ella = turtle.Turtle()
+   =====
+   ella.right(90)
+   ella.forward(150)
+   =====
+   ella.left(90)
+   ella.forward(75)
+
+
+
+.. parsonsprob:: bnm_3_2_2018
 
    Construct a block of code that correctly implements the accumulator pattern.
    -----
    x = 0
+   =====
    for i in range(10)
       x = x + 1
 
@@ -347,6 +365,7 @@ Parsons Problems
          Construct a block of code that correctly implements the accumulator pattern.
          -----
          x = 0
+         ======
          for i in range(10)
             x = x + 1
 
@@ -659,7 +678,7 @@ Aside from reading the text, it is sometimes useful to hear someone tell you abo
 In order to accomplish this, we provide a way to integrate simple, short videos into the text.  For example, if you click
 on the video shown below, you will hear us talk about the tools that will be described shortly.
 
-.. video:: videoinfo
+.. video:: over_videoinfo
     :controls:
     :thumb: _static/activecodethumb.png
 
@@ -686,6 +705,7 @@ YouTube
 -------
 
 .. youtube:: anwy2MPT5RE
+    :divid: yt_vid_ex1
     :height: 315
     :width: 560
     :align: left
