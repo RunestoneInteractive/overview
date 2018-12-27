@@ -23,8 +23,8 @@ How do I build my own course?
 -----------------------------
 
 1.  First, register yourself as a user on this site.  When you register, you must pick a course book.  Just use ``thinkcspy`` or ``pythonds``, it doesn't matter -- what your course book looks like will change when you build your own.
-2.  Then, go to the `instructors page <http://interactivepython.org/runestone/admin/index>`_.
-3.  You should see the links for listing and grading assignments, and lots of other things.  Right now those won't show you anything, so move along to the `Create a Custom Course <http://interactivepython.org/runestone/designer>`_ link.
+2.  Then, go to the `instructors page <http://runestone.academy/runestone/admin/index>`_.
+3.  You should see the links for listing and grading assignments, and lots of other things.  Right now those won't show you anything, so move along to the `Create a Custom Course <http://runestone.academy/runestone/designer>`_ link.
 4. Fill in the **Project Name**.  This should be a short one word description of your course like ``luther150a.``  **When your students register for the course, this is the name they will have to type in to join your particular course.**  No apaces allowed in this name.
 5. The **description** can say a bit more about the course.
 6. Now, your big choice is which book we provide to use. You will have the option to edit the table of contents for your course book.
@@ -44,13 +44,13 @@ There could be two reasons.
 
 1.  You only see assignments or quiz questions that your students have attempted.  If you or your students haven't attempted any assignments yet then this report will be empty.
 
-2.  Check your course starting date.  If the starting date is in the future you won't see anything.  You can change your course start date `here <http://interactivepython.org/runestone/admin/startdate>`_.
+2.  Check your course starting date.  If the starting date is in the future you won't see anything.  You can change your course start date `here <http://runestone.academy/runestone/admin/startdate>`_.
 
 
 I want to reuse my course from last year, what should I do?
 -----------------------------------------------------------
 
-You can either just change your course start date, see above, or you can rebuild your course.   We recommend that you rebuild your course every so often to get the latest bug fixes etc.  Here is the link to `rebuild your course <http://interactivepython.org/runestone/admin/rebuildcourse>`_.
+You can either just change your course start date, see above, or you can rebuild your course.   We recommend that you rebuild your course every so often to get the latest bug fixes etc.  Here is the link to `rebuild your course <http://runestone.academy/runestone/admin/rebuildcourse>`_.
 
 All the data from past terms is still saved in the database so students that want to go back and look at things from their past terms will be able to access their information, but nothing prior to your latest course start date will show up in any of your reports.
 
@@ -58,14 +58,14 @@ All the data from past terms is still saved in the database so students that wan
 How do I update my course to get the latest bug fixes?
 ------------------------------------------------------
 
-Here is the link to `rebuild your course <http://interactivepython.org/runestone/admin/rebuildcourse>`_.   We recommend that you do this every so often.  The instructors page will show you the current version of our software used to build the thinkcspy and pythonds books.  It will also show you the version for your own course.   If you course is out of date you will also get a flash message in the upper right corner of your browser window.
+Here is the link to `rebuild your course <http://runestone.academy/runestone/admin/rebuildcourse>`_.   We recommend that you do this every so often.  The instructors page will show you the current version of our software used to build the thinkcspy and pythonds books.  It will also show you the version for your own course.   If you course is out of date you will also get a flash message in the upper right corner of your browser window.
 
 I got a notification to rebuild my course. What should I do?
 ------------------------------------------------------------
 
 *Rebuilding* your course will pull in all updates from our base books, except for things you've edited, like your Table of Contents. Sometimes, we find bugs in what we've done, and will release a notification that you should rebuild your book. (This is rare, and it will not affect any of your students' course progress.) In that case, you should probably do so.
 
-Here is the link to `rebuild your course <http://interactivepython.org/runestone/admin/rebuildcourse>`_.
+Here is the link to `rebuild your course <http://runestone.academy/runestone/admin/rebuildcourse>`_.
 
 All the data from past terms is still saved in the database so students that want to go back and look at things from their past terms will be able to access their information, but nothing prior to your latest course start date will show up in any of your reports.
 
