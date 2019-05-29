@@ -16,8 +16,11 @@ master_url = None
 if master_url is None:
     if gethostname() in ['runestone.academy', 'runestone-deploy',  'rsbuilder']:
         master_url = 'https://runestone.academy'
+    elif 'RUNESTONE_HOST' in os.environ:
+        master_url = "http://{}".format(os.environ['RUNESTONE_HOST'])
     else:
         master_url = 'http://127.0.0.1:8000'
+
 master_app = 'runestone'
 serving_dir = "./build/"+project_name
 dest = '../../static'
@@ -27,7 +30,7 @@ options(
 
     build = Bunch(
         builddir="./build/"+project_name,
-        sourcedir=".",
+        sourcedir="_sources",
         outdir="./build/"+project_name,
         confdir=".",
         project_name = project_name,
