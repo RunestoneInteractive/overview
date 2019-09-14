@@ -12,7 +12,7 @@ from sphinxcontrib import paverutils
 project_name = "overview"
 ###############################
 
-master_url = None
+master_url = 'dev.runestoneinteractive.org'
 if master_url is None:
     if gethostname() in ['runestone.academy', 'runestone-deploy',  'rsbuilder']:
         master_url = 'https://runestone.academy'
@@ -20,10 +20,10 @@ if master_url is None:
         master_url = "http://{}".format(os.environ['RUNESTONE_HOST'])
     else:
         master_url = 'http://127.0.0.1:8000'
-
+        
 master_app = 'runestone'
 serving_dir = "./build/"+project_name
-dest = '../../static'
+dest = './published'
 
 options(
     sphinx = Bunch(docroot=".",),
@@ -40,13 +40,13 @@ options(
             'appname':master_app,
             'loglevel':10,
             'course_url':master_url,
-            'use_services': 'true',
+            'dynamic_pages': True,
+            'use_services': True,
             'basecourse': 'overview',
             'python3': 'true',
             'downloads_enabled': 'true',
-            'jobe_server': master_url,
-            'proxy_uri_runs': '/runestone/proxy/jobeRun',
-            'proxy_uri_files': '/runestone/proxy/jobePushFile',
+            'allow_pairs': 'false',
+            'enable_chatcodes': 'false'
         }
     )
 )
