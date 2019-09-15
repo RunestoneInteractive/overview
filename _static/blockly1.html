@@ -76,14 +76,14 @@
       }
     }
 
-    Blockly.JavaScript['text_print'] = function(block) { 
-      // Print statement override. 
-      var argument0 = Blockly.JavaScript.valueToCode(block, 'TEXT', 
-          Blockly.JavaScript.ORDER_NONE) || '\'\''; 
-      return 'my_custom_print(' + argument0 + ', "blockly1" );\n'; 
-    }; 
+    Blockly.JavaScript['text_print'] = function(block) {
+      // Print statement override.
+      var argument0 = Blockly.JavaScript.valueToCode(block, 'TEXT',
+          Blockly.JavaScript.ORDER_NONE) || '\'\'';
+      return 'my_custom_print(' + argument0 + ', "blockly1" );\n';
+    };
 
-    function my_custom_print(text,divid) { 
+    function my_custom_print(text,divid) {
       var p = document.getElementById(divid+"_pre");
       p.innerHTML += text + "\n"
       }
@@ -93,7 +93,7 @@
     Blockly.Xml.domToWorkspace(Blockly.mainWorkspace, xmlDom);
 
   </script>
-  
+
   <pre class="active_out" id="blockly1_pre"></pre>
   </body>
   </html>

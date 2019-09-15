@@ -329,7 +329,7 @@ Parsons Problems
 .. parsonsprob:: bnm_3_1_2018
 
    Add some text here
-       
+
    -----
    import turtle
    window = turtle.Screen()
@@ -704,6 +704,12 @@ on the video shown below, you will hear us talk about the tools that will be des
 YouTube
 -------
 
+.. youtube:: LD-F4RODy-I
+    :divid: booleanexpressions
+    :height: 315
+    :width: 560
+    :align: left
+
 .. youtube:: anwy2MPT5RE
     :divid: yt_vid_ex1
     :height: 315
@@ -829,24 +835,6 @@ ShowEval Trace Mode
    'DOGSCATSMOOSE'.join({{eggs}}{{['dogs', 'cats', 'moose']}})
    {{'DOGSCATSMOOSE'.join(['dogs', 'cats', 'moose'])}}{{'dogsDOGSCATSMOOSEcatsDOGSCATSMOOSEmoose'}}
 
-.. reveal:: showEval_0_src
-   :showtitle: Show Source
-   :hidetitle: Hide Source
-   :modaltitle: Source for the example above
-
-   .. code-block:: rst
-
-      .. showeval:: showEval_0
-         :trace_mode: true
-
-         eggs = ['dogs', 'cats', 'moose']
-         ~~~~
-
-         ''.join({{eggs}}{{['dogs', 'cats', 'moose']}}).upper().join(eggs)
-         {{''.join(['dogs', 'cats', 'moose'])}}{{'dogscatsmoose'}}.upper().join(eggs)
-         {{'dogscatsmoose'.upper()}}{{'DOGSCATSMOOSE'}}.join(eggs)
-         'DOGSCATSMOOSE'.join({{eggs}}{{['dogs', 'cats', 'moose']}})
-         {{'DOGSCATSMOOSE'.join(['dogs', 'cats', 'moose'])}}{{'dogsDOGSCATSMOOSEcatsDOGSCATSMOOSEmoose'}}
 
 .. showeval:: showEval_2
    :trace_mode: true
@@ -874,24 +862,6 @@ ShowEval Replace Mode
   'DOGSCATSMOOSE'.join({{eggs}}{{['dogs', 'cats', 'moose']}})
   {{'DOGSCATSMOOSE'.join(['dogs', 'cats', 'moose'])}}{{'dogsDOGSCATSMOOSEcatsDOGSCATSMOOSEmoose'}}
 
-.. reveal:: showEval_1_src
-   :showtitle: Show Source
-   :hidetitle: Hide Source
-   :modaltitle: Source for the example above
-
-   .. code-block:: rst
-
-      .. showeval:: showEval_1
-        :trace_mode: false
-
-        eggs = ['dogs', 'cats', 'moose']
-        ~~~~
-
-        ''.join({{eggs}}{{['dogs', 'cats', 'moose']}}).upper().join(eggs)
-        {{''.join(['dogs', 'cats', 'moose'])}}{{'dogscatsmoose'}}.upper().join(eggs)
-        {{'dogscatsmoose'.upper()}}{{'DOGSCATSMOOSE'}}.join(eggs)
-        'DOGSCATSMOOSE'.join({{eggs}}{{['dogs', 'cats', 'moose']}})
-        {{'DOGSCATSMOOSE'.join(['dogs', 'cats', 'moose'])}}{{'dogsDOGSCATSMOOSEcatsDOGSCATSMOOSEmoose'}}
 
 Disqus Comment Box
 ------------------
@@ -1270,6 +1240,32 @@ programs in any of these options.
         cout << "Hello World!" << endl;   cout << "Welcome to C++ Programming" << endl;
     }
 
+
+SQL
+---
+
+.. activecode:: sql1
+    :language: sql
+    :dburl: http://dev.runestoneinteractive.org/runestone/books/published/overview/_static/bikeshare.db
+
+    select * from trip_data limit 10;
+
+
+
+.. datafile:: country_data.csv
+    :fromfile: world_countries.csv
+
+Server Side Python
+------------------
+
+.. activecode:: pandas
+   :language: python3
+   :datafile: country_data.csv
+
+   import pandas as pd
+   import reframe
+
+Lets see how much we can do with pandas in our sandbox
 
 Audio Tours
 -----------
