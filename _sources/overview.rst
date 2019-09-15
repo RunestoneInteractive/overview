@@ -1263,9 +1263,11 @@ Server Side Python
    :datafile: country_data.csv
 
    import pandas as pd
-   import reframe
 
-Lets see how much we can do with pandas in our sandbox
+   df = pd.read_csv('country_data.csv', encoding='latin1')
+   print(df.head())
+
+If the JOBE server has pandas installed we can even use pandas right in the text!
 
 Audio Tours
 -----------
