@@ -4,7 +4,7 @@ import paver.setuputils
 paver.setuputils.install_distutils_tasks()
 import os, sys
 from socket import gethostname
-
+import pkg_resources
 from sphinxcontrib import paverutils
 
 
@@ -50,5 +50,8 @@ options(
         }
     )
 )
+
+version = pkg_resources.require("runestone")[0].version
+options.build.template_args['runestone_version'] = version
 
 from runestone import build  # build is called implicitly by the paver driver.
