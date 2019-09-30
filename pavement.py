@@ -4,7 +4,7 @@ import paver.setuputils
 paver.setuputils.install_distutils_tasks()
 import os, sys
 from socket import gethostname
-
+import pkg_resources
 from sphinxcontrib import paverutils
 
 
@@ -12,7 +12,7 @@ from sphinxcontrib import paverutils
 project_name = "overview"
 ###############################
 
-master_url = 'dev.runestoneinteractive.org'
+master_url = 'https://runestone.academy'
 if master_url is None:
     if gethostname() in ['runestone.academy', 'runestone-deploy',  'rsbuilder']:
         master_url = 'https://runestone.academy'
@@ -50,5 +50,8 @@ options(
         }
     )
 )
+
+version = pkg_resources.require("runestone")[0].version
+options.build.template_args['runestone_version'] = version
 
 from runestone import build  # build is called implicitly by the paver driver.
