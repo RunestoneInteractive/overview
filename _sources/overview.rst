@@ -1280,7 +1280,7 @@ SQL
     ====
     assert 0,0 == W00379
     assert 0,1 == 86355
-    assert 2,2 == 86336
+    assert 2,1 == 86336
 
 
 
