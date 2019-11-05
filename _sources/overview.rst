@@ -1268,9 +1268,19 @@ SQL
 
 .. activecode:: sql1
     :language: sql
+    :autograde: unittest
     :dburl: https://runestone.academy/runestone/books/published/overview/_static/bikeshare.db
 
-    select * from trip_data limit 10;
+    select bike_number, max(duration)
+    from trip_data
+    group by bike_number
+    order by max(duration) desc
+    limit 4;
+
+    ====
+    assert 0,0 == W00379
+    assert 0,1 == 86355
+    assert 2,2 == 86336
 
 
 
