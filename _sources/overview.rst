@@ -1262,6 +1262,209 @@ programs in any of these options.
         cout << "Hello World!" << endl;   cout << "Welcome to C++ Programming" << endl;
     }
 
+jUnit Tests
+-----------
+
+
+.. activecode:: jUnitTesting2
+    :language: java
+
+    Here is a for loop that counts from 1 to 5.
+    Can you change it to count from 2 to 10?
+    ~~~~
+    public class StudentCode
+    {
+        public static void main(String[] args)
+        {
+            for(int count = 2; count <= 10; count++)
+            {
+                System.out.println(count);
+            }
+
+        }
+
+        public int adder(int a, int b) {
+
+            return a+b;
+        }
+    }
+
+    ====
+    import static org.junit.Assert.*;
+
+    import org.junit.After;
+    import org.junit.Before;
+    import org.junit.Test;
+
+    import java.io.*;
+    import java.nio.file.Files;
+    import java.nio.file.Paths;
+
+    public class ForLoopTestTester extends LabTestHelper
+    {
+        /* Example test for main method - should pass */
+        @Test
+        public void testMain() throws IOException
+        {
+            // I wrote a method to run a method and send back the output - only works with String[] args for now
+            String output = getMethodOutput("StudentCode", "main");
+            String expect = "2\n3\n4\n5\n6\n7\n8\n9\n10\n";
+
+            assertEquals("Output doesn't match", cleanString(expect), cleanString(output));
+
+        }
+
+        @Test
+        public void testAdder() throws IOException {
+            StudentCode s = new StudentCode();
+            String msg = createMessage("Adding 2+2", ""+4, ""+s.adder(2,2));
+            System.out.println("testing s.adder(2,2)");
+            assertEquals(msg, 4, s.adder(2,2));
+            assertEquals("adding 3+3", 6, s.adder(3,3));
+        }
+
+        @Test
+        public void testContent() throws IOException {
+            String content = new String ( Files.readAllBytes( Paths.get("StudentCode.java")));
+
+        }
+    }
+
+.. reveal:: junit_src
+   :showtitle: Show Source
+   :hidetitle: Hide Source
+   :modaltitle: Source for the example above
+
+   .. code-block::
+
+      .. activecode:: jUnitTesting2
+          :language: java
+
+          Here is a for loop that counts from 1 to 5.
+          Can you change it to count from 2 to 10?
+          ~~~~
+          public class StudentCode
+          {
+              public static void main(String[] args)
+              {
+                  for(int count = 2; count <= 10; count++)
+                  {
+                      System.out.println(count);
+                  }
+
+              }
+
+              public int adder(int a, int b) {
+
+                  return a+b;
+              }
+          }
+
+          ====
+          import static org.junit.Assert.*;
+
+          import org.junit.After;
+          import org.junit.Before;
+          import org.junit.Test;
+
+          import java.io.*;
+          import java.nio.file.Files;
+          import java.nio.file.Paths;
+
+          public class ForLoopTestTester extends LabTestHelper
+          {
+              /* Example test for main method - should pass */
+              @Test
+              public void testMain() throws IOException
+              {
+            // I wrote a method to run a method and send back the output - only works       with String[] args for now
+                  String output = getMethodOutput("StudentCode", "main");
+                  String expect = "2\n3\n4\n5\n6\n7\n8\n9\n10\n";
+
+            assertEquals("Output doesn't match", cleanString(expect), cleanString      (output));
+
+              }
+
+              @Test
+              public void testAdder() throws IOException {
+                  StudentCode s = new StudentCode();
+                  String msg = createMessage("Adding 2+2", ""+4, ""+s.adder(2,2));
+                  System.out.println("testing s.adder(2,2)");
+                  assertEquals(msg, 4, s.adder(2,2));
+                  assertEquals("adding 3+3", 6, s.adder(3,3));
+              }
+
+              @Test
+              public void testContent() throws IOException {
+            String content = new String ( Files.readAllBytes( Paths.get("StudentCode.      java")));
+
+              }
+          }
+
+Catch2 C++ Unit Tests
+---------------------
+
+.. activecode:: cpp_units
+    :language: cpp
+    :autograde: unittest
+
+    Write a function to compute the factorial of a. number
+    ~~~~
+    unsigned int Factorial( unsigned int number ) {
+        return number <= 1 ? number : Factorial(number-1)*number;
+    }
+
+    ====
+
+    #define CATCH_CONFIG_MAIN // This tells Catch to provide a main() - only do this in one cpp file
+    #include <catch.hpp>
+
+    TEST_CASE( "Factorials are computed", "[factorial]" ) {
+    REQUIRE( Factorial(1) == 1 );
+    REQUIRE( Factorial(2) == 2 );
+    REQUIRE( Factorial(3) == 6 );
+    REQUIRE( Factorial(10) == 3628800 );
+    }
+
+    TEST_CASE( "Factorial of 0", "[fact0]" ) {
+    REQUIRE( Factorial(0) == 1);
+    }
+
+
+.. reveal:: catch2_src
+   :showtitle: Show Source
+   :hidetitle: Hide Source
+   :modaltitle: Source for the example above
+
+   .. code-block::
+
+      .. activecode:: cpp_units
+          :language: cpp
+          :autograde: unittest
+
+          Write a function to compute the factorial of a. number
+          ~~~~
+          unsigned int Factorial( unsigned int number ) {
+              return number <= 1 ? number : Factorial(number-1)*number;
+          }
+
+          ====
+
+        #define CATCH_CONFIG_MAIN // This tells Catch to provide a main() - only do   this in one cpp file
+          #include <catch.hpp>
+
+          TEST_CASE( "Factorials are computed", "[factorial]" ) {
+          REQUIRE( Factorial(1) == 1 );
+          REQUIRE( Factorial(2) == 2 );
+          REQUIRE( Factorial(3) == 6 );
+          REQUIRE( Factorial(10) == 3628800 );
+          }
+
+          TEST_CASE( "Factorial of 0", "[fact0]" ) {
+          REQUIRE( Factorial(0) == 1);
+          }
+
+
 
 SQL
 ---
