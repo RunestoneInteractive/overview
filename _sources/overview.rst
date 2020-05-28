@@ -1268,6 +1268,7 @@ jUnit Tests
 
 .. activecode:: jUnitTesting2
     :language: java
+    :autograde: unittest
 
     Here is a for loop that counts from 1 to 5.
     Can you change it to count from 2 to 10?
@@ -1339,6 +1340,7 @@ jUnit Tests
 
       .. activecode:: jUnitTesting2
           :language: java
+          :autograde: unittest
 
           Here is a for loop that counts from 1 to 5.
           Can you change it to count from 2 to 10?
