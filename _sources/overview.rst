@@ -1301,7 +1301,7 @@ jUnit Tests
     import java.nio.file.Files;
     import java.nio.file.Paths;
 
-    public class ForLoopTestTester extends LabTestHelper
+    public class ForLoopTestTester extends CodeTestHelper
     {
         /* Example test for main method - should pass */
         @Test
@@ -1373,7 +1373,7 @@ jUnit Tests
           import java.nio.file.Files;
           import java.nio.file.Paths;
 
-          public class ForLoopTestTester extends LabTestHelper
+          public class ForLoopTestTester extends CodeTestHelper
           {
               /* Example test for main method - should pass */
               @Test
