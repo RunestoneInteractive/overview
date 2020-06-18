@@ -24,5 +24,5 @@ Runestone Interactive
    :maxdepth: 2
 
    overview.rst
-
+   mdauthor.md
 
