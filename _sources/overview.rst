@@ -53,11 +53,11 @@ What is an Interactive Textbook?
 One of the key differences between an interactive textbook and a regular textbook is that with an interactive textbook your students do not need to switch back and forth between reading a book and interacting with a development environment.  One of our primary motivations for creating an interactive book was to encourage students to experiment with examples as they are reading.  To do this we developed the idea of an activecode example.  This led to the development of many other interactive components.  In the following sections you can explore each of them from the perspective of a reader.  At the end, we have some information on where to go if you want to write your own materials.
 
 
-ActiveCode Examples
--------------------
+ActiveCode Examples in Python
+--------------------------------
 
 One of the most important things that you can do when you are learning a programming language is to write programs.  Unfortunately,
-typical textbooks allow you to read about programming but don't allow you to practice.  We have created a unique tool called
+typical textbooks allow you to read about programming, but don't allow you to practice.  We have created a unique tool called
 **activecode** that allows you to write, modify, and execute programs right
 in the text itself (right from the web browser).  Although this is certainly not the way real programs are written, it provides an excellent
 environment for learning a programming language like Python since you can experiment with the language as you are reading.
@@ -85,6 +85,8 @@ If you are a registered user and have logged in,
 any changes you make are automatically saved, and the history slider allows you to go back to any previous version of your program.
 Note that these saved programs can be accessed from anywhere if you have logged in.  However, if you are
 working anonymously, then you will lose your work at the end of the session.
+
+Click on the "Show Source" button below to see what the reStructuredText (rst) looks like for the activecode above.  You can author ebook content in rst.
 
 .. reveal:: codeexample1_src
    :showtitle: Show Source
@@ -163,6 +165,61 @@ are learning to program.
 
     main()
 
+.. reveal:: codeexample2_src
+   :showtitle: Show Source
+   :hidetitle: Hide Source
+   :modaltitle: Source for the example above
+
+       .. code-block:: rst
+
+          .. activecode:: codeexample2
+             :nocodelens:
+             :hidecode:
+             :autorun:
+
+             import turtle
+
+             def drawTriangle(points,color,myTurtle):
+                 myTurtle.fillcolor(color)
+                 myTurtle.up()
+                 myTurtle.goto(points[0][0],points[0][1])
+                 myTurtle.down()
+                 myTurtle.begin_fill()
+                 myTurtle.goto(points[1][0],points[1][1])
+                 myTurtle.goto(points[2][0],points[2][1])
+                 myTurtle.goto(points[0][0],points[0][1])
+                 myTurtle.end_fill()
+
+             def getMid(p1,p2):
+                 return ( (p1[0]+p2[0]) / 2, (p1[1] + p2[1]) / 2)
+
+             def sierpinski(points,degree,myTurtle):
+                 colormap = ['blue','red','green','white','yellow',
+                           'violet','orange']
+                 drawTriangle(points,colormap[degree],myTurtle)
+                 if degree > 0:
+                     sierpinski([points[0],
+                                     getMid(points[0], points[1]),
+                                     getMid(points[0], points[2])],
+                                degree-1, myTurtle)
+                     sierpinski([points[1],
+                                     getMid(points[0], points[1]),
+                                     getMid(points[1], points[2])],
+                                degree-1, myTurtle)
+                     sierpinski([points[2],
+                                     getMid(points[2], points[1]),
+                                     getMid(points[0], points[2])],
+                                degree-1, myTurtle)
+
+             def main():
+                myTurtle = turtle.Turtle()
+                myWin = turtle.Screen()
+                myPoints = [[-100,-50],[0,100],[100,-50]]
+                sierpinski(myPoints,3,myTurtle)
+                myWin.exitonclick()
+
+             main()
+
 
 
 
@@ -179,10 +236,7 @@ all variables as they are created and modified.  The following example shows cod
     print("My first program adds two numbers, 2 and 3:")
     print(2 + 3)
 
-
-Note that you can control the step by step execution and you can even move forward and backward thru the statements as they execute.  The following example shows a more sophisticated program using Python lists.  The codelens tool draws very useful
-pictures as the statements are being executed.  These pictures, called reference diagrams, are very helpful as you learn about the
-more complex aspects of Python.
+Note that you can control the step by step execution and you can even move forward and backward thru the statements as they execute.
 
 .. reveal:: over_codelens1_src
    :showtitle: Show Source
@@ -198,6 +252,8 @@ more complex aspects of Python.
           print(2 + 3)
 
 
+The following example shows a more sophisticated program using Python lists.  The codelens tool draws very useful  pictures as the statements are being executed.  These pictures, called reference diagrams, are very helpful as you learn about the more complex aspects of Python.
+
 .. codelens:: secondexample
 
     fruit = ["apple","orange","banana","cherry"]
@@ -208,166 +264,22 @@ more complex aspects of Python.
     zeros[1] = fruit
     zeros[1][2] = numlist
 
-
-Multiple Choice
----------------
-
-It is also possible to embed simple questions into the text.  These
-questions provide a way for the students to check themselves as they go along.  The questions also provide feedback so that you can
-understand why an answer may or may not be correct.
-
-**Check your understanding**
-
-.. mchoice:: question1_1
-   :answer_a: Python
-   :answer_b: Java
-   :answer_c: C
-   :answer_d: ML
-   :correct: a
-   :feedback_a: Yes, Python is a great language to learn, whether you are a beginner or an experienced programmer.
-   :feedback_b: Java is a good object oriented language but it has some details that make it hard for the beginner.
-   :feedback_c: C is an imperative programming language that has been around for a long time, but it is not the one that we use.
-   :feedback_d: No, ML is a functional programming language.  You can use Python to write functional programs as well.
-
-   What programming language does this site help you to learn?
-
-
-This next type of question allows more than one correct answer to be required.  The feedback will tell you whether you have the
-correct number as well as the feedback for each.
-
-.. reveal:: question1_1_src
+.. reveal:: secondexample_src
    :showtitle: Show Source
    :hidetitle: Hide Source
    :modaltitle: Source for the example above
 
    .. code-block:: rst
 
-      .. mchoice:: question1_1
-         :answer_a: Python
-         :answer_b: Java
-         :answer_c: C
-         :answer_d: ML
-         :correct: a
-         :feedback_a: Yes, Python is a great language to learn, whether you are a beginner or an experienced programmer.
-         :feedback_b: Java is a good object oriented language but it has some details that make it hard for the beginner.
-         :feedback_c: C is an imperative programming language that has been around for a long time, but it is not the one that we use.
-         :feedback_d: No, ML is a functional programming language.  You can use Python to write functional programs as well.
+      .. codelens:: secondexample
 
-         What programming language does this site help you to learn?
+         fruit = ["apple","orange","banana","cherry"]
+         numlist = [6,7]
+         newlist = fruit + numlist
+         zeros = [0] * 4
 
-
-.. mchoice:: question1_2
-   :multiple_answers:
-   :answer_a: red
-   :answer_b: yellow
-   :answer_c: black
-   :answer_d: green
-   :correct: a,b,d
-   :feedback_a: Red is a definitely on of the colors.
-   :feedback_b: Yes, yellow is correct.
-   :feedback_c: Remember the acronym...ROY G BIV.  B stands for blue.
-   :feedback_d: Yes, green is one of the colors.
-
-   Which colors might be found in a rainbow? (choose all that are correct)
-
-
-.. reveal:: question1_2_src
-   :showtitle: Show Source
-   :hidetitle: Hide Source
-   :modaltitle: Source for the example above
-
-   .. code-block:: rst
-
-      .. mchoice:: question1_2
-         :multiple_answers:
-         :answer_a: red
-         :answer_b: yellow
-         :answer_c: black
-         :answer_d: green
-         :correct: a,b,d
-         :feedback_a: Red is a definitely on of the colors.
-         :feedback_b: Yes, yellow is correct.
-         :feedback_c: Remember the acronym...ROY G BIV.  B stands for blue.
-         :feedback_d: Yes, green is one of the colors.
-
-         Which colors might be found in a rainbow? (choose all that are correct)
-
-
-Fill in the Blank
------------------
-
-Another type of question allows you as the instructor to ask for a value.  You can test for the value using Pythons regular expressions.  For example:
-
-.. fillintheblank:: fill1512
-
-    What is the value of 25 expressed as an octal number (base 8)?
-
-    - :31: Is the correct answer!
-      :25: Thats base 10!
-      :.*: 25 in octal please
-
-.. reveal:: fill1512_src
-   :showtitle: Show Source
-   :hidetitle: Hide Source
-   :modaltitle: Source for the example above
-
-   .. code-block:: rst
-
-      .. fillintheblank:: fill1512
-
-          What is the value of 25 expressed as an octal number (base 8)?
-
-          - :31: Is the correct answer!
-            :25: Thats base 10!
-            :.*: 25 in octal please
-
-There is also a way of giving your students some simple programming problems where the code is already there for them but not indented or in the correct order.  Think of it like coding with refrigerator magnets! Use drag-and-drop to get everything right.
-
-Parsons Problems
-----------------
-
-.. parsonsprob:: bnm_3_1_2018
-
-   Add some text here
-
-   -----
-   import turtle
-   window = turtle.Screen()
-   ella = turtle.Turtle()
-   =====
-   ella.right(90)
-   ella.forward(150)
-   =====
-   ella.left(90)
-   ella.forward(75)
-
-
-
-.. parsonsprob:: bnm_3_2_2018
-
-   Construct a block of code that correctly implements the accumulator pattern.
-   -----
-   x = 0
-   =====
-   for i in range(10)
-      x = x + 1
-
-
-.. reveal:: question1_100_4_src
-   :showtitle: Show Source
-   :hidetitle: Hide Source
-   :modaltitle: Source for the example above
-
-   .. code-block:: rst
-
-      .. parsonsprob:: question1_100_4
-
-         Construct a block of code that correctly implements the accumulator pattern.
-         -----
-         x = 0
-         ======
-         for i in range(10)
-            x = x + 1
+         zeros[1] = fruit
+         zeros[1][2] = numlist
 
 CodeLens Predictions
 --------------------
@@ -447,6 +359,380 @@ next line executed.
           else:
               print('x is even')
               y = y - x
+
+
+Multiple Choice
+---------------
+
+It is also possible to embed simple questions into the text.  These
+questions provide a way for the students to check themselves as they go along.  The questions also provide feedback so that you can
+understand why an answer may or may not be correct.
+
+**Check your understanding**
+
+.. mchoice:: question1_1
+   :answer_a: Python
+   :answer_b: Java
+   :answer_c: C
+   :answer_d: ML
+   :correct: a
+   :feedback_a: Yes, Python is a great language to learn, whether you are a beginner or an experienced programmer.
+   :feedback_b: Java is a good object oriented language but it has some details that make it hard for the beginner.
+   :feedback_c: C is an imperative programming language that has been around for a long time, but it is not the one that we use.
+   :feedback_d: No, ML is a functional programming language.  You can use Python to write functional programs as well.
+
+   What programming language does this site help you to learn?
+
+.. reveal:: question1_1_src
+   :showtitle: Show Source
+   :hidetitle: Hide Source
+   :modaltitle: Source for the example above
+
+   .. code-block:: rst
+
+      .. mchoice:: question1_1
+         :answer_a: Python
+         :answer_b: Java
+         :answer_c: C
+         :answer_d: ML
+         :correct: a
+         :feedback_a: Yes, Python is a great language to learn, whether you are a beginner or an experienced programmer.
+         :feedback_b: Java is a good object oriented language but it has some details that make it hard for the beginner.
+         :feedback_c: C is an imperative programming language that has been around for a long time, but it is not the one that we use.
+         :feedback_d: No, ML is a functional programming language.  You can use Python to write functional programs as well.
+
+         What programming language does this site help you to learn?
+
+This next type of question allows more than one correct answer to be required.  Just add (:multiple_answers:) and then specify all of the correct answers.  The feedback will tell you whether you have the
+correct number as well as the feedback for each.
+
+.. mchoice:: question1_2
+   :multiple_answers:
+   :answer_a: red
+   :answer_b: yellow
+   :answer_c: black
+   :answer_d: green
+   :correct: a,b,d
+   :feedback_a: Red is a definitely on of the colors.
+   :feedback_b: Yes, yellow is correct.
+   :feedback_c: Remember the acronym...ROY G BIV.  B stands for blue.
+   :feedback_d: Yes, green is one of the colors.
+
+   Which colors might be found in a rainbow? (choose all that are correct)
+
+
+.. reveal:: question1_2_src
+   :showtitle: Show Source
+   :hidetitle: Hide Source
+   :modaltitle: Source for the example above
+
+   .. code-block:: rst
+
+      .. mchoice:: question1_2
+         :multiple_answers:
+         :answer_a: red
+         :answer_b: yellow
+         :answer_c: black
+         :answer_d: green
+         :correct: a,b,d
+         :feedback_a: Red is a definitely one of the colors.
+         :feedback_b: Yes, yellow is correct.
+         :feedback_c: Remember the acronym...ROY G BIV.  B stands for blue.
+         :feedback_d: Yes, green is one of the colors.
+
+         Which colors might be found in a rainbow? (choose all that are correct)
+
+
+Fill in the Blank
+-----------------
+
+Another type of question allows you as the instructor to ask for a value.  You can test for the value using Pythons regular expressions.  For example:
+
+.. fillintheblank:: fill1512
+
+    What is the value of 25 expressed as an octal number (base 8)?
+
+    - :31: Is the correct answer!
+      :25: Thats base 10!
+      :.*: 25 in octal please
+
+.. reveal:: fill1512_src
+   :showtitle: Show Source
+   :hidetitle: Hide Source
+   :modaltitle: Source for the example above
+
+   .. code-block:: rst
+
+      .. fillintheblank:: fill1512
+
+          What is the value of 25 expressed as an octal number (base 8)?
+
+          - :31: Is the correct answer!
+            :25: Thats base 10!
+            :.*: 25 in octal please
+
+You can have multiple blank areas to fill in.
+
+.. fillintheblank:: fillDecVar1
+
+   Fill in the following: |blank| age = |blank|; to declare age to be an integer and set its value to 5.
+
+   -    :int: Correct.  You typically use whole numbers for ages after age 1.
+        :.*: Remember that Java uses just the first 3 letters of integer
+   -    :5: Correct.  You can initialize to a value.
+        :.*: Use 5 in the second blank
+
+.. reveal:: fillDecVar1_src
+   :showtitle: Show Source
+   :hidetitle: Hide Source
+   :modaltitle: Source for the example above
+
+   .. code-block:: rst
+
+      .. fillintheblank:: fillDecVar1
+
+         Fill in the following: |blank| age = |blank|; to declare age to be an integer and set its value to 5.
+
+         -    :int: Correct.  You typically use whole numbers for ages after age 1.
+              :.*: Remember that Java uses just the first 3 letters of integer
+         -    :5: Correct.  You can initialize to a value.
+              :.*: Use 5 in the second blank
+
+
+Parsons Problems - Mixed Up Blocks
+-------------------------------------
+
+Parsons problems provide blocks that are mixed up and the user must drag the blocks to the right and put them in the correct order.  The blocks can be plain text as shown below.
+
+.. parsonsprob:: morning
+
+   Put the blocks in order to describe a morning routine.
+   -----
+   get up
+   =====
+   eat breakfast
+   =====
+   brush your teeth
+
+.. reveal:: morning_src
+   :showtitle: Show Source
+   :hidetitle: Hide Source
+   :modaltitle: Source for the example above
+
+   .. code-block:: rst
+
+      .. parsonsprob:: morning
+
+         Put the blocks in order to describe a morning routine.
+         -----
+         get up
+         =====
+         eat breakfast
+         =====
+         brush your teeth
+
+
+The blocks can contain code. They can
+also have numbered labels on the left or right side which can help people working in groups to discuss the problem (:numbered: left or :numbered: right).  The example below shows a problem in Python. Notice that a block can contain more than one line of code.  Be sure to break up the lines of code so that there is only one correct solution.
+
+.. parsonsprob:: per_person_cost
+   :numbered: left
+
+   The following program should figure out the cost per person for a dinner including the tip. But the blocks have been mixed up.  Drag the blocks from the left and put them in the correct order on the right.  Click the <i>Check Me</i> button to check your solution.</p>
+   -----
+   bill = 89.23
+   =====
+   tip = bill * 0.20
+   =====
+   total = bill + tip
+   =====
+   numPeople = 3
+   perPersonCost = total / numPeople
+   =====
+   print(perPersonCost)
+
+.. reveal:: per_person_cost_src
+      :showtitle: Show Source
+      :hidetitle: Hide Source
+      :modaltitle: Source for the example above
+
+      .. code-block:: rst
+
+         .. parsonsprob:: per_person_cost
+            :numbered: left
+
+            The following program should figure out the cost per person for a dinner including the tip. But the blocks have been mixed up.  Drag the blocks from the left and put them in the correct order on the right.  Click the <i>Check Me</i> button to check your solution.</p>
+            -----
+            bill = 89.23
+            =====
+            tip = bill * 0.20
+            =====
+            total = bill + tip
+            =====
+            numPeople = 3
+            perPersonCost = total / numPeople
+            =====
+            print(perPersonCost)
+
+Here is an example in Java.  Parsons problems can have distractor (incorrect) code blocks that are not needed in a correct solution. Indicate that a block is a distractor by adding (#distractor) at the end of the line of code.  This will randomly mix in the distractor block with the correct code blocks.  The problems can also be adaptive (:adaptive:), which means that if learner is struggling to answer the problem correctly it can dynamically be made easier by removing distractors or combining blocks.  You can tell if a problem is adaptive because it will have a "Help Me" button.  The learner must submit at least three incorrect solutions before they can use the help button.  Also, notice that the indentation has been provided in the problem below.  This is because of the ( :noindent:).
+
+.. parsonsprob:: java_countdown
+   :numbered: left
+   :adaptive:
+   :noindent:
+
+   The following program segment should print a countdown from 15 to 0 (15, 14, 13, ... 0).  But the blocks have been mixed up and include <b>one extra block</b> that is not needed in a correct solution.  Drag the needed blocks from the left and put them in the correct order on the right.  Click the <i>Check Me</i> button to check your solution.</p>
+   -----
+   public class Test1
+   {
+   =====
+       public static void main(String[] args)
+       {
+   =====
+           for (int i = 15; i >=0; i--)
+   =====
+           for (int i = 15; i > 0; i--) #distractor
+   =====
+               System.out.println(i);
+   =====
+       }
+   =====
+   }
+
+.. reveal:: java_countdown_src
+   :showtitle: Show Source
+   :hidetitle: Hide Source
+   :modaltitle: Source for the example above
+
+   .. code-block:: rst
+
+      .. parsonsprob:: java_countdown
+         :numbered: left
+         :adaptive:
+         :noindent:
+
+         The following program segment should print a countdown from 15 to 0 (15, 14, 13, ... 0).  But the blocks have been mixed up and include <b>one extra block</b> that is not needed in a correct solution.  Drag the needed blocks from the left and put them in the correct order on the right.  Click the <i>Check Me</i> button to check your solution.</p>
+         -----
+         public class Test1
+         {
+         =====
+             public static void main(String[] args)
+             {
+         =====
+                 for (int i = 15; i >=0; i--)
+         =====
+                 for (int i = 15; i > 0; i--) #distractor
+         =====
+                     System.out.println(i);
+         =====
+             }
+         =====
+         }
+
+Here is the same example, but with a paired distractor (#paired vs #distractor).  The distractor block be shown either above or below the correct block.  There will also be purple edges on the sides and the word "or" to show that the blocks are paired.
+
+.. parsonsprob:: java_countdown_paired
+            :numbered: left
+            :noindent:
+
+            The following program segment should print a countdown from 15 to 0 (15, 14, 13, ... 0).  But the blocks have been mixed up and include <b>one extra block</b> that is not needed in a correct solution.  Drag the needed blocks from the left and put them in the correct order on the right.  Click the <i>Check Me</i> button to check your solution.</p>
+            -----
+            public class Test1
+            {
+            =====
+                public static void main(String[] args)
+                {
+            =====
+                    for (int i = 15; i >=0; i--)
+            =====
+                    for (int i = 15; i > 0; i--) #paired
+            =====
+                        System.out.println(i);
+            =====
+                }
+            =====
+            }
+
+.. reveal:: java_countdown_paired_src
+   :showtitle: Show Source
+   :hidetitle: Hide Source
+   :modaltitle: Source for the example above
+
+   .. code-block:: rst
+
+      .. parsonsprob:: java_countdown_paired
+         :numbered: left
+         :noindent:
+
+         The following program segment should print a countdown from 15 to 0 (15, 14, 13, ... 0).  But the blocks have been mixed up and include <b>one extra block</b> that is not needed in a correct solution.  Drag the needed blocks from the left and put them in the correct order on the right.  Click the <i>Check Me</i> button to check your solution.</p>
+         -----
+         public class Test1
+         {
+         =====
+             public static void main(String[] args)
+             {
+         =====
+                 for (int i = 15; i >=0; i--)
+         =====
+                     for (int i = 15; i > 0; i--) #paired
+         =====
+                         System.out.println(i);
+         =====
+              }
+         =====
+         }
+
+Here is the same problem, but now the user has to indent the code as well since this does not have (:noindent:).  That means the user must provide the indentation.  Notice the lines on the right that indicate that indentation is possible.
+
+.. parsonsprob:: java_countdown_paired2
+   :numbered: left
+
+   The following program segment should print a countdown from 15 to 0 (15, 14, 13, ... 0).  But the blocks have been mixed up and include <b>one extra block</b> that is not needed in a correct solution.  Drag the needed blocks from the left and put them in the correct order on the right.  Click the <i>Check Me</i> button to check your solution.</p>
+   -----
+   public class Test1
+   {
+   =====
+       public static void main(String[] args)
+       {
+   =====
+           for (int i = 15; i >=0; i--)
+   =====
+           for (int i = 15; i > 0; i--) #paired
+   =====
+               System.out.println(i);
+   =====
+       }
+   =====
+   }
+
+.. reveal:: java_countdown_paired2_src
+   :showtitle: Show Source
+   :hidetitle: Hide Source
+   :modaltitle: Source for the example above
+
+   .. code-block:: rst
+
+      .. parsonsprob:: java_countdown_paired
+         :numbered: left
+
+         The following program segment should print a countdown from 15 to 0 (15, 14, 13, ... 0).  But the blocks have been mixed up and include <b>one extra block</b> that is not needed in a correct solution.  Drag the needed blocks from the left and put them in the correct order on the right.  Click the <i>Check Me</i> button to check your solution.</p>
+         -----
+         public class Test1
+         {
+         =====
+             public static void main(String[] args)
+             {
+         =====
+                 for (int i = 15; i >=0; i--)
+         =====
+                     for (int i = 15; i > 0; i--) #paired
+         =====
+                         System.out.println(i);
+         =====
+              }
+         =====
+         }
+
 
 Drag N Drop
 -----------
@@ -710,13 +996,26 @@ YouTube
     :width: 560
     :align: left
 
+.. reveal:: X1-UNHUajfk_src
+   :showtitle: Show Source
+   :hidetitle: Hide Source
+   :modaltitle: Source for the example above
+
+   .. code-block:: rst
+
+      .. youtube:: X1-UNHUajfk
+         :divid: theforloop
+         :height: 315
+         :width: 560
+         :align: left
+
 .. youtube:: anwy2MPT5RE
     :divid: yt_vid_ex1
     :height: 315
     :width: 560
     :align: left
 
-.. reveal:: anwy2MPT5RE
+.. reveal:: anwy2MPT5RE_src
    :showtitle: Show Source
    :hidetitle: Hide Source
    :modaltitle: Source for the example above
@@ -749,30 +1048,35 @@ Its nice to be able to have students solve a particular problem by writing some 
 
    myTests().main()
 
-Before you go on, fix the add function in the activecode box.  The full complement of assertXXX functions is available.  You can see the list `Here <http://docs.python.org/2/library/unittest.html#assert-methods>`_.  Now, for an introductory course exposing the inner workings of the unittest class may lead to more confusion that anything.  But, you can still get the benefit of the unittest module with activecode by placing it in the hidden code at the end.  You can hide the code by placing it after a line that contains ``====``.  The source code for the above example with the unit tests hidden would look like this:
+Before you go on, fix the add function in the activecode box.  The full complement of assertXXX functions is available.  You can see the list `Here <http://docs.python.org/2/library/unittest.html#assert-methods>`_.  Now, for an introductory course exposing the inner workings of the unittest class may lead to more confusion that anything.  But, you can still get the benefit of the unittest module with activecode by placing it in the hidden code at the end.  You can hide the code by placing it after a line that contains ``====``.
 
-.. sourcecode:: rst
+Click the Show Source button to see the source code for the above example with the unit tests hidden.
 
-    .. activecode:: units1
+.. reveal:: units1_src
+   :showtitle: Show Source
+   :hidetitle: Hide Source
+   :modaltitle: Source for the example above
 
-       def add(a,b):
-          return 4
+   .. code-block:: rst
 
-       ====
-       from unittest.gui import TestCaseGui
+      .. activecode:: units1
+        :nocodelens:
 
-       class myTests(TestCaseGui):
+        def add(a,b):
+           return 4
 
-           def testOne(self):
-               self.assertEqual(add(2,2),4,"A feedback string when the test fails")
-               self.assertAlmostEqual(add(2.0,3.0), 5.0, 5, "Try adding the parameters")
+        from unittest.gui import TestCaseGui
 
-       myTests().main()
+        class myTests(TestCaseGui):
+
+            def testOne(self):
+                self.assertEqual(add(2,2),4,"A feedback string when the test fails")
+                self.assertAlmostEqual(add(2.0,3.0), 5.0, 1, "Try adding your parmeters")
+
+        myTests().main()
 
 Hidden Unit Tests with Graphical Status
 ---------------------------------------
-
-
 
 .. activecode:: units2
    :nocodelens:
@@ -821,20 +1125,7 @@ Hidden Unit Tests with Graphical Status
          myTests().main()
 
 ShowEval Trace Mode
--------------------
-
-.. showeval:: showEval_0
-   :trace_mode: true
-
-   eggs = ['dogs', 'cats', 'moose']
-   ~~~~
-
-   ''.join({{eggs}}{{['dogs', 'cats', 'moose']}}).upper().join(eggs)
-   {{''.join(['dogs', 'cats', 'moose'])}}{{'dogscatsmoose'}}.upper().join(eggs)
-   {{'dogscatsmoose'.upper()}}{{'DOGSCATSMOOSE'}}.join(eggs)
-   'DOGSCATSMOOSE'.join({{eggs}}{{['dogs', 'cats', 'moose']}})
-   {{'DOGSCATSMOOSE'.join(['dogs', 'cats', 'moose'])}}{{'dogsDOGSCATSMOOSEcatsDOGSCATSMOOSEmoose'}}
-
+--------------------
 
 .. showeval:: showEval_2
    :trace_mode: true
@@ -846,6 +1137,24 @@ ShowEval Trace Mode
    eggs = {{eggs}}{{['dogs', 'cats', 'moose']}} + ham
    eggs = ['dogs', 'cats', 'moose'] + {{ham}}{{['elk', 'salmon']}}
    eggs = {{['dogs', 'cats', 'moose'] + ['elk', 'salmon']}}{{['dogs', 'cats', 'moose', 'elk', 'salmon']}}
+
+.. reveal:: showEval_2_src
+   :showtitle: Show Source
+   :hidetitle: Hide Source
+   :modaltitle: Source for the example above
+
+   .. code-block:: rst
+
+      .. showeval:: showEval_2
+         :trace_mode: true
+
+         eggs = ['dogs', 'cats', 'moose']
+         ham = ['elk', 'salmon']
+         eggs = eggs + ham
+         ~~~~
+         eggs = {{eggs}}{{['dogs', 'cats', 'moose']}} + ham
+         eggs = ['dogs', 'cats', 'moose'] + {{ham}}{{['elk', 'salmon']}}
+         eggs = {{['dogs', 'cats', 'moose'] + ['elk', 'salmon']}}{{['dogs', 'cats', 'moose', 'elk', 'salmon']}}
 
 ShowEval Replace Mode
 ---------------------
@@ -861,6 +1170,25 @@ ShowEval Replace Mode
   {{'dogscatsmoose'.upper()}}{{'DOGSCATSMOOSE'}}.join(eggs)
   'DOGSCATSMOOSE'.join({{eggs}}{{['dogs', 'cats', 'moose']}})
   {{'DOGSCATSMOOSE'.join(['dogs', 'cats', 'moose'])}}{{'dogsDOGSCATSMOOSEcatsDOGSCATSMOOSEmoose'}}
+
+.. reveal:: showEval_1_src
+     :showtitle: Show Source
+     :hidetitle: Hide Source
+     :modaltitle: Source for the example above
+
+     .. code-block:: rst
+
+        .. showeval:: showEval_1
+          :trace_mode: false
+
+          eggs = ['dogs', 'cats', 'moose']
+          ~~~~
+
+          ''.join({{eggs}}{{['dogs', 'cats', 'moose']}}).upper().join(eggs)
+          {{''.join(['dogs', 'cats', 'moose'])}}{{'dogscatsmoose'}}.upper().join(eggs)
+          {{'dogscatsmoose'.upper()}}{{'DOGSCATSMOOSE'}}.join(eggs)
+          'DOGSCATSMOOSE'.join({{eggs}}{{['dogs', 'cats', 'moose']}})
+          {{'DOGSCATSMOOSE'.join(['dogs', 'cats', 'moose'])}}{{'dogsDOGSCATSMOOSEcatsDOGSCATSMOOSEmoose'}}
 
 
 Disqus Comment Box
@@ -1143,6 +1471,27 @@ Cells in the spreadsheet that are graded are initially colored light blue.  When
     assert A3 == Yahoo
     assert B3 == 1994
 
+.. reveal:: ss1_src
+   :showtitle: Show Source
+   :hidetitle: Hide Source
+   :modaltitle: Source for the example above
+
+   .. code-block:: rst
+
+      .. spreadsheet:: ss1
+          :mindimensions: 6,5
+          :colwidths: 200,100,100
+          :coltitles: 'name','year','price','foo'
+
+          Google, 1998, 807.80
+          Apple, 1976, 116.52
+          Yahoo, 1994, 38.66
+          ,,=sum(c1:c3)
+
+          ====
+          assert A3 == Yahoo
+          assert B3 == 1994
+
 
 
 Blockly
@@ -1180,6 +1529,46 @@ Support for blockly is very experimental at this stage.  Hopefully we will move 
          </value>
       </block>
    </xml>
+
+
+.. reveal:: blockly1_src
+   :showtitle: Show Source
+   :hidetitle: Hide Source
+   :modaltitle: Source for the example above
+
+   .. code-block:: rst
+
+      .. blockly:: blockly1
+
+         * controls
+         controls_if
+         controls_repeat_ext
+         ====
+         * logic
+         logic_compare
+         ====
+         * math
+         math_number
+         math_arithmetic
+         ====
+         * text
+         text
+         text_print
+         ====
+         variables
+
+         preload::
+         <xml>
+            <block type="variables_set" id="1" inline="true" x="25" y="9">
+               <field name="VAR">X</field>
+               <value name="VALUE">
+                  <block type="math_number" id="2">
+                     <field name="NUM">10</field>
+                  </block>
+               </value>
+            </block>
+         </xml>
+
 
 Add a print statement after the set X to 10.  Click on text and drag out a print block;
 connect it to the set block.  Then click on variables and drag out the X block and
@@ -1249,7 +1638,7 @@ programs in any of these options.
 
          }
 
-
+You can also have C++ code in an activecode.
 
 .. activecode:: lc2
     :language: cpp
@@ -1261,6 +1650,24 @@ programs in any of these options.
     void main() {
         cout << "Hello World!" << endl;   cout << "Welcome to C++ Programming" << endl;
     }
+
+.. reveal:: lc2_src
+   :showtitle: Show Source
+   :hidetitle: Hide Source
+   :modaltitle: Source for the example above
+
+   .. code-block:: rst
+
+      .. activecode:: lc2
+         :language: cpp
+         :stdin: 100
+         :compileargs: ['-std=c++11', '-Wall', '-Wpedantic']
+
+         #include <iostream>
+         using namespace std;
+         void main() {
+             cout << "Hello World!" << endl;   cout << "Welcome to C++ Programming" << endl;
+         }
 
 jUnit Tests
 -----------
@@ -1551,6 +1958,162 @@ jUnit Tests
         }
     }
 
+.. reveal:: jUnitTesting3_src
+       :showtitle: Show Source
+       :hidetitle: Hide Source
+       :modaltitle: Source for the example above
+
+       .. code-block::
+
+          .. activecode:: jUnitTesting3
+              :language: java
+              :autograde: unittest
+
+              In this project, you will create a class that can tell riddles like the following:
+
+              Riddle Question: Why did the chicken cross the playground?
+              Riddle Answer: To get to the other slide!
+              ~~~~
+              public class Riddle
+              {
+                  // 2 instance variables for Riddle's question and answer: private type variableName;
+                  private String quest;
+                  private String ans;
+
+                  // constructor
+                  public Riddle(String initQuestion, String initAnswer)
+                  {
+                      // set the instance variables to the init parameter variables
+                      quest = initQuestion;
+                      ans = initAnswer;
+                  }
+
+                  // Print riddle question
+                  public void printQuestion()
+                  {
+                      // print out the riddle question with System.out.println
+                      System.out.println(quest);
+                  }
+
+                  // Print riddle answer
+                  public void printAnswer()
+                  {
+                      // print out the riddle answer with System.out.println
+                      System.out.println(ans);
+                  }
+
+                  // main method for testing
+                  public static void main(String[] args)
+                  {
+                      // call the constructor to create 3 new Riddle objects
+
+                      // call their printQuestion() and printAnswer methods
+
+                  }
+              }
+              ====
+              //import codetesthelper.*;
+
+              // Test Code for Lesson 5.1.5 - Riddle
+              import static org.junit.Assert.*;
+              import org.junit.After;
+              import org.junit.Before;
+              import org.junit.Test;
+
+              import java.io.*;
+
+              public class RunestoneTests extends CodeTestHelper
+              {
+                  public RunestoneTests()
+                  {
+                      super("Riddle"); // class name / location of main
+
+                      Object[] values = new Object[]{"Question", "Answer"};
+                      setDefaultValues(values);
+                  }
+
+                  @Test
+                  public void testPrintQuestion()
+                  {
+                      String output = getMethodOutput("printQuestion");
+                      String expect = "Question";
+
+                      boolean passed = getResults(expect, output, "Checking method printQuestion()");
+                      assertTrue(passed);
+                  }
+
+                  @Test
+                  public void testPrintAnswer()
+                  {
+                      String output = getMethodOutput("printAnswer");
+                      String expect = "Answer";
+
+                      boolean passed = getResults(expect, output, "Checking method printAnswer()");
+                      assertTrue(passed);
+                  }
+
+                  @Test
+                  public void testDefaultConstructor()
+                  {
+                      String[] args = {"Question 1", "Answer 1"};
+                      String output = checkDefaultConstructor();
+                      String expect = "fail";
+
+                      boolean passed = getResults(expect, output, "Checking default constructor");
+                      assertTrue(passed);
+                  }
+
+                  @Test
+                  public void testConstructor()
+                  {
+                      String[] args = {"Question 1", "Answer 1"};
+                      String output = checkConstructor(args);
+                      String expect = "pass";
+
+                      boolean passed = getResults(expect, output, "Checking constructor with parameters");
+                      assertTrue(passed);
+                  }
+
+                  @Test
+                  public void testVariableTypes()
+                  {
+                      String varTypes = "String String";
+                      String output = testInstanceVariableTypes(varTypes.split(" "));
+
+                      boolean passed = getResults(varTypes, output, "Checking Instance Variable Type(s)");
+                      assertTrue(passed);
+                  }
+
+                  @Test
+                  public void testPrivateVariables()
+                  {
+                      String expect = "2 Private";
+                      String output = testPrivateInstanceVariables();
+
+                      boolean passed = getResults(expect, output, "Checking Private Instance Variable(s)");
+                      assertTrue(passed);
+                  }
+
+
+                  @Test
+                  public void testMain()
+                  {
+                      String output = getMethodOutput("main");
+
+                      String expect = "6 line(s) of text";
+                      String actual = " line(s) of text";
+
+                      if (output.length() > 0) {
+                          actual = output.split("\n").length + actual;
+                      } else {
+                          actual = output.length() + actual;
+                      }
+                      boolean passed = getResults(expect, actual, "Checking main method");
+                      assertTrue(passed);
+                  }
+              }
+
+
 Catch2 C++ Unit Tests
 ---------------------
 
@@ -1640,6 +2203,35 @@ SQL
 .. datafile:: country_data.csv
     :fromfile: world_countries.csv
 
+.. reveal:: sql1_src
+   :showtitle: Show Source
+   :hidetitle: Hide Source
+   :modaltitle: Source for the example above
+
+   .. code-block::
+
+      .. activecode:: sql1
+         :language: sql
+         :autograde: unittest
+         :dburl: https://runestone.academy/runestone/books/published/overview/_static/bikeshare.db
+
+         select bike_number, max(duration)
+         from trip_data
+         group by bike_number
+         order by max(duration) desc
+         limit 4;
+
+         ====
+         assert 0,0 == W00379
+         assert 0,1 == 86355
+         assert 2,1 == 86336
+
+      .. datafile:: country_data.csv
+         :fromfile: world_countries.csv
+
+
+
+
 Server Side Python
 ------------------
 
@@ -1653,6 +2245,22 @@ Server Side Python
    print(df.head())
 
 If the JOBE server has pandas installed we can even use pandas right in the text!
+
+.. reveal:: pandas_src
+   :showtitle: Show Source
+   :hidetitle: Hide Source
+   :modaltitle: Source for the example above
+
+   .. code-block:: rst
+
+      .. activecode:: pandas
+         :language: python3
+         :datafile: country_data.csv
+
+         import pandas as pd
+
+         df = pd.read_csv('country_data.csv', encoding='latin1')
+         print(df.head())
 
 Audio Tours
 -----------
