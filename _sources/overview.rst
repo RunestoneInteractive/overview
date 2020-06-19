@@ -421,7 +421,7 @@ You can also have C++ code in an activecode.
 
     #include <iostream>
     using namespace std;
-    void main() {
+    int main() {
         cout << "Hello World!" << endl;   cout << "Welcome to C++ Programming" << endl;
     }
 
@@ -439,7 +439,7 @@ You can also have C++ code in an activecode.
 
          #include <iostream>
          using namespace std;
-         void main() {
+         int main() {
              cout << "Hello World!" << endl;   cout << "Welcome to C++ Programming" << endl;
          }
 
@@ -466,9 +466,6 @@ You can even have SQL in an activecode.
     assert 0,1 == 51618
     assert 2,1 == 38347
 
-.. datafile:: country_data.csv
-    :fromfile: world_countries.csv
-
 .. reveal:: sql1_src
    :showtitle: Show Source
    :hidetitle: Hide Source
@@ -492,16 +489,16 @@ You can even have SQL in an activecode.
          assert 0,1 == 86355
          assert 2,1 == 86336
 
-      .. datafile:: country_data.csv
-         :fromfile: world_countries.csv
-
-
-
 
 Server Side Python
 ------------------
 
-If the JOBE server has pandas installed we can even use pandas right in the text!
+If the JOBE server has pandas installed we can even use pandas right in the text and have it process data from a file.
+
+Here is the file it will read from.
+
+.. datafile:: country_data.csv
+    :fromfile: world_countries.csv
 
 .. activecode:: pandas
    :language: python3
