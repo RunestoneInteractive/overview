@@ -1,2 +1,3 @@
 runestone>=3.0.1
+myst-parser
 SQLAlchemy>=1.0.8
