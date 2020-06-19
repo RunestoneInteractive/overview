@@ -1938,7 +1938,7 @@ ShowEval Trace Mode
          eggs = eggs + ham
          ~~~~
          eggs = {​{eggs}}{​{['dogs', 'cats', 'moose']}} + ham
-         eggs = ['dogs', 'cats', 'moose'] + {​{ham}}{{['elk', 'salmon']}}
+         eggs = ['dogs', 'cats', 'moose'] + {​{ham}}{​{['elk', 'salmon']}}
          eggs = {​{['dogs', 'cats', 'moose'] + ['elk', 'salmon']}}{​{['dogs', 'cats', 'moose', 'elk', 'salmon']}}
 
 ShowEval Replace Mode
@@ -1969,11 +1969,11 @@ ShowEval Replace Mode
           eggs = ['dogs', 'cats', 'moose']
           ~~~~
 
-          ''.join({{eggs}}{{['dogs', 'cats', 'moose']}}).upper().join(eggs)
+          ''.join({​{eggs}}{​{['dogs', 'cats', 'moose']}}).upper().join(eggs)
           {​{''.join(['dogs', 'cats', 'moose'])}}{​{'dogscatsmoose'}}.upper().join(eggs)
           {​{'dogscatsmoose'.upper()}}{​{'DOGSCATSMOOSE'}}.join(eggs)
-          'DOGSCATSMOOSE'.join({{eggs}}{​{['dogs', 'cats', 'moose']}})
-          {​{'DOGSCATSMOOSE'.join(['dogs', 'cats', 'moose'])}}{​{'dogsDOGSCATSMOOSEcatsDOGSCATSMOOSEmoose'}}
+          'DOGSCATSMOOSE'.join({​{eggs}}{​{['dogs', 'cats', 'moose']}})
+          {​​{'DOGSCATSMOOSE'.join(['dogs', 'cats', 'moose'])}}{​{'dogsDOGSCATSMOOSEcatsDOGSCATSMOOSEmoose'}}
 
 
 Disqus Comment Box
