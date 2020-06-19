@@ -267,7 +267,7 @@ Click the Show Source button to see the source code for the above example.
 
         myTests().main()
 
-Before you go on, fix the add function in the activecode box.  The full complement of assertXXX functions is available.  You can see the list `Here <http://docs.python.org/2/library/unittest.html#assert-methods>`_.  Now, for an introductory course exposing the inner workings of the unittest class may lead to more confusion that anything.
+Before you go on, fix the add function in the activecode box.  The full complement of assertXXX functions is available.  You can see the list `Here <http://docs.python.org/2/library/unittest.html#assert-methods>`__.  Now, for an introductory course exposing the inner workings of the unittest class may lead to more confusion that anything.
 
 Hidden Unit Tests with Graphical Status
 ---------------------------------------
@@ -1188,17 +1188,29 @@ understand why an answer may or may not be correct.
 **Check your understanding**
 
 .. mchoice:: question1_1
-   :answer_a: Python
-   :answer_b: Java
-   :answer_c: C
-   :answer_d: ML
-   :correct: a
-   :feedback_a: Yes, Python is a great language to learn, whether you are a beginner or an experienced programmer.
-   :feedback_b: Java is a good object oriented language but it has some details that make it hard for the beginner.
-   :feedback_c: C is an imperative programming language that has been around for a long time, but it is not the one that we use.
-   :feedback_d: No, ML is a functional programming language.  You can use Python to write functional programs as well.
 
-   What programming language does this site help you to learn?
+    What programming language does this site help you to learn?
+
+    -   Python
+
+        +   Yes, Python is a great language to learn, whether you are a beginner or
+            an experienced programmer. The correct answer is designated by using
+            a plus sign before the answer.
+
+    -   Java
+
+        -   Java is a good object oriented language but it has some details that make
+            it hard for the beginner.
+
+    -   C
+
+        -   C is an imperative programming language that has been around for a long
+            time, but it is not the one that we use.
+
+    -   ML
+
+        -   No, ML is a functional programming language.  You can use Python to write
+            functional programs as well.
 
 .. reveal:: question1_1_src
    :showtitle: Show Source
@@ -1207,100 +1219,129 @@ understand why an answer may or may not be correct.
 
    .. code-block:: rst
 
-      .. mchoice:: question1_1
-         :answer_a: Python
-         :answer_b: Java
-         :answer_c: C
-         :answer_d: ML
-         :correct: a
-         :feedback_a: Yes, Python is a great language to learn, whether you are a beginner or an experienced programmer.
-         :feedback_b: Java is a good object oriented language but it has some details that make it hard for the beginner.
-         :feedback_c: C is an imperative programming language that has been around for a long time, but it is not the one that we use.
-         :feedback_d: No, ML is a functional programming language.  You can use Python to write functional programs as well.
+        .. mchoice:: question1_1
 
-         What programming language does this site help you to learn?
+            What programming language does this site help you to learn?
 
-You can also have code blocks in multiple-choice questions.
+            -   Python
+
+                +   Yes, Python is a great language to learn, whether you are a beginner or
+                    an experienced programmer. The correct answer is designated by using
+                    a plus sign before the answer.
+
+            -   Java
+
+                -   Java is a good object oriented language but it has some details that make
+                    it hard for the beginner.
+
+            -   C
+
+                -   C is an imperative programming language that has been around for a long
+                    time, but it is not the one that we use.
+
+            -   ML
+
+                -   No, ML is a functional programming language.  You can use Python to write
+                    functional programs as well.
+
+You can also have code blocks in multiple-choice questions, or any other reST construct.
 
 .. mchoice:: qce_1
-   :practice: T
-   :answer_a: x is negative
-   :answer_b: x is zero
-   :answer_c: x is positive
-   :correct: c
-   :feedback_a: This will only print if x has been set to a number less than zero. Has it?
-   :feedback_b: This will only print if x has been set to 0.  Has it?
-   :feedback_c: The first condition is false and x is not equal to zero so the else will execute.
+    :practice: T
 
-   What does the following code print when x has been set to 187?
+    What does the following code print when ``x`` has been set to 187?
 
-   .. code-block:: java
+    .. code-block:: java
 
-     if (x < 0)
-     {
-        System.out.println("x is negative");
-     }
-     else if (x == 0)
-     {
-         System.out.println("x is zero");
-     }
-     else
-     {
-         System.out.println("x is positive");
-     }
+        if (x < 0)
+        {
+            System.out.println("x is negative");
+        }
+        else if (x == 0)
+        {
+            System.out.println("x is zero");
+        }
+        else
+        {
+            System.out.println("x is positive");
+        }
+
+    -   x is negative
+
+        -   This will only print if x has been set to a number less than zero. Has it?
+
+    -   x is zero
+
+        -   This will only print if x has been set to 0.  Has it?
+
+    -   x is positive
+
+        +   The first condition is false and ``x`` is not equal to zero so the else
+            will execute.
 
 .. reveal:: qce_1_src
-   :showtitle: Show Source
-   :hidetitle: Hide Source
-   :modaltitle: Source for the example above
+    :showtitle: Show Source
+    :hidetitle: Hide Source
+    :modaltitle: Source for the example above
 
-   .. code-block:: rst
+    .. code-block:: rst
 
-      .. mchoice:: qce_1
-         :practice: T
-         :answer_a: x is negative
-         :answer_b: x is zero
-         :answer_c: x is positive
-         :correct: c
-         :feedback_a: This will only print if x has been set to a number less than zero. Has it?
-         :feedback_b: This will only print if x has been set to 0.  Has it?
-         :feedback_c: The first condition is false and x is not equal to zero so the else will execute.
+        .. mchoice:: qce_1
+            :practice: T
 
-         What does the following code print when x has been set to 187?
+            What does the following code print when ``x`` has been set to 187?
 
-         .. code-block:: java
+            .. code-block:: java
 
-           if (x < 0)
-           {
-              System.out.println("x is negative");
-           }
-           else if (x == 0)
-           {
-               System.out.println("x is zero");
-           }
-           else
-           {
-               System.out.println("x is positive");
-           }
+                if (x < 0)
+                {
+                    System.out.println("x is negative");
+                }
+                else if (x == 0)
+                {
+                    System.out.println("x is zero");
+                }
+                else
+                {
+                    System.out.println("x is positive");
+                }
+
+            -   x is negative
+
+                -   This will only print if x has been set to a number less than zero. Has it?
+
+            -   x is zero
+
+                -   This will only print if x has been set to 0.  Has it?
+
+            -   x is positive
+
+                +   The first condition is false and ``x`` is not equal to zero so the else
+                    will execute.
 
 
-This next type of question allows more than one correct answer to be required.  Just add (:multiple_answers:) and then specify all of the correct answers.  The feedback will tell you whether you have the
+This next type of question allows more than one correct answer to be required.  Just mark each correct answer with a plus sign (``+``).  The feedback will tell you whether you have the
 correct number as well as the feedback for each.
 
 .. mchoice:: question1_2
-   :multiple_answers:
-   :answer_a: red
-   :answer_b: yellow
-   :answer_c: black
-   :answer_d: green
-   :correct: a,b,d
-   :feedback_a: Red is a definitely on of the colors.
-   :feedback_b: Yes, yellow is correct.
-   :feedback_c: Remember the acronym...ROY G BIV.  B stands for blue.
-   :feedback_d: Yes, green is one of the colors.
 
-   Which colors might be found in a rainbow? (choose all that are correct)
+    Which colors might be found in a rainbow? (Choose all that are correct)
 
+    -   red
+
+        +   Red is a definitely on of the colors.
+
+    -   yellow
+
+        +   Yes, yellow is correct.
+
+    -   black
+
+        -   Remember the acronym...ROY G BIV.  B stands for blue.
+
+    -   green
+
+        +   Yes, green is one of the colors.
 
 .. reveal:: question1_2_src
    :showtitle: Show Source
@@ -1309,54 +1350,128 @@ correct number as well as the feedback for each.
 
    .. code-block:: rst
 
-      .. mchoice:: question1_2
-         :multiple_answers:
-         :answer_a: red
-         :answer_b: yellow
-         :answer_c: black
-         :answer_d: green
-         :correct: a,b,d
-         :feedback_a: Red is a definitely one of the colors.
-         :feedback_b: Yes, yellow is correct.
-         :feedback_c: Remember the acronym...ROY G BIV.  B stands for blue.
-         :feedback_d: Yes, green is one of the colors.
+        .. mchoice:: question1_2
 
-         Which colors might be found in a rainbow? (choose all that are correct)
+            Which colors might be found in a rainbow? (Choose all that are correct)
 
+            -   red
+
+                +   Red is a definitely on of the colors.
+
+            -   yellow
+
+                +   Yes, yellow is correct.
+
+            -   black
+
+                -   Remember the acronym...ROY G BIV.  B stands for blue.
+
+            -   green
+
+                +   Yes, green is one of the colors.
+
+The order in which multiple-choice answers are presented can be randomized by adding the ``:random:`` option.
+
+.. mchoice:: mchoice_random
+    :random:
+
+    What numbers are less than 3?
+
+    -   0
+
+        +   Correct.
+
+    -   1
+
+        +   Correct.
+
+    -   2
+
+        +   Correct.
+
+    -   3
+
+        -   Incorrect.
+
+    -   4
+
+        -   Incorrect.
+
+.. reveal:: mchoice_random_src
+    :showtitle: Show Source
+    :hidetitle: Hide Source
+    :modaltitle: Source for the example above
+
+    .. code-block:: rst
+
+        .. mchoice:: mchoice_random
+            :random:
+
+            What numbers are less than 3?
+
+            -   0
+
+                +   Correct.
+
+            -   1
+
+                +   Correct.
+
+            -   2
+
+                +   Correct.
+
+            -   3
+
+                -   Incorrect.
+
+            -   4
+
+                -   Incorrect.
 
 Fill in the Blank
 -----------------
 
-Another type of question allows you as the instructor to ask for a value.  You can test for the value using Pythons regular expressions.  For example:
+Another type of question allows you as the instructor to ask for a value.  You can test for the value using regular expressions.  Leading and trailing whitespace in an answer will automatically be ignored. For example:
 
 .. fillintheblank:: fill1512
 
-    What is the value of 25 expressed as an octal number (base 8)?
+    How many bowling pins are used when bowling?
+    You can put spaces before or after the number without affecting
+    the correctness of the answer.
+    You can provide the answer in decimal (10), hexadecimal (0xA),
+    binary (0b1010), or using scientific notation (1e1).
 
-    - :31: Is the correct answer!
-      :25: Thats base 10!
-      :.*: 25 in octal please
+    -   :10: Correct.
+        :0x10: Incorrect. (Note that solutions can be provided in any base as well).
+        :.*: Incorrect.
 
 .. reveal:: fill1512_src
-   :showtitle: Show Source
-   :hidetitle: Hide Source
-   :modaltitle: Source for the example above
+    :showtitle: Show Source
+    :hidetitle: Hide Source
+    :modaltitle: Source for the example above
 
-   .. code-block:: rst
+    .. code-block:: rst
 
-      .. fillintheblank:: fill1512
+        .. fillintheblank:: fill1512
 
-          What is the value of 25 expressed as an octal number (base 8)?
+            How many bowling pins are used when bowling?
+            You can put spaces before or after the number without affecting
+            the correctness of the answer.
+            You can provide the answer in decimal (10), hexadecimal (0xA),
+            binary (0b1010), or using scientific notation (1e1).
 
-          - :31: Is the correct answer!
-            :25: Thats base 10!
-            :.*: 25 in octal please
+            -   :10: Correct.
+                :0x10: Incorrect. (Note that solutions can be provided in any base as well).
+                :.*: Incorrect.
+
 
 You can have multiple blank areas to fill in.
 
 .. fillintheblank:: fillDecVar1
 
-   Fill in the following: |blank| age = |blank|; to declare age to be an integer and set its value to 5.
+   Fill in the following: |blank| ``age =`` |blank|; to declare age to be an
+   integer and set its value to 5.
 
    -    :int: Correct.  You typically use whole numbers for ages after age 1.
         :.*: Remember that Java uses just the first 3 letters of integer
@@ -1372,12 +1487,62 @@ You can have multiple blank areas to fill in.
 
       .. fillintheblank:: fillDecVar1
 
-         Fill in the following: |blank| age = |blank|; to declare age to be an integer and set its value to 5.
+         Fill in the following: |blank| ``age =`` |blank|; to declare age to be an
+         integer and set its value to 5.
 
          -    :int: Correct.  You typically use whole numbers for ages after age 1.
               :.*: Remember that Java uses just the first 3 letters of integer
          -    :5: Correct.  You can initialize to a value.
               :.*: Use 5 in the second blank
+
+Case-insensitive answers are supported:
+
+.. fillintheblank:: fitb_casei
+    :casei:
+
+    What is the opposite of yes?
+
+    -   :no: Correct.
+        :.*: The correct answer is no, No, nO, or NO.
+
+.. reveal:: fitb_casei_src
+    :showtitle: Show Source
+    :hidetitle: Hide Source
+    :modaltitle: Source for the example above
+
+    .. code-block:: rst
+
+        .. fillintheblank:: fitb_casei
+            :casei:
+
+            What is the opposite of yes?
+
+            -   :no: Correct.
+                :.*: The correct answer is no, No, nO, or NO.
+
+
+Numeric answers may provide a tolerance, to accept a range of correct answers.
+
+.. fillintheblank:: fitb_tolerance
+
+    What is 1/3 as a decimal value? Provide at least three `significant figures <https://en.wikipedia.org/wiki/Significant_figures>`_.
+
+    -   :0.333 0.0005: Correct. Any value in the range of 0.333±0.0005 is correct.
+        :.*: Incorrect. Did you provide three `significant figures`_?
+
+.. reveal:: fitb_tolerance_src
+    :showtitle: Show Source
+    :hidetitle: Hide Source
+    :modaltitle: Source for the example above
+
+    .. code-block:: rst
+
+        .. fillintheblank:: fitb_tolerance
+
+            What is 1/3 as a decimal value? Provide at least three `significant figures <https://en.wikipedia.org/wiki/Significant_figures>`_.
+
+            -   :0.333 0.0005: Correct. Any value in the range of 0.333±0.0005 is correct.
+                :.*: Incorrect. Did you provide three `significant figures`_?
 
 
 Parsons Problems - Mixed Up Blocks
@@ -2373,7 +2538,7 @@ You can find more complete documentation of the directives on our `Runestone doc
 Now that you have seen some of these tools in action, you can do more exploration by going to `Runestone library <http://runestoneinteractive.org/library.html>`_
 and browsing through some of our existing books.
 
-We hope you will find these tools and materials useful.  If you want to get more involved, feel free to download the tools and write your own materials.  Everything you need, instructions and help for contributing or writing your own materials, and links to our GitHub repositories, can be found `here <http://runestoneinteractive.org/build/html/index.html>`_
+We hope you will find these tools and materials useful.  If you want to get more involved, feel free to download the tools and write your own materials.  Everything you need, instructions and help for contributing or writing your own materials, and links to our GitHub repositories, can be found `here <http://runestoneinteractive.org/build/html/index.html>`__.
 
 
 .. toctree::
