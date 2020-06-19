@@ -456,14 +456,15 @@ You can even have SQL in an activecode.
 
     select bike_number, max(duration)
     from trip_data
+    where start_station = 31105
     group by bike_number
     order by max(duration) desc
     limit 4;
 
     ====
-    assert 0,0 == W00379
-    assert 0,1 == 86355
-    assert 2,1 == 86336
+    assert 0,0 == W00554
+    assert 0,1 == 51618
+    assert 2,1 == 38347
 
 .. datafile:: country_data.csv
     :fromfile: world_countries.csv
