@@ -1160,7 +1160,7 @@ You can also have hidden unit tests in C++ using catch.hpp.  Place the unit test
 
           ====
 
-        #define CATCH_CONFIG_MAIN // This tells Catch to provide a main() - only do   this in one cpp file
+          #define CATCH_CONFIG_MAIN // This tells Catch to provide a main() - only do   this in one cpp file
           #include <catch.hpp>
 
           TEST_CASE( "Factorials are computed", "[factorial]" ) {
@@ -2347,7 +2347,7 @@ Any of the existing components can be placed in a tabbed exhibit-style question.
 Polls
 -----
 
-You can have a poll with a scale from x to y.
+You can have a poll with a scale from x to y (such as 1 to 10).
 
 .. poll:: pollid1
    :scale: 10
