@@ -489,6 +489,144 @@ You can even have SQL in an activecode.
          assert 0,1 == 86355
          assert 2,1 == 86336
 
+DOM Access
+----------
+
+Python programs written in activecode windows can now import the ``document`` module. This document module
+allows access to basic elements of the web page, including the new text entry box called
+**text1** :textfield:`text1:example input:medium` like this one.  Try running the program, then change
+the value in the text entry box and run it again.
+
+.. activecode:: tftest1
+   :nocodelens:
+
+   import document
+
+   t = document.getElementById('text1')
+   print('value = ', t.value)
+
+.. reveal:: tftest1_src
+   :showtitle: Show Source
+   :hidetitle: Hide Source
+   :modaltitle: Source for the example above
+
+   .. code-block:: rst
+
+      .. activecode:: tftest1
+         :nocodelens:
+
+         import document
+
+         t = document.getElementById('text1')
+         print('value = ', t.value)
+
+JavaScript
+----------
+
+We have come to realize that not everyone loves Python as much as we do.
+So we have now made it possible to write activecode examples in pure javascript as well
+as Python.  Here is a simple example:
+
+.. activecode:: jstest1
+   :language: javascript
+   :nocodelens:
+
+   var x = 10;
+   var y = 11;
+   var z = x + y;
+   console.log(z);
+   function fact(n) {
+      if(n <= 1) return 1;
+      else {
+          return n * fact(n-1);
+      }
+   }
+   console.log(fact(10));
+   writeln('hello world');
+
+
+Adding a javascript example is just as easy as Python, all you need to do is add a ``:language:``
+parameter to the activecode directive.
+
+.. reveal:: jstest1_src
+   :showtitle: Show Source
+   :hidetitle: Hide Source
+   :modaltitle: Source for the example above
+
+   .. code-block:: rst
+
+      .. activecode:: jstest1
+         :language: javascript
+         :nocodelens:
+
+         var x = 10;
+         var y = 11;
+         var z = x + y;
+         console.log(z);
+         function fact(n) {
+            if(n <= 1) return 1;
+            else {
+                return n * fact(n-1);
+            }
+         }
+         console.log(fact(10));
+         writeln('hello world');
+
+
+      Adding a javascript example is just as easy as Python, all you need to do is add a ``:language:``
+      parameter to the activecode directive.
+
+HTML
+----
+
+Teaching a class on HTML and simple web design?  Why not use activecode for HTML too?
+Although you don't run HTML, clicking the run button will cause the HTML to be rendered.
+
+.. activecode:: html1
+   :language: html
+   :nocodelens:
+
+   <html>
+   <body>
+   <style>
+       h2 { font-size: 48px;
+            color: red;
+       }
+   </style>
+   <h2>Hello World</h2>
+   <ul>
+       <li>one</li>
+       <li>two</li>
+   </ul>
+   </body>
+   </html>
+
+.. reveal:: html1_src
+   :showtitle: Show Source
+   :hidetitle: Hide Source
+   :modaltitle: Source for the example above
+
+   .. code-block:: rst
+
+      .. activecode:: html1
+         :language: html
+         :nocodelens:
+
+         <html>
+         <body>
+         <style>
+             h2 { font-size: 48px;
+                  color: red;
+             }
+         </style>
+         <h2>Hello World</h2>
+         <ul>
+             <li>one</li>
+             <li>two</li>
+         </ul>
+         </body>
+         </html>
+
 
 Server Side Python
 ------------------
@@ -2043,6 +2181,9 @@ Any of the existing components can be placed in a tabbed exhibit-style question.
 
 Polls
 -----
+
+You can have a poll with a scale from x to y.
+
 .. poll:: pollid1
    :scale: 10
    :allowcomment:
@@ -2061,6 +2202,31 @@ Polls
          :allowcomment:
 
           On a scale from 1 to 10, how important do you think it is to have a polling directive in the Runestone Tools?
+
+You can also have a poll with specific answers.
+
+.. poll:: qstudent
+   :option_1: student
+   :option_2: teacher
+   :option_3: other
+   :option_4: prefer not to answer
+
+   I am a :
+
+.. reveal:: qstudent_src
+   :showtitle: Show Source
+   :hidetitle: Hide Source
+   :modaltitle: Source for the example above
+
+   .. code-block:: rst
+
+      .. poll:: qstudent
+         :option_1: student
+         :option_2: teacher
+         :option_3: other
+         :option_4: prefer not to answer
+
+         I am a :
 
 Reveals
 -------
@@ -2095,144 +2261,6 @@ Reveals
           .. activecode:: ac11
 
               print ("Hello, world")
-
-DOM Access
-----------
-
-Python programs written in activecode windows can now import the ``document`` module. This document module
-allows access to basic elements of the web page, including the new text entry box called
-**text1** :textfield:`text1:example input:medium` like this one.  Try running the program, then change
-the value in the text entry box and run it again.
-
-.. activecode:: tftest1
-   :nocodelens:
-
-   import document
-
-   t = document.getElementById('text1')
-   print('value = ', t.value)
-
-.. reveal:: tftest1_src
-   :showtitle: Show Source
-   :hidetitle: Hide Source
-   :modaltitle: Source for the example above
-
-   .. code-block:: rst
-
-      .. activecode:: tftest1
-         :nocodelens:
-
-         import document
-
-         t = document.getElementById('text1')
-         print('value = ', t.value)
-
-JavaScript
-----------
-
-We have come to realize that not everyone loves Python as much as we do.
-So we have now made it possible to write activecode examples in pure javascript as well
-as Python.  Here is a simple example:
-
-.. activecode:: jstest1
-   :language: javascript
-   :nocodelens:
-
-   var x = 10;
-   var y = 11;
-   var z = x + y;
-   console.log(z);
-   function fact(n) {
-      if(n <= 1) return 1;
-      else {
-          return n * fact(n-1);
-      }
-   }
-   console.log(fact(10));
-   writeln('hello world');
-
-
-Adding a javascript example is just as easy as Python, all you need to do is add a ``:language:``
-parameter to the activecode directive.
-
-.. reveal:: jstest1_src
-   :showtitle: Show Source
-   :hidetitle: Hide Source
-   :modaltitle: Source for the example above
-
-   .. code-block:: rst
-
-      .. activecode:: jstest1
-         :language: javascript
-         :nocodelens:
-
-         var x = 10;
-         var y = 11;
-         var z = x + y;
-         console.log(z);
-         function fact(n) {
-            if(n <= 1) return 1;
-            else {
-                return n * fact(n-1);
-            }
-         }
-         console.log(fact(10));
-         writeln('hello world');
-
-
-      Adding a javascript example is just as easy as Python, all you need to do is add a ``:language:``
-      parameter to the activecode directive.
-
-HTML
-----
-
-Teaching a class on HTML and simple web design?  Why not use activecode for HTML too?
-Although you don't run HTML, clicking the run button will cause the HTML to be rendered.
-
-.. activecode:: html1
-   :language: html
-   :nocodelens:
-
-   <html>
-   <body>
-   <style>
-       h2 { font-size: 48px;
-            color: red;
-       }
-   </style>
-   <h2>Hello World</h2>
-   <ul>
-       <li>one</li>
-       <li>two</li>
-   </ul>
-   </body>
-   </html>
-
-.. reveal:: html1_src
-   :showtitle: Show Source
-   :hidetitle: Hide Source
-   :modaltitle: Source for the example above
-
-   .. code-block:: rst
-
-      .. activecode:: html1
-         :language: html
-         :nocodelens:
-
-         <html>
-         <body>
-         <style>
-             h2 { font-size: 48px;
-                  color: red;
-             }
-         </style>
-         <h2>Hello World</h2>
-         <ul>
-             <li>one</li>
-             <li>two</li>
-         </ul>
-         </body>
-         </html>
 
 
 Spreadsheet
