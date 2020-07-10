@@ -27,8 +27,7 @@ Whereas in RST you would write:
 
 Lets Try a Parsons
 
-Parsons Problems
-----------------
+## Parsons Problems
 
 ```{parsonsprob} bnm_3_1_2018_md
 
@@ -44,5 +43,22 @@ ella.forward(150)
 =====
 ella.left(90)
 ella.forward(75)
+```
+
+## Multiple Choice
+
+```{mchoice} question1_ma
+:multiple_answers:
+:correct: a, c
+:answer_a: red
+:answer_b: brown
+:answer_c: blue
+:answer_d: gray
+:feedback_a: Red it is.
+:feedback_b: Not brown.
+:feedback_c: Blue it is.
+:feedback_d: Not gray.
+
+Which colors might be found in a rainbow (check all)?
 ```
 

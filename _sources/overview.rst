@@ -220,6 +220,66 @@ are learning to program.
 
              main()
 
+
+Image Processing
+----------------
+
+We have a special image library that we wrote for skulpt that lets you access images pixel by pixel.  This is a great way to practice nested iteration and to learn about the many different filters provided by services like Instagram, and others.
+
+.. datafile:: golden_gate.png
+    :image:
+    :fromfile: golden_gate.png
+
+You can use images in many ways.  If you have an image in your page and it has an id tag you can use that.  If you have a full URL to an image you can use that.  But the best thing to do if you are writing a book is to use the ``.. datafile::`` directive, this ensures that the image is available from anywhere in the book.
+
+.. activecode::  act_ip_1
+    :nocodelens:
+
+    import image
+
+    img = image.Image("golden_gate.png")
+    win = image.ImageWin(img.getWidth(), img.getHeight())
+    img.draw(win)
+    img.setDelay(1,15)   # setDelay(1, 2000) will speed up a lot                      # img.setDelay(delay, number of pixels between delay)
+
+    for row in range(img.getHeight()):
+        for col in range(img.getWidth()):
+            p = img.getPixel(col, row)
+
+            newred = p.red * 1.4
+            newgreen =  p.green * .75
+            newblue =  p.blue * 1.1
+
+            newpixel = image.Pixel(newred, newgreen, newblue)
+
+            img.setPixel(col, row, newpixel)
+
+    img.draw(win)
+    win.exitonclick()
+
+
+Graphs and Charts
+-----------------
+
+Using a simple Altair-like wrapper around the vega library, we can draw some nice charts and graphs.  We only implement a subset of altair but you can do most of the basic plots. bar, scatter, line, point, heatmaps are all possible.  If you see something from the `Altair Gallery <https://altair-viz.github.io/gallery/>`_ that does not work let us know, or have a look at the code `On github <https://github.com/RunesotneInteractive/skulpt>`_ and make PR 😀!
+
+A key difference between our baby Altair and the real Altair is that we do not use DataFrames.  We use a simple Data object.  YOu can create a data object with a bunch of named parameters and lists of values as shown below. Or from a dictionary or even from a JSON object.
+
+.. activecode:: alt_kiva_bar1
+    :nocodelens:
+
+    import altair
+
+    data = altair.Data(customer=['Alice', 'Bob', 'Claire'], cakes=[5,9,7], flavor=['chocolate', 'vanilla', 'strawberry'])
+    print(data)
+    chart = altair.Chart(data)
+    mark = chart.mark_bar()
+    enc = mark.encode(x='customer:N',y='cakes',color='flavor:N')
+    enc.display()
+
+
+
+
 Unit Tests for Python Code
 ---------------------------
 
