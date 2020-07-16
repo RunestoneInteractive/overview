@@ -553,7 +553,7 @@ You can even have SQL in an activecode.
 Server Side Python
 ------------------
 
-If the JOBE server has pandas installed we can even use pandas right in the text and have it process data from a file.
+If the JOBE server has pandas installed we can even use pandas right in the text and have it process data from a file.  Just use the option :language: python3.
 
 Here is the file it will read from.
 
