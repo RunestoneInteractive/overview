@@ -1082,7 +1082,7 @@ You can also have hidden unit tests in C++ using catch.hpp.  Place the unit test
 
           ====
 
-        #define CATCH_CONFIG_MAIN // This tells Catch to provide a main() - only do   this in one cpp file
+          #define CATCH_CONFIG_MAIN // This tells Catch to provide a main() - only do   this in one cpp file
           #include <catch.hpp>
 
           TEST_CASE( "Factorials are computed", "[factorial]" ) {
@@ -2268,6 +2268,9 @@ Any of the existing components can be placed in a tabbed exhibit-style question.
 
 Polls
 -----
+
+You can have a poll with a scale from x to y (such as 1 to 10).
+
 .. poll:: pollid1
    :scale: 10
    :allowcomment:
@@ -2286,6 +2289,32 @@ Polls
          :allowcomment:
 
           On a scale from 1 to 10, how important do you think it is to have a polling directive in the Runestone Tools?
+
+You can also have a poll with specific answers.
+
+.. poll:: qstudent
+   :option_1: student
+   :option_2: teacher
+   :option_3: other
+   :option_4: prefer not to answer
+
+   I am a :
+
+.. reveal:: qstudent_src
+   :showtitle: Show Source
+   :hidetitle: Hide Source
+   :modaltitle: Source for the example above
+
+   .. code-block:: rst
+
+      .. poll:: qstudent
+         :option_1: student
+         :option_2: teacher
+         :option_3: other
+         :option_4: prefer not to answer
+
+         I am a :
+
 
 Reveals
 -------
