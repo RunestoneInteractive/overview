@@ -175,6 +175,20 @@ We have a special image library that we wrote for skulpt that lets you access im
     :image:
     :fromfile: golden_gate.png
 
+
+Click on the reveal to see the rst for the datafile directive.
+
+.. reveal:: golden_gate_ex
+   :showtitle: Show Source
+   :hidetitle: Hide Source
+   :modaltitle: Source for the example above
+
+   .. code-block:: rst
+
+      .. datafile:: golden_gate.png
+         :image:
+         :fromfile: golden_gate.png
+
 You can use images in many ways.  If you have an image in your page and it has an id tag you can use that.  If you have a full URL to an image you can use that.  But the best thing to do if you are writing a book is to use the ``.. datafile::`` directive, this ensures that the image is available from anywhere in the book.
 
 .. activecode::  act_ip_1
@@ -202,6 +216,40 @@ You can use images in many ways.  If you have an image in your page and it has a
     img.draw(win)
     win.exitonclick()
 
+Click on the reveal to show the source for the activecode above.
+
+.. reveal:: act_ip_1_rev
+   :showtitle: Show Source
+   :hidetitle: Hide Source
+   :modaltitle: Source for the example above
+
+   .. code-block:: rst
+
+      .. activecode::  act_ip_1
+          :nocodelens:
+
+          import image
+
+          img = image.Image("golden_gate.png")
+          win = image.ImageWin(img.getWidth(), img.getHeight())
+          img.draw(win)
+          img.setDelay(1,15)   # setDelay(1, 2000) will speed up a lot                      # img.setDelay(delay, number of pixels between delay)
+
+          for row in range(img.getHeight()):
+              for col in range(img.getWidth()):
+                  p = img.getPixel(col, row)
+
+                  newred = p.red * 1.4
+                  newgreen =  p.green * .75
+                  newblue =  p.blue * 1.1
+
+                  newpixel = image.Pixel(newred, newgreen, newblue)
+
+                  img.setPixel(col, row, newpixel)
+
+          img.draw(win)
+          win.exitonclick()
+
 
 Graphs and Charts
 -----------------
@@ -221,6 +269,25 @@ A key difference between our baby Altair and the real Altair is that we do not u
     mark = chart.mark_bar()
     enc = mark.encode(x='customer:N',y='cakes',color='flavor:N')
     enc.display()
+
+.. reveal:: alt_kiva_bar1_rev
+   :showtitle: Show Source
+   :hidetitle: Hide Source
+   :modaltitle: Source for the example above
+
+   .. code-block:: rst
+
+      .. activecode:: alt_kiva_bar1
+          :nocodelens:
+
+          import altair
+
+          data = altair.Data(customer=['Alice', 'Bob', 'Claire'], cakes=[5,9,7], flavor=['chocolate', 'vanilla', 'strawberry'])
+          print(data)
+          chart = altair.Chart(data)
+          mark = chart.mark_bar()
+          enc = mark.encode(x='customer:N',y='cakes',color='flavor:N')
+          enc.display()
 
 
 
