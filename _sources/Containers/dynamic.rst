@@ -23,15 +23,30 @@ any point in a book or an exam.
 .. timed:: timed2
     :timelimit: 10
 
-    .. fillintheblank:: fill1412_ex
+    .. activecode:: units7
+        :nocodelens:
 
-        Fill in the blanks to make the following sentence: "The red car drove away" The |blank| car drove |blank|.
+        This is some question text.
 
-        - :red: Correct
-          :.*: Try red
+        And this is more question text
 
-        - :away: Corect
-          :.*: where did we say the red car was going?
+        ~~~~
+        def add(a,b):
+            return 4
+
+        from unittest.gui import TestCaseGui
+
+        class myTests(TestCaseGui):
+
+            def testOne(self):
+                self.assertEqual(add(2,2),4,"A feedback string when the test fails")
+                self.assertAlmostEqual(add(2.0,3.0), 5.0, 1, "Try adding your parmeters")
+
+        myTests().main()
+
+    .. selectquestion:: dynamic_q_0
+        :proficiency: TransformingSequences/TheAccumulatorPatternwithStrings
+
 
     .. selectquestion:: dynamic_q_2
         :fromid: qce_1, question1_1, mchoice_random
@@ -40,7 +55,7 @@ any point in a book or an exam.
         :fromid: units2
 
     .. selectquestion:: dynamic_q_4
-        :fromid: morning
+        :fromid: morning, pp_2_hours2seconds_jcomes, per_person_cost
 
 
 

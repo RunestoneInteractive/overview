@@ -2,7 +2,7 @@ ActiveCode Languages
 ::::::::::::::::::::
 
 .. toctree::
-   :caption: Active Cdoe
+   :caption: Active Code
    :maxdepth: 2
 
    python.rst
