@@ -12,4 +12,5 @@ ActiveCode Languages
    sql.rst
    java.rst
    clangs.rst
+   octave.rst
 

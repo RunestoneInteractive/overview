@@ -45,17 +45,22 @@ any point in a book or an exam.
         myTests().main()
 
     .. selectquestion:: dynamic_q_0
-        :proficiency: TransformingSequences/TheAccumulatorPatternwithStrings
+        :proficiency: FUNC01
+        :points: 5
 
 
     .. selectquestion:: dynamic_q_2
         :fromid: qce_1, question1_1, mchoice_random
+        :points: 5
 
     .. selectquestion:: dynamic_q_3
         :fromid: units2
+        :points: 2
 
     .. selectquestion:: dynamic_q_4
         :fromid: morning, pp_2_hours2seconds_jcomes, per_person_cost
+        :points: 2
+
 
 
 

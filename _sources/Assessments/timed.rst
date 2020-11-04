@@ -58,13 +58,32 @@ Please note that you can currently only have one timed exam per html page.  By d
         - :away: Corect
           :.*: where did we say the red car was going?
 
+    .. parsonsprob:: morning_exam
+
+        Put the blocks in order to describe a morning routine.
+        -----
+        get up
+        =====
+        eat breakfast
+        =====
+        brush your teeth               
 
     .. activecode:: timedactive
-       :language: python
+       :nocodelens:
 
-       Write a program that prints "hello world" two times.
-       ~~~~
-       print("hello world")
+       def add(a,b):
+          return 4
+
+       ====
+       from unittest.gui import TestCaseGui
+
+       class myTests(TestCaseGui):
+
+           def testOne(self):
+               self.assertEqual(add(2,2),4,"A feedback string when the test fails")
+               self.assertAlmostEqual(add(2.0,3.0), 5.0, 1, "Try adding your parmeters")
+
+       myTests().main()
 
 
 .. reveal:: timed1_src
@@ -126,6 +145,17 @@ Please note that you can currently only have one timed exam per html page.  By d
                 :.*: where did we say the red car was going?
 
 
+          .. parsonsprob:: morning_exam
+
+              Put the blocks in order to describe a morning routine.
+              -----
+              get up
+              =====
+              eat breakfast
+              =====
+              brush your teeth
+
+              
           .. activecode:: timedactive
              :language: python
 

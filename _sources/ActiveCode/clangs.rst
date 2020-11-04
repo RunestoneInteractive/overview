@@ -1,6 +1,18 @@
 C and C++
 ---------
 
+Now for the most famous program of all time!  This program is often the first program someone will write in a new language.  Here it is presented in the original C language!
+
+.. activecode:: hw_in_c
+    :language: c
+
+    #include <stdio.h>
+
+    int main() {
+        printf("Hello World!");
+    }
+
+
 You can also have C++ code in an activecode.
 
 .. activecode:: lc2
