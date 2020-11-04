@@ -125,6 +125,11 @@ Please note that you can currently only have one timed exam per html page.  By d
               - :away: Corect
                 :.*: where did we say the red car was going?
 
+          .. parsonsprob:: parsonstest
+          
+              Get Out of Bed
+              Eat Breakfast
+              Brush Your Teeth
 
           .. activecode:: timedactive
              :language: python
