@@ -45,7 +45,7 @@ any point in a book or an exam.
         myTests().main()
 
     .. selectquestion:: dynamic_q_0
-        :proficiency: FUNC01
+        :fromid: test_question2_3_2, test_question2_4_1
         :points: 5
 
 
@@ -58,7 +58,7 @@ any point in a book or an exam.
         :points: 2
 
     .. selectquestion:: dynamic_q_4
-        :fromid: morning, pp_2_hours2seconds_jcomes, per_person_cost
+        :fromid: morning, per_person_cost
         :points: 2
 
 

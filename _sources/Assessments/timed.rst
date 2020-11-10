@@ -70,6 +70,9 @@ Please note that you can currently only have one timed exam per html page.  By d
 
     .. activecode:: timedactive
        :nocodelens:
+       
+       Fix this code so it passes all of the unit tests.
+       ~~~~
 
        def add(a,b):
           return 4

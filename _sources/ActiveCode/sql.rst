@@ -6,7 +6,7 @@ You can even have SQL in an activecode.
 .. activecode:: sql1
     :language: sql
     :autograde: unittest
-    :dburl: https://runestone.academy/runestone/books/published/overview/_static/bikeshare.db
+    :dburl: /_static/bikeshare.db
 
     select bike_number, max(duration)
     from trip_data
