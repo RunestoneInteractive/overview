@@ -66,11 +66,23 @@ any point in a book or an exam.
 AB Experiments with Dynamic Questions
 =====================================
 
-Using the ``:AB:`` option on selectquestion allows the system to assign a student to either the A or B group and then consistently choose the questions for that group for your student.
+Using the ``:ab:`` option on selectquestion allows the system to assign a student to either the A or B group and then consistently choose the questions for that group for your student.
 
 .. selectquestion:: ab_example
    :ab:
    :fromid: test_question2_3_2, test_question2_4_1
    :points: 10
    
-   
+
+.. reveal:: selectreveal_src
+   :showtitle: Show Source
+   :hidetitle: Hide Source
+   :modaltitle: Foo
+
+   .. code-block::
+
+      .. selectquestion:: ab_example
+         :ab:
+         :fromid: test_question2_3_2, test_question2_4_1
+         :points: 10
+         
