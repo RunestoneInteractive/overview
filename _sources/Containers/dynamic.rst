@@ -45,7 +45,7 @@ any point in a book or an exam.
         myTests().main()
 
     .. selectquestion:: dynamic_q_0
-        :fromid: test_question2_3_2, test_question2_4_1
+        :fromid: question1_ma
         :points: 5
 
 
