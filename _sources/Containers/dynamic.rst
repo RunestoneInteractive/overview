@@ -16,7 +16,8 @@ any point in a book or an exam.
 
    .. code-block::
 
-       .. selectquestion:: question1_2
+       .. selectquestion:: dynamic_q_1
+          :fromid: question1_2
 
 
 
@@ -61,16 +62,40 @@ any point in a book or an exam.
         :fromid: morning, per_person_cost
         :points: 2
 
+In the above timed exam the selectquestion was used to provide multiple options for each of the questions.  This would mean that students would not all get exactly the same questions on their exam but rather randomly selected, yet equivalent problems for each question in the exam.  Here is an example of how you can do that:
+
+.. reveal:: dynamic_q_4_src
+   :showtitle: Show Source
+   :hidetitle: Hide Source
+   :modaltitle: Foo
+
+   .. code-block::
+   
+       .. selectquestion:: dynamic_q_4
+           :fromid: morning, per_person_cost
+           :points: 2
 
 
 AB Experiments with Dynamic Questions
 =====================================
 
-Using the ``:AB:`` option on selectquestion allows the system to assign a student to either the A or B group and then consistently choose the questions for that group for your student.
+Using the ``:AB:`` option on selectquestion allows the system to assign a student to either the A or B group. If the student is in the A group they will always get the first question in the `:fromid:` list and if they are in the B group they will always get the second.
 
 .. selectquestion:: ab_example
-   :ab:
-   :fromid: test_question2_3_2, test_question2_4_1
+   :ab: experiment1
+   :fromid: question1_1, mchoice_random
    :points: 10
    
-   
+
+.. reveal:: ab_example_src
+    :showtitle: Show Source
+    :hidetitle: Hide Source
+    :modaltitle: AB Example
+    
+    .. code-block:: 
+    
+       .. selectquestion:: ab_example
+          :ab: experimentName
+          :fromid: question1_1, mchoice_random
+          :points: 10
+    
