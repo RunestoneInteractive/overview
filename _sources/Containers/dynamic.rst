@@ -19,7 +19,15 @@ any point in a book or an exam.
        .. selectquestion:: dynamic_q_1
           :fromid: question1_2
 
+If you list multiple questions as part of the ``:fromid:`` option a question will be selected at random when it is displayed to the student.
 
+Using Dynamic Questions to secure Exams
+---------------------------------------
+
+Using the ``selectquestion`` directive has real benefits for writing a timed exam including:
+
+* Questions are not loaded into the page until the student sees the question for the first time.  This prevents students from viewing the source to see the questions.
+* using ``:fromid: question_1 question_2`` you can provide multiple equivalent questions for each exam question making it more difficult for students to share answers.
 
 .. timed:: timed2
     :timelimit: 10
@@ -77,7 +85,7 @@ In the above timed exam the selectquestion was used to provide multiple options 
 
 
 AB Experiments with Dynamic Questions
-=====================================
+-------------------------------------
 
 Using the ``:AB:`` option on selectquestion allows the system to assign a student to either the A or B group. If the student is in the A group they will always get the first question in the `:fromid:` list and if they are in the B group they will always get the second.
 
