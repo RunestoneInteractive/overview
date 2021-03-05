@@ -27,7 +27,18 @@ Using Dynamic Questions to secure Exams
 Using the ``selectquestion`` directive has real benefits for writing a timed exam including:
 
 * Questions are not loaded into the page until the student sees the question for the first time.  This prevents students from viewing the source to see the questions.
-* using ``:fromid: question_1 question_2`` you can provide multiple equivalent questions for each exam question making it more difficult for students to share answers.
+* Using ``:fromid: question_1, question_2, ...`` you can provide multiple equivalent questions for each exam question making it more difficult for students to share answers.
+
+There are several other options to the ``selectquestion`` that are designed to support automated exam creation, but they rely on the presence of a well developed and structured question bank.  Something we would love to develop in Runestone, but have not yet completed.
+
+* ``:proficiency:`` - If you have a lot of questions and they are tagged with either ``:prim_comp:`` or ``:supp_comp:``  then the exam will choose a question at random from all questions in the question bank that are aimed at that particular proficiency.
+
+* ``:min_difficulty:`` - We have developed a way to automatically assign a level of difficulty to a question based on past students historical performance on the question.  This allows you to include a question between a minimum and maximum difficulty level.
+* ``:max_difficulty:``
+* ``:autogradable:`` -- this ensures that Runestone only chooses a question that is automatically gradeable.
+* ``:not_seen_ever:`` -- this ensures that Runestone selects a question that the student has not answered sometime in the past.
+
+There is lots of research to do to see if this approach can actually work and produce exams that students will accept as fair.  But it seems that for an online exam, generating a different (but equivalent) exam for every student could go a long way toward reducing cheating as well as saving instructors a lot of work.
 
 .. timed:: timed2
     :timelimit: 10
