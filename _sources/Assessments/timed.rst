@@ -89,6 +89,16 @@ Please note that you can currently only have one timed exam per html page.  By d
        myTests().main()
 
 
+    .. actex:: timedactex
+       :language: python
+   
+       Write a program that prints "hello world" two times.
+       Note that although this is an ``actex`` the code should
+       show.
+       ~~~~
+       print("hello world")
+
+
 .. reveal:: timed1_src
    :showtitle: Show Source
    :hidetitle: Hide Source
@@ -170,3 +180,4 @@ Please note that you can currently only have one timed exam per html page.  By d
              Write a program that prints "hello world" two times.
              ~~~~
              print("hello world")
+
