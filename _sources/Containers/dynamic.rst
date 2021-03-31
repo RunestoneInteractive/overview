@@ -118,3 +118,15 @@ Using the ``:ab: <experimentid>`` option on selectquestion allows the system to 
          :fromid: test_question2_3_2, test_question2_4_1
          :points: 10
          
+
+
+Toggle Questions
+----------------
+
+Sometimes student struggle and fail with writing code from scratch.  This component gives them a fallback so that if they cannot complete the code they can work on it as a parsons problem. In addition some students would really rather write the code themselves instead of doing a parsons problem.
+
+.. selectquestion:: dynamic_toggle_1
+    :fromid: units2, morning
+    :toggle:
+    
+    

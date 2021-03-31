@@ -41,9 +41,9 @@ ShowEval Replace Mode
 
   ''.join({{eggs}}{{['dogs', 'cats', 'moose']}}).upper().join(eggs)
   {{''.join(['dogs', 'cats', 'moose'])}}{{'dogscatsmoose'}}.upper().join(eggs)
-  {{'dogscatsmoose'.upper()}}{​{'DOGSCATSMOOSE'}}.join(eggs)
-  'DOGSCATSMOOSE'.join({​{eggs}}{​{['dogs', 'cats', 'moose']}})
-  {​{'DOGSCATSMOOSE'.join(['dogs', 'cats', 'moose'])}}{​{'dogsDOGSCATSMOOSEcatsDOGSCATSMOOSEmoose'}}
+  {{'dogscatsmoose'.upper()}}{{'DOGSCATSMOOSE'}}.join(eggs)
+  'DOGSCATSMOOSE'.join({{eggs}}{{['dogs', 'cats', 'moose']}})
+  {{'DOGSCATSMOOSE'.join(['dogs', 'cats', 'moose'])}}{{'dogsDOGSCATSMOOSEcatsDOGSCATSMOOSEmoose'}}
 
 .. reveal:: showEval_1_src
      :showtitle: Show Source
