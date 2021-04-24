@@ -12,6 +12,3 @@ Assessments
    dragndrop.rst
    shortanswer.rst
    timed.rst
-
-
-
