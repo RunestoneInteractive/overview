@@ -27,7 +27,7 @@ import pkg_resources
 
 # Add any Sphinx extension module names here, as strings. They can be extensions
 # coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
-extensions = ["sphinx.ext.mathjax", "myst_parser"] + runestone_extensions()
+extensions = ["sphinx.ext.mathjax", "myst_parser", "sphinx_reredirects"] + runestone_extensions()
 
 # ,'runestone.video','runestone.reveal','runestone.poll','runestone.tabbedStuff','runestone.disqus','runestone.codelens','runestone.activecode', 'runestone.assess', 'runestone.animation','runestone.meta', 'runestone.parsons', 'runestone.blockly', 'runestone.livecode']
 
@@ -227,3 +227,9 @@ html_show_sourcelink = False
 
 # Output file base name for HTML help builder.
 htmlhelp_basename = "PythonCoursewareProjectdoc"
+
+
+# sphinx-reredirects extension
+# ----------------------------
+# See the `docs <https://pypi.org/project/sphinx-reredirects/>`_ for details.
+redirects = {"overview": "index.html"}
