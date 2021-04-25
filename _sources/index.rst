@@ -37,13 +37,13 @@ Table of Contents
     :numbered:
     :maxdepth: 3
 
-    ActiveCode/toctree.rst
-    Assessments/toctree.rst
-    Visualizers/toctree.rst
-    Containers/toctree.rst
-    Video/toctree.rst
-    Misc/toctree.rst
-    OtherMarkups/toctree.rst
+    ActiveCode/toctree
+    Assessments/toctree
+    Visualizers/toctree
+    Containers/toctree
+    Video/toctree
+    Misc/toctree
+    OtherMarkups/toctree
 
 
 How can I use Runestone?
@@ -65,4 +65,3 @@ What is an Interactive Textbook?
 ================================
 
 One of the key differences between an interactive textbook and a regular textbook is that with an interactive textbook your students do not need to switch back and forth between reading a book and interacting with a development environment.  One of our primary motivations for creating an interactive book was to encourage students to experiment with examples as they are reading.  To do this we developed the idea of an activecode example.  This led to the development of many other interactive components.  In the following sections you can explore each of them from the perspective of a reader.
-
