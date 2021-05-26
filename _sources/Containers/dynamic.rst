@@ -123,7 +123,7 @@ Using the ``:ab: <experimentid>`` option on selectquestion allows the system to 
 Toggle Questions
 ----------------
 
-Sometimes when learners are given a mixed-up code (Parsons) problem to solve they would rather write the code themselves.  Adding the ``toggle`` option to a ``selectquestion`` directive allows the learner to preview the other problems and choose which one to solve.  Whichever one is selected will be graded. This can be used with any types of problems.
+Sometimes when learners are given a mixed-up code (Parsons) problem to solve they would rather write the code themselves.  Adding the ``:toggle:`` option to a ``selectquestion`` directive allows the learner to preview the other problems and choose which one to solve.  Whichever one is selected will be graded. This can be used with any types of problems.
 
 .. selectquestion:: dynamic_toggle_1
    :fromid: exp1_pp1a, exp1_q1_write
