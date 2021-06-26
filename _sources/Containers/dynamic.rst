@@ -9,7 +9,7 @@ any point in a book or an exam.
 .. selectquestion:: dynamic_q_1
     :fromid: question1_2
 
-.. reveal:: selectreveal_src
+.. reveal:: dynamic_q_1_src
    :showtitle: Show Source
    :hidetitle: Hide Source
    :modaltitle: Foo
@@ -89,7 +89,7 @@ In the above timed exam the selectquestion was used to provide multiple options 
    :modaltitle: Foo
 
    .. code-block::
-   
+
        .. selectquestion:: dynamic_q_4
            :fromid: morning, per_person_cost
            :points: 2
@@ -104,9 +104,9 @@ Using the ``:ab: <experimentid>`` option on selectquestion allows the system to 
    :ab: abexperiment1
    :fromid: test_question2_3_2, test_question2_4_1
    :points: 10
-   
 
-.. reveal:: selectreveal_src
+
+.. reveal:: ab_example_src
    :showtitle: Show Source
    :hidetitle: Hide Source
    :modaltitle: Foo
@@ -117,16 +117,25 @@ Using the ``:ab: <experimentid>`` option on selectquestion allows the system to 
          :ab: abexperiment1
          :fromid: test_question2_3_2, test_question2_4_1
          :points: 10
-         
+
 
 
 Toggle Questions
 ----------------
 
-Sometimes student struggle and fail with writing code from scratch.  This component gives them a fallback so that if they cannot complete the code they can work on it as a parsons problem. In addition some students would really rather write the code themselves instead of doing a parsons problem.
+Sometimes when learners are given a mixed-up code (Parsons) problem to solve they would rather write the code themselves.  Adding the ``:toggle:`` option to a ``selectquestion`` directive allows the learner to preview the other problems and choose which one to solve.  Whichever one is selected will be graded. This can be used with any types of problems.
 
 .. selectquestion:: dynamic_toggle_1
-    :fromid: over_ac_example1, morning
-    :toggle:
-    
-    
+   :fromid: exp1_pp1a, exp1_q1_write
+   :toggle:
+
+.. reveal:: dynamic_toggle_1_src
+   :showtitle: Show Source
+   :hidetitle: Hide Source
+   :modaltitle: Foo
+
+   .. code-block::
+
+      .. selectquestion:: dynamic_toggle_1
+         :fromid: exp1_pp1a, exp1_q1_write
+         :toggle:
