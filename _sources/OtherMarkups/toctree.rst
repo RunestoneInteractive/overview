@@ -2,8 +2,8 @@ Other Markup Languages
 ::::::::::::::::::::::
 
 .. toctree::
-   :caption: Active Cdoe
+   :caption: Table of Contents
    :maxdepth: 2
 
+   wavedrom
    mdauthor.md
-
