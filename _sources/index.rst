@@ -59,7 +59,7 @@ If you decide to use one of our books, you can customize the book in a couple of
 * You can also customize which chapters you want to use, and the order that you teach them in.  That takes a bit more work, but you can definitely do it.
 
 
-Once you get going using one of our textbooks, you may decide that you want to create your own tutorials, lab exercises, or even make a short booklet to use as presentation materials.  Using the runestone tools it is pretty easy to make your own materials. We have `Documentation on how to do that <https://runestone.academy/runestone/static/instructorguide/WritingExercises/toctree.html>`_
+Once you get going using one of our textbooks, you may decide that you want to create your own tutorials, lab exercises, or even make a short booklet to use as presentation materials.  Using the runestone tools it is pretty easy to make your own materials. We have `Documentation on how to do that <https://runestone.academy/runestone/books/published/instructorguide/WritingExercises/toctree.html>`_
 
 What is an Interactive Textbook?
 ================================
