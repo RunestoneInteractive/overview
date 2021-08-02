@@ -44,6 +44,7 @@ Table of Contents
     Video/toctree
     Misc/toctree
     OtherMarkups/toctree
+    CellBotics/toctree
 
 
 How can I use Runestone?
