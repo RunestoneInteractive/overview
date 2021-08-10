@@ -49,3 +49,38 @@ Toggle Questions
            self.assertEqual(has22([1, 4, 4]), False, 'has22([1, 4, 4])')
 
    myTests().main()
+
+
+.. mchoice:: test_question2_3_2
+   :practice: T
+   :answer_a: Nothing is printed. A runtime error occurs.
+   :answer_b: Thursday
+   :answer_c: 32.5
+   :answer_d: 19
+   :correct: d
+   :feedback_a: It is legal to change the type of data that a variable holds in Python.
+   :feedback_b: This is the first value assigned to the variable day, but the next statements reassign that variable to new values.
+   :feedback_c: This is the second value assigned to the variable day, but the next statement reassigns that variable to a new value.
+   :feedback_d: The variable day will contain the last value assigned to it when it is printed.
+
+   What is printed when the following statements execute?
+
+   .. code-block:: python
+
+     day = "Thursday"
+     day = 32.5
+     day = 19
+     print(day)
+
+
+.. mchoice:: test_question2_4_1
+   :practice: T
+   :answer_a: True
+   :answer_b: False
+   :correct: b
+   :feedback_a: -  The + character is not allowed in variable names.
+   :feedback_b: -  The + character is not allowed in variable names (everything else in this name is fine).
+
+   True or False:  the following is a legal variable name in Python:   A_good_grade_is_A+
+
+     
