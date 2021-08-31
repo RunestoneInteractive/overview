@@ -256,7 +256,7 @@ Graphs and Charts
 
 Using a simple Altair-like wrapper around the vega library, we can draw some nice charts and graphs.  We only implement a subset of altair but you can do most of the basic plots. bar, scatter, line, point, heatmaps are all possible.  If you see something from the `Altair Gallery <https://altair-viz.github.io/gallery/>`_ that does not work let us know, or have a look at the code `On github <https://github.com/RunesotneInteractive/skulpt>`_ and make PR 😀!
 
-A key difference between our baby Altair and the real Altair is that we do not use DataFrames.  We use a simple Data object.  YOu can create a data object with a bunch of named parameters and lists of values as shown below. Or from a dictionary or even from a JSON object.
+A key difference between our baby Altair and the real Altair is that we do not use DataFrames.  We use a simple Data object.  You can create a data object with a bunch of named parameters and lists of values as shown below. Or from a dictionary or even from a JSON object.
 
 .. activecode:: alt_kiva_bar1
     :nocodelens:
