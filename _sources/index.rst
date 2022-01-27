@@ -7,9 +7,9 @@
     is included in the section entitled "GNU Free Documentation License".
 
 
-=================================
-Overview of Runestone Interactive
-=================================
+=============================
+Overview of Runestone Academy
+=============================
 
 .. image:: _static/logo_small.png
     :scale: 25%
@@ -19,7 +19,7 @@ Overview of Runestone Interactive
 ..  shortname:: Overview
 ..  description:: This is an overview chapter for the web site.
 
-.. admonition:: **Runestone Interactive** is a project that provides:
+.. admonition:: **Runestone Academy** is a project that provides:
 
     * Interactive, open source textbooks for computer science, math and other topics
     * Integrated LMS to give instructors insight into their students performance
