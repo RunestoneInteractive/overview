@@ -7,6 +7,7 @@ will be evaluated once they click the 'Check Me' button.
 
 .. clickablearea:: click1
     :question: Click on all assignment statements.
+    :prim_comp: ASSIGNMENT
     :iscode:
     :feedback: Remember, the operator '=' is used for assignment.
 
@@ -27,6 +28,7 @@ will be evaluated once they click the 'Check Me' button.
 
       .. clickablearea:: click1
           :question: Click on all assignment statements.
+          :prim_comp: ASSIGNMENT
           :iscode:
           :feedback: Remember, the operator '=' is used for assignment.
 

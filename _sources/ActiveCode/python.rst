@@ -11,6 +11,7 @@ Take a look at the activecode interpreter in action.  If we take a simple Python
 
 .. activecode:: over_ac_example1
    :coach:
+   :prim_comp: ASSIGNMENT
 
    print("My first program adds a list of numbers")
    myList = [2, 4, 6, 8, 10]
@@ -42,6 +43,7 @@ Click on the "Show Source" button below to see what the reStructuredText (rst) l
 
       .. activecode:: codeexample1
          :coach:
+         :prim_comp: ASSIGNMENT
 
          print("My first program adds a list of numbers")
          myList = [2, 4, 6, 8, 10]

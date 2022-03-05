@@ -144,7 +144,8 @@ This next type of question allows more than one correct answer to be required.  
 correct number as well as the feedback for each.
 
 .. mchoice:: question1_2
-
+    :prim_comp: GENERAL
+    
     Which colors might be found in a rainbow? (Choose all that are correct)
 
     -   red

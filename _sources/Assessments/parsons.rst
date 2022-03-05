@@ -4,6 +4,7 @@ Parsons Problems - Mixed Up Blocks
 Parsons problems provide blocks that are mixed up and the user must drag the blocks to the right and put them in the correct order.  The blocks can be plain text as shown below.
 
 .. parsonsprob:: morning
+   :prim_comp: GENERAL
 
    Put the blocks in order to describe a morning routine.
    -----
@@ -36,7 +37,8 @@ also have numbered labels on the left or right side which can help people workin
 
 .. parsonsprob:: per_person_cost
    :numbered: left
-
+   :prim_comp: GENERAL
+   
    The following program should figure out the cost per person for a dinner including the tip. But the blocks have been mixed up.  Drag the blocks from the left and put them in the correct order on the right.  Click the *Check Me* button to check your solution.</p>
    -----
    bill = 89.23
