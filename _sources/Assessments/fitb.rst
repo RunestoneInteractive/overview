@@ -5,7 +5,8 @@ Fill in the Blank
 Another type of question allows you as the instructor to ask for a value.  You can test for the value using regular expressions.  Leading and trailing whitespace in an answer will automatically be ignored. For example:
 
 .. fillintheblank:: fill1512
-
+    :prim_comp: GENERAL
+    
     How many bowling pins are used when bowling?
     You can put spaces before or after the number without affecting
     the correctness of the answer.

@@ -5,6 +5,7 @@ You can add a Drag n drop matching question to your page simply by defining the 
 The order of draggable elements and their respective dropzones will be randomized so the pairs aren't always side-by-side.
 
 .. dragndrop:: dnd1
+    :prim_comp: ASSIGNMENT
     :feedback: This is feedback.
     :match_1: Drag me to 1|||I am 1
     :match_2: Drag me to 2|||I am 2
@@ -20,6 +21,7 @@ The order of draggable elements and their respective dropzones will be randomize
    .. code-block:: rst
 
       .. dragndrop:: dnd1
+          :prim_comp: ASSIGNMENT
           :feedback: This is feedback.
           :match_1: Drag me to 1|||I am 1
           :match_2: Drag me to 2|||I am 2
