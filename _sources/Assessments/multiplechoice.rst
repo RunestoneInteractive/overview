@@ -193,6 +193,57 @@ correct number as well as the feedback for each.
 
 The order in which multiple-choice answers are presented can be randomized by adding the ``:random:`` option.
 
+.. reveal:: pxt_show_mchoice
+    :showtitle: Show PreTeXt
+    :hidetitle: HidePreTeXt
+
+    .. code-block:: xml
+
+        <exercise label="multiple-choice-multiple-answers">
+            <title>Multiple-Choice, Not Randomized, Multiple Answers</title>
+            <idx>stop signs</idx>
+            <statement>
+                <p>Which colors might be found in a rainbow?  (Note that the radio buttons now allow multiple buttons to be selected.)</p>
+            </statement>
+            <choices>
+                <choice correct="yes">
+                    <statement>
+                        <p>Red</p>
+                    </statement>
+                    <feedback>
+                        <p>Red is a definitely one of the colors.</p>
+                    </feedback>
+                </choice>
+                <choice correct="yes">
+                    <statement>
+                        <p>Yellow</p>
+                    </statement>
+                    <feedback>
+                        <p>Yes, yellow is correct.</p>
+                    </feedback>
+                </choice>
+                <choice>
+                    <statement>
+                        <p>Black</p>
+                    </statement>
+                    <feedback>
+                        <p>Remember the acronym<ellipsis/><acro>ROY G BIV</acro>.  <q>B</q> stands for blue.</p>
+                    </feedback>
+                </choice>
+                <choice correct="yes">
+                    <statement>
+                        <p>Green</p>
+                    </statement>
+                    <feedback>
+                        <p>Yes, green is one of the colors.</p>
+                    </feedback>
+                </choice>
+            </choices>
+            <hint>
+                <p>Do you know the acronym<ellipsis/><acro>ROY G BIV</acro> for the colors of a rainbow, and their order?</p>
+            </hint>
+        </exercise>
+
 .. mchoice:: mchoice_random
     :random:
 

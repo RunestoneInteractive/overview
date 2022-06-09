@@ -33,6 +33,39 @@ Another type of question allows you as the instructor to ask for a value.  You c
         :end-before: fill1512_src
 
 
+.. reveal:: ptx_fitb1_src
+    :showtitle: Show PreTeXt
+    :hidetitle: Hide PreTeXt
+
+    .. code-block:: xml
+
+        <exercise label="fillin-integer">
+            <title>Fill-In, Integer Answer</title>
+
+            <statement>
+                <p>The game of bowling uses <var/> pins that you try to knock down.</p>
+            </statement>
+            <setup>
+                <var>
+                    <condition number="10">
+                        <feedback>
+                            <p>Arranged in a triangle, there are <m>1+2+3+4 = 10</m> pins, a so-called <term>triangular</term> number.</p>
+                        </feedback>
+                    </condition>
+                    <condition number="16">
+                        <feedback>
+                            <p><em>Close</em>! You may have used hexadecimal notation, when you did not really mean to.</p>
+                        </feedback>
+                    </condition>
+                    <condition string=".*">
+                        <feedback>
+                            <p>Incorrect.</p>
+                        </feedback>
+                    </condition>
+                </var>
+            </setup>
+        </exercise>
+
 You can have multiple blank areas to fill in.
 
 .. fillintheblank:: fillDecVar1

@@ -32,6 +32,32 @@ Parsons problems provide blocks that are mixed up and the user must drag the blo
          brush your teeth
 
 
+.. reveal:: ptx_morning_src
+   :showtitle: Show PreTeXt
+   :hidetitle: Hide PreTeXt
+
+      .. code-block:: xml
+
+         <exercise label="number-theory-proof" adaptive="yes">
+            <title>Early morning exercise</title>
+            <statement>
+                <p>Put the blocks in order.</p>
+            </statement>
+            <blocks>
+                <block order="2">
+                    <p>Get Up</p>
+                </block>
+                <block order="3">
+                    <choice><p>Drink a shot of rum</p></choice>
+                    <choice correct="yes"><p>Eat Breakfast</p></choice>
+                </block>
+                <block order="1">
+                    <p>Brush your teeth</p>
+                </block>
+            </blocks>
+            <hint>Drinking before noon is not recommended.</hint>
+         </exercise>
+
 The blocks can contain code. They can
 also have numbered labels on the left or right side which can help people working in groups to discuss the problem (:numbered: left or :numbered: right).  The example below shows a problem in Python. Notice that a block can contain more than one line of code.  Be sure to break up the lines of code so that there is only one correct solution.
 
