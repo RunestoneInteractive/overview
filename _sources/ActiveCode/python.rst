@@ -52,6 +52,26 @@ Click on the "Show Source" button below to see what the reStructuredText (rst) l
              total = total + num
          print(total)
 
+.. reveal:: ptx_active1_src
+   :showtitle: Show PreTeXt
+   :hidetitle: Hide PreTeXt
+   
+   .. code-block:: xml
+
+      <listing xml:id="program-activecode-python">
+         <caption>An interactive Python program, using <pubtitle>Runestone</pubtitle></caption>
+         <program xml:id="python-hello-world" interactive='activecode' language="python">
+            <input>
+            print("My first program adds a list of numbers")
+            myList = [2, 4, 6, 8, 10]
+            total = 0
+            for num in myList:
+               total = total + num
+            print(total)
+            </input>
+         </program>
+      </listing>
+
 
 Activecode is even capable of executing graphical programs that use the built in Python turtle module.
 The program shown below is a very interesting graphics program that uses the turtle and the idea of recursion to construct a type of
