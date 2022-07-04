@@ -262,7 +262,7 @@ Here is the same problem, but now the user has to indent the code as well since 
 
 
 Graph Based Grading
--------------------
+~~~~~~~~~~~~~~~~~~~
 
 Sometimes there is not one correct ordering for a problem.  For example if you need to initialize a couple of variables and then use them later, but the order you initialize the variables doesn't matter.  If you can specify the order of the blocks as a Directed Acyclic Graph then you can do create a Parsons problem with dependencies.  
 Here is a simple example.  The variables a and b can be initialized in either order as long as they are initialized before they are used in the multiplication.
@@ -300,9 +300,8 @@ Here is a simple example.  The variables a and b can be initialized in either or
 
 Here is a more complicated example from :math:`Mathematics` :
 
-============
 Proof Blocks
-============
+~~~~~~~~~~~~
 
 .. parsonsprob:: test_proof_blocks_1
   :language: natural
