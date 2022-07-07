@@ -370,4 +370,66 @@ Proof Blocks
         \(c'(u) \ne c'(v)\) #tag:7;depends:6,3;
         =====
         \(c'\) is a 2-coloring of \(H\), so \(H\) is 2-colorable. (end of proof) #tag:8;depends:7;
-     
+
+
+Horizontal Parsons Problems
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This parsons problem demonstrates randomized blocks with block based feedback.
+
+.. hparsons:: test_hparsons_block_1
+    :language: sql
+    :dburl: /_static/test.db
+    :randomize:
+    :blockanswer: 0 1 2 3
+
+    This is a horizontal Parsons problem! Feedback is based on block for this problem.
+    The blocks are randomized, but cannot be reused ;)
+    ~~~~
+    --blocks--
+    SELECT 
+    *
+    FROM
+    test
+
+
+Randomized block with execution based feedback.
+
+.. hparsons:: test_hparsons_regex_1 
+    :language: regex
+    :randomize:
+    :reuse:
+    :blockanswer: 0 1 2 3
+
+    This is a horizontal Parsons problem! Feedback is based on code execution.
+    The blocks are randomized, but cannot be reused ;) write a regular expression 
+    that matches a string that starts with ab followed by zero or more c
+    ~~~~
+    --blocks--
+    a
+    b
+    c
+    *
+
+Randomized block with execution based feedback
+
+.. hparsons:: test_hparsons_sql_1 
+    :language: sql
+    :dburl: /_static/test.db
+    :randomize:
+
+    This is a horizontal Parsons problem! Feedback is based on code execution.
+    The blocks are randomized, but cannot be reused ;)
+    ~~~~
+    --blocks--
+    SELECT 
+    *
+    FROM
+    test
+    --unittest--
+    assert 1,1 == world
+    assert 0,1 == hello
+    assert 2,1 == 42
+
+(2x-3)^2
+4x^2 -6x -6x + 9
