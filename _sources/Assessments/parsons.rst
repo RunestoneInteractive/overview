@@ -430,6 +430,3 @@ Randomized block with execution based feedback
     assert 1,1 == world
     assert 0,1 == hello
     assert 2,1 == 42
-
-(2x-3)^2
-4x^2 -6x -6x + 9
