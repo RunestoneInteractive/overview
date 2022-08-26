@@ -64,7 +64,7 @@ also have numbered labels on the left or right side which can help people workin
 .. parsonsprob:: per_person_cost
    :numbered: left
    :prim_comp: GENERAL
-   
+
    The following program should figure out the cost per person for a dinner including the tip. But the blocks have been mixed up.  Drag the blocks from the left and put them in the correct order on the right.  Click the *Check Me* button to check your solution.</p>
    -----
    bill = 89.23
@@ -157,6 +157,8 @@ Here is an example in Java.  Parsons problems can have distractor (incorrect) co
          }
 
 Here is the same example, but with a paired distractor (#paired vs #distractor).  The distractor block be shown either above or below the correct block.  There will also be purple edges on the sides and the word "or" to show that the blocks are paired.
+You can optionally add an explanation of the distractor by adding a colon and including text after the colon.  This will be
+shown if the user hovers over the block after the block is disabled.
 
 .. parsonsprob:: java_countdown_paired
             :numbered: left
@@ -172,7 +174,7 @@ Here is the same example, but with a paired distractor (#paired vs #distractor).
             =====
                     for (int i = 15; i >=0; i--)
             =====
-                    for (int i = 15; i > 0; i--) #paired
+                    for (int i = 15; i > 0; i--) #paired: This will stop when i is 0 so the countdown won't include 0
             =====
                         System.out.println(i);
             =====
@@ -201,7 +203,7 @@ Here is the same example, but with a paired distractor (#paired vs #distractor).
          =====
                  for (int i = 15; i >=0; i--)
          =====
-                     for (int i = 15; i > 0; i--) #paired
+                     for (int i = 15; i > 0; i--) #paired: This will stop when i is 0 so the countdown won't include 0
          =====
                          System.out.println(i);
          =====
@@ -224,7 +226,7 @@ Here is the same problem, but now the user has to indent the code as well since 
    =====
            for (int i = 15; i >=0; i--)
    =====
-           for (int i = 15; i > 0; i--) #paired
+           for (int i = 15; i > 0; i--) #paired: This will never reach 0
    =====
                System.out.println(i);
    =====
@@ -252,11 +254,10 @@ Here is the same problem, but now the user has to indent the code as well since 
          =====
                  for (int i = 15; i >=0; i--)
          =====
-                     for (int i = 15; i > 0; i--) #paired
+                     for (int i = 15; i > 0; i--) #paired: This will never reach 0
          =====
                          System.out.println(i);
          =====
               }
          =====
          }
-
