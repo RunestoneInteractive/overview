@@ -261,3 +261,177 @@ Here is the same problem, but now the user has to indent the code as well since 
               }
          =====
          }
+
+
+Graph Based Grading
+~~~~~~~~~~~~~~~~~~~
+
+Sometimes there is not one correct ordering for a problem.  For example if you need to initialize a couple of variables and then use them later, but the order you initialize the variables doesn't matter.  If you can specify the order of the blocks as a Directed Acyclic Graph then you can do create a Parsons problem with dependencies.  
+Here is a simple example.  The variables a and b can be initialized in either order as long as they are initialized before they are used in the multiplication.
+
+.. parsonsprob:: simple_dag
+    :grader: dag
+
+    -----
+    a = 5 #tag:0; depends:;
+    =====
+    b = 10 #tag:1; depends:;
+    =====
+    result = a * b #tag:2; depends: 0,1;
+    =====
+    print(f"result = {result}") #tag:3; depends: 2;
+
+.. reveal:: proof_blocks_src
+   :showtitle: Show Source
+   :hidetitle: Hide Source
+   :modaltitle: Source for the example above
+
+   .. code-block:: rst
+
+        .. parsonsprob:: simple_dag_src
+            :grader: dag
+
+            -----
+            a = 5 #tag:0; depends:;
+            =====
+            b = 10 #tag:1; depends:;
+            =====
+            result = a * b #tag:2; depends: 0,1;
+            =====
+            print(f"result = {result}") #tag:3; depends: 2;
+
+Here is a more complicated example from :math:`Mathematics` :
+
+Proof Blocks
+~~~~~~~~~~~~
+
+.. parsonsprob:: test_proof_blocks_1
+  :language: natural
+  :grader: dag
+
+  .. raw:: html
+
+    <embed>
+          <p>Drag and drop <font color="red"><strong>ALL</strong></font> of the blocks below to create a proof of the following statement.</p>
+        <center><font color="red">If graphs \(G\) and \(H\) are isomorphic and \(G\) is 2-colorable, then \(H\) is 2-colorable.</font></center>
+    </embed>
+
+  -----
+  Assume \(G\) and \(H\) are isomorphic graphs and \(G\) is 2-colorable. #tag:0; depends:;
+  =====
+  Let \(c:V(G) \to \{red, blue\}\) be a 2-coloring of \(G\). #tag: 1; depends:0;
+  =====
+  Let \(f\) be an isomorphism \(V(H) \to V(G)\) #tag: 2; depends: 0;
+  =====
+  Define \(c':V(H) \to \{red, blue\}\) as \(c'(v)=c(f(v))\) #tag:3;depends:1,2;
+  =====
+  Let \(\langle u - v \rangle\) be an edge in \(H\). (If instead there are no edges in \(H\), then \(H\) is trivially 2-colorable and we are done.) #tag:4;depends:0;
+  =====
+  \(\langle f(u) - f(v) \rangle\) is an edge in \(G\) #tag:5;depends:4,2;
+  =====
+  \(c(f(u)) \ne c(f(v))\) #tag:6;depends:5,1;
+  =====
+  \(c'(u) \ne c'(v)\) #tag:7;depends:6,3;
+  =====
+  \(c'\) is a 2-coloring of \(H\), so \(H\) is 2-colorable. (end of proof) #tag:8;depends:7;
+
+
+.. reveal:: proof_blocks_src
+   :showtitle: Show Source
+   :hidetitle: Hide Source
+   :modaltitle: Source for the example above
+
+   .. code-block:: rst
+
+      .. parsonsprob:: test_proof_blocks_1
+        :language: math
+        :grader: dag
+
+        .. raw:: html
+
+            <embed>
+                <p>Drag and drop <font color="red"><strong>ALL</strong></font> of the blocks below to create a proof of the following statement.</p>
+                <center><font color="red">If graphs \(G\) and \(H\) are isomorphic and \(G\) is 2-colorable, then \(H\) is 2-colorable.</font></center>
+            </embed>
+
+        -----
+        Assume \(G\) and \(H\) are isomorphic graphs and \(G\) is 2-colorable. #tag:0; depends:;
+        =====
+        Let \(c:V(G) \to \{red, blue\}\) be a 2-coloring of \(G\). #tag: 1; depends:0;
+        =====
+        Let \(f\) be an isomorphism \(V(H) \to V(G)\) #tag: 2; depends: 0;
+        =====
+        Define \(c':V(H) \to \{red, blue\}\) as \(c'(v)=c(f(v))\) #tag:3;depends:1,2;
+        =====
+        Let \(\langle u - v \rangle\) be an edge in \(H\). (If instead there are no edges in \(H\), then \(H\) is trivially 2-colorable and we are done.) #tag:4;depends:0;
+        =====
+        \(\langle f(u) - f(v) \rangle\) is an edge in \(G\) #tag:5;depends:4,2;
+        =====
+        \(c(f(u)) \ne c(f(v))\) #tag:6;depends:5,1;
+        =====
+        \(c'(u) \ne c'(v)\) #tag:7;depends:6,3;
+        =====
+        \(c'\) is a 2-coloring of \(H\), so \(H\) is 2-colorable. (end of proof) #tag:8;depends:7;
+
+
+Horizontal Parsons Problems
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This parsons problem demonstrates randomized blocks with block based feedback.
+
+.. hparsons:: test_hparsons_block_1
+    :language: sql
+    :dburl: /_static/test.db
+    :randomize:
+    :blockanswer: 0 1 2 3
+
+    This is a horizontal Parsons problem! Feedback is based on block for this problem.
+    The blocks are randomized, but cannot be reused ;)
+    ~~~~
+    --blocks--
+    SELECT 
+    *
+    FROM
+    test
+
+
+Randomized block with execution based feedback.
+
+.. hparsons:: test_hparsons_regex_1 
+    :language: regex
+    :randomize:
+    :reuse:
+    :blockanswer: 0 1 2 3
+
+    This is a horizontal Parsons problem! Feedback is based on code execution.
+    The blocks are randomized, but cannot be reused ;) write a regular expression 
+    that matches a string that starts with ab followed by zero or more c
+    ~~~~
+    --blocks--
+    a
+    b
+    c
+    *
+
+Randomized block with execution based feedback
+
+.. hparsons:: test_hparsons_sql_1 
+    :language: sql
+    :dburl: /_static/test.db
+    :randomize:
+
+    This is a horizontal Parsons problem! Feedback is based on code execution.
+    The blocks are randomized, but cannot be reused ;)
+    ~~~~
+    --blocks--
+    SELECT 
+    *
+    FROM
+    test
+    --unittest--
+    assert 1,1 == world
+    assert 0,1 == hello
+    assert 2,1 == 42
+
+(2x-3)^2
+4x^2 -6x -6x + 9
