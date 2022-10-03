@@ -139,13 +139,195 @@ You can also have code blocks in multiple-choice questions, or any other reST co
                 +   The first condition is false and ``x`` is not equal to zero so the else
                     will execute.
 
+You can have multiple-choice questions with images in them.  You can
+upload the images to a service like postimage so that they are on the web.
+
+.. mchoice:: over_turtle_which_draws_pict_mcq
+
+    Which of the following code draws this picture?
+
+    .. image:: https://i.postimg.cc/VNSyPdkL/rect.png
+
+    -   .. image:: https://i.postimg.cc/05L2r1wN/codea.png
+
+        - This code will draw a rectangle in the south west quadrant.
+
+    -   .. image:: https://i.postimg.cc/3xZKLyby/codeb.png
+
+        - This code will draw a rectangle in the north east quadrant.
+
+    -   .. image:: https://i.postimg.cc/4xwg6DmV/codec.png
+
+        + This code will draw a rectangle in the north west quadrant.
+
+    -   .. image:: https://i.postimg.cc/QCLGNsyG/coded.png
+
+        - This code will draw a rectangle in the south east quadrant.
+
+.. reveal:: over_turtle_which_draws_pict_mcq_src
+   :showtitle: Show Source
+   :hidetitle: Hide Source
+   :modaltitle: Source for the example above
+
+   .. code-block:: rst
+
+      .. mchoice:: over_turtle_which_draws_pict_mcq
+
+          Which of the following code draws this picture?
+
+          .. image:: https://i.postimg.cc/VNSyPdkL/rect.png
+
+          -   .. image:: https://i.postimg.cc/05L2r1wN/codea.png
+
+              - This code will draw a rectangle in the south west quadrant.
+
+          -   .. image:: https://i.postimg.cc/3xZKLyby/codeb.png
+
+              - This code will draw a rectangle in the north east quadrant.
+
+          -   .. image:: https://i.postimg.cc/4xwg6DmV/codec.png
+
+              + This code will draw a rectangle in the north west quadrant.
+
+          -   .. image:: https://i.postimg.cc/QCLGNsyG/coded.png
+
+              - This code will draw a rectangle in the south east quadrant.
+
+
+You can also have a multiple choice question with code for each answer.
+
+.. mchoice:: over_class_mcq_correct_person_def_code_block
+
+    Which of the following code is correct?
+
+    -   .. code-block::
+
+           class Person:
+
+               def __init__(self, first, last):
+                    self.first = first
+                    self.last = last
+
+               def __str__(self):
+                   return (first + " " + last)
+
+               def initials(self):
+                   return (self.first[0] + self.last[0])
+
+
+        - This code should use ``self.first`` and ``self.last`` in the ``__str__`` method
+
+    -   .. code-block::
+
+           class Person:
+
+               def __init__(self, first, last):
+                    self.first = first
+                    self.last = last
+
+               def __str__(self):
+                   return (self.first + " " + self.last)
+
+               def initials(self):
+                   return (self.first[0] + self.last[0])
+
+
+
+        + This code is correct.
+
+    -   .. code-block::
+
+            class Person:
+
+               def __init__(self, first, last):
+                    self.first = first
+                    self.last = last
+
+               def __str__():
+                   return (first + " " + last)
+
+               def initials():
+                   return (self.first[0] + self.last[0])
+
+        - This code is missing the ``self`` on the ``__str__`` and ``initials`` methods
+
+    -   None of them
+
+        - One of them is correct
+
+
+.. reveal:: over_class_mcq_correct_person_def_code_block_src
+   :showtitle: Show Source
+   :hidetitle: Hide Source
+   :modaltitle: Source for the example above
+
+   .. code-block:: rst
+
+      .. mchoice:: over_class_mcq_correct_person_def_code_block
+
+          Which of the following code is correct?
+
+          -   .. code-block::
+
+                 class Person:
+
+                     def __init__(self, first, last):
+                          self.first = first
+                          self.last = last
+
+                     def __str__(self):
+                         return (first + " " + last)
+
+                     def initials(self):
+                         return (self.first[0] + self.last[0])
+
+
+              - This code should use ``self.first`` and ``self.last`` in the ``__str__`` method
+
+          -   .. code-block::
+
+                 class Person:
+
+                     def __init__(self, first, last):
+                          self.first = first
+                          self.last = last
+
+                     def __str__(self):
+                         return (self.first + " " + self.last)
+
+                     def initials(self):
+                         return (self.first[0] + self.last[0])
+
+
+
+              + This code is correct.
+
+          -   .. code-block::
+
+                  class Person:
+
+                     def __init__(self, first, last):
+                          self.first = first
+                          self.last = last
+
+                     def __str__():
+                         return (first + " " + last)
+
+                     def initials():
+                         return (self.first[0] + self.last[0])
+
+              - This code is missing the ``self`` on the ``__str__`` and ``initials`` methods
+
+          -   None of them
+
+              - One of them is correct
 
 This next type of question allows more than one correct answer to be required.  Just mark each correct answer with a plus sign (``+``).  The feedback will tell you whether you have the
 correct number as well as the feedback for each.
 
 .. mchoice:: question1_2
     :prim_comp: GENERAL
-    
+
     Which colors might be found in a rainbow? (Choose all that are correct)
 
     -   red

@@ -139,3 +139,24 @@ Sometimes when learners are given a mixed-up code (Parsons) problem to solve the
       .. selectquestion:: dynamic_toggle_1
          :fromid: exp1_pp1a, exp1_q1_write
          :toggle:
+
+You can also lock the toggle question so that it will display the other question in a
+pop-up window, but not allow the user to switch to that question.  This is
+helpful if you want to use a Parsons problem to scaffold a student who is
+struggling to write code.
+
+.. selectquestion:: dynamic_toggle_lock
+   :fromid: exp1_q1_write, exp1_pp1a
+   :toggle: lock
+
+
+.. reveal:: dynamic_toggle_lock_src
+   :showtitle: Show Source
+   :hidetitle: Hide Source
+   :modaltitle: Foo
+
+   .. code-block::
+
+      .. selectquestion:: dynamic_toggle_1
+         :fromid: exp1_q1_write, exp1_pp1a
+         :toggle: lock
