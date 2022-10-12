@@ -266,7 +266,7 @@ Here is the same problem, but now the user has to indent the code as well since 
 Graph Based Grading
 ~~~~~~~~~~~~~~~~~~~
 
-Sometimes there is not one correct ordering for a problem.  For example if you need to initialize a couple of variables and then use them later, but the order you initialize the variables doesn't matter.  If you can specify the order of the blocks as a Directed Acyclic Graph then you can do create a Parsons problem with dependencies.  
+Sometimes there is not one correct ordering for a problem.  For example if you need to initialize a couple of variables and then use them later, but the order you initialize the variables doesn't matter.  If you can specify the order of the blocks as a Directed Acyclic Graph then you can do create a Parsons problem with dependencies.
 Here is a simple example.  The variables a and b can be initialized in either order as long as they are initialized before they are used in the multiplication.
 
 .. parsonsprob:: simple_dag
@@ -389,22 +389,43 @@ This parsons problem demonstrates randomized blocks with block based feedback.
     The blocks are randomized, but cannot be reused ;)
     ~~~~
     --blocks--
-    SELECT 
+    SELECT
     *
     FROM
     test
 
+.. reveal:: test_hparsons_block_1_src
+   :showtitle: Show Source
+   :hidetitle: Hide Source
+   :modaltitle: Source for the example above
+
+   .. code-block:: rst
+
+      .. hparsons:: test_hparsons_block_1
+          :language: sql
+          :dburl: /_static/test.db
+          :randomize:
+          :blockanswer: 0 1 2 3
+
+          This is a horizontal Parsons problem! Feedback is based on block for this problem.
+          The blocks are randomized, but cannot be reused ;)
+          ~~~~
+          --blocks--
+          SELECT
+          *
+          FROM
+          test
 
 Randomized block with execution based feedback.
 
-.. hparsons:: test_hparsons_regex_1 
+.. hparsons:: test_hparsons_regex_1
     :language: regex
     :randomize:
     :reuse:
     :blockanswer: 0 1 2 3
 
     This is a horizontal Parsons problem! Feedback is based on code execution.
-    The blocks are randomized, but cannot be reused ;) write a regular expression 
+    The blocks are randomized, but cannot be reused ;) write a regular expression
     that matches a string that starts with ab followed by zero or more c
     ~~~~
     --blocks--
@@ -413,9 +434,32 @@ Randomized block with execution based feedback.
     c
     *
 
+.. reveal:: test_hparsons_regex_1_src
+   :showtitle: Show Source
+   :hidetitle: Hide Source
+   :modaltitle: Source for the example above
+
+   .. code-block:: rst
+
+      .. hparsons:: test_hparsons_regex_1
+          :language: regex
+          :randomize:
+          :reuse:
+          :blockanswer: 0 1 2 3
+
+          This is a horizontal Parsons problem! Feedback is based on code execution.
+          The blocks are randomized, but cannot be reused ;) write a regular expression
+          that matches a string that starts with ab followed by zero or more c
+          ~~~~
+          --blocks--
+          a
+          b
+          c
+          *
+
 Randomized block with execution based feedback
 
-.. hparsons:: test_hparsons_sql_1 
+.. hparsons:: test_hparsons_sql_1
     :language: sql
     :dburl: /_static/test.db
     :randomize:
@@ -424,7 +468,7 @@ Randomized block with execution based feedback
     The blocks are randomized, but cannot be reused ;)
     ~~~~
     --blocks--
-    SELECT 
+    SELECT
     *
     FROM
     test
@@ -433,5 +477,27 @@ Randomized block with execution based feedback
     assert 0,1 == hello
     assert 2,1 == 42
 
-(2x-3)^2
-4x^2 -6x -6x + 9
+.. reveal:: test_hparsons_sql_1_src
+   :showtitle: Show Source
+   :hidetitle: Hide Source
+   :modaltitle: Source for the example above
+
+   .. code-block:: rst
+
+      .. hparsons:: test_hparsons_sql_1
+          :language: sql
+          :dburl: /_static/test.db
+          :randomize:
+
+          This is a horizontal Parsons problem! Feedback is based on code execution.
+          The blocks are randomized, but cannot be reused ;)
+          ~~~~
+          --blocks--
+          SELECT
+          *
+          FROM
+          test
+          --unittest--
+          assert 1,1 == world
+          assert 0,1 == hello
+          assert 2,1 == 42
