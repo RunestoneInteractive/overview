@@ -187,6 +187,36 @@ are learning to program.
 
              main()
 
+Event Driven Programming
+------------------------
+
+This little program illustrates how to use events in python and turtle graphics.
+You can "drive" the turtle around the canvas using the arrow keys and by clicking the mouse.
+The turtle will leave a trail as it moves.
+
+.. activecode:: overview_event_turtle
+   :nocodelens:
+
+   import turtle
+
+   t = turtle.Turtle()
+   s = turtle.Screen()
+   t.goto(0,0)
+
+   def f():
+      t.forward(10)
+
+   def l():
+      t.left(45)
+
+   def r():
+      t.right(45)
+
+   s.onkey(f, "Up")
+   s.onkey(l, "Left")
+   s.onkey(r, "Right")
+   s.onclick(t.goto)
+   s.listen()
 
 Image Processing
 ----------------
