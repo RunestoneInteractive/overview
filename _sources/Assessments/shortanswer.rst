@@ -30,3 +30,11 @@ Short Answer
                 <p>You can ask your students to answer reflective questions or short essays in the box provided.</p>
             </statement>
         </exercise>
+
+
+.. shortanswer:: shortattach1
+   :attachment:
+
+   You can also attach files to short answer questions.  Students can attach files to their answer and you can
+   see those files when you grade.
+

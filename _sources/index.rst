@@ -15,6 +15,7 @@ Overview of Runestone Academy
     :scale: 25%
     :align: center
     :alt: ThinkCSPy Logo
+    :class: no-scaled-link
 
 ..  shortname:: Overview
 ..  description:: This is an overview chapter for the web site.

@@ -12,6 +12,7 @@ The order of draggable elements and their respective dropzones will be randomize
     :match_3: Louisiana Purchase|||1803
     :match_4: Battle of Gettysburg|||1863
 
+
     Match each event in United States history with the year it happened.
 
 .. reveal:: dnd1_src
@@ -35,7 +36,7 @@ The order of draggable elements and their respective dropzones will be randomize
 .. reveal:: ptx_matching_1
     :showtitle: Show PreTeXt
     :hidetitle: Hide PreTeXt
-    
+
     .. code-block:: xml
 
         <exercise label="matching-dates">
@@ -66,4 +67,3 @@ The order of draggable elements and their respective dropzones will be randomize
                 </match>
             </matches>
         </exercise>
-    

@@ -510,3 +510,40 @@ Here is the file it will read from.
          import pandas as pd
 
          df = pd.read_csv('country_data.csv', encoding='latin1')
+
+
+
+For this example, we move our ``PartyAnimal`` class into its own file.
+Then, we can 'import' the ``PartyAnimal`` class in a new file and extend it, as follows:
+
+.. datafile:: src/builtin/party.py
+
+   class PartyAnimal:
+
+         def __init__(self, nam):
+            self.name = nam
+            print(self.name,'constructed')
+
+         def party(self, x) :
+            self.x = x
+            self.x = self.x + 1
+            print(self.name,'party count',self.x)
+
+
+.. activecode:: inherit_cricketfan
+
+    from party import PartyAnimal
+
+    class CricketFan(PartyAnimal):
+        points = 0
+        def six(self):
+            self.points = self.points + 6
+            self.party()
+            print(self.name,"points",self.points)
+
+    s = PartyAnimal("Sally")
+    s.party()
+    j = CricketFan("Jim")
+    j.party()
+    j.six()
+    print(dir(j))
