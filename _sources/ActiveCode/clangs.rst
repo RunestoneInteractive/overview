@@ -23,7 +23,8 @@ You can also have C++ code in an activecode.
     #include <iostream>
     using namespace std;
     int main() {
-        cout << "Hello World!" << endl;   cout << "Welcome to C++ Programming" << endl;
+        cout << "Hello World!" << endl;   
+        cout << "Welcome to C++ Programming" << endl;
     }
 
 .. reveal:: lc2_src
@@ -41,7 +42,8 @@ You can also have C++ code in an activecode.
          #include <iostream>
          using namespace std;
          int main() {
-             cout << "Hello World!" << endl;   cout << "Welcome to C++ Programming" << endl;
+             cout << "Hello World!" << endl;   
+             cout << "Welcome to C++ Programming" << endl;
          }
 
 
